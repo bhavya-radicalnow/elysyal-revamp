@@ -17,7 +17,7 @@ export default function Navbar() {
           src="/logo.webp"
           alt="ELYSYAL Logo"
           width={140}
-          height={40}
+          height={140}
           priority
         />
 

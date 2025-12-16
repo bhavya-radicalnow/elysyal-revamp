@@ -3,6 +3,11 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer"
 import Hero from "@/components/section/Hero";
 import Features from "@/components/section/Features";
+import Services from "@/components/section/Services";
+import Industries from "@/components/section/Industries";
+import WhyChoose from "@/components/section/WhyChoose";
+
+import CallToAction from "@/components/section/CallToAction";
 
 export default function HomePage() {
   return (
@@ -10,9 +15,10 @@ export default function HomePage() {
       <Navbar />
       <Hero/>
       <Features/>
-      <main>
-        <h1>Hello</h1>
-      </main>
+      <Services/>
+      <Industries/>
+      <WhyChoose/>
+      <CallToAction/>
       <Footer />
     </>
   );
