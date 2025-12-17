@@ -9,7 +9,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full bg-transparent fixed top-0 left-0 z-50 shadow-md">
+    <header className="w-full bg-white/70 backdrop-blur-md fixed top-0 left-0 z-50 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
 
         {/* Logo */}
@@ -66,7 +66,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden bg-white shadow-md overflow-hidden"
+            className="lg:hidden bg-white/90 backdrop-blur-md shadow-md overflow-hidden border-t border-gray-100"
           >
             <nav className="flex flex-col gap-4 px-6 py-6 text-sm font-bold text-black">
               <Link href="#" onClick={() => setOpen(false)}>Services</Link>

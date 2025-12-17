@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const industriesLeft = [
   {
@@ -77,16 +78,22 @@ export default function Industries() {
 
             {/* Center Humanoid Robot */}
             <div className="hidden lg:flex justify-center items-center relative h-full min-h-[700px]">
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div 
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
                     <Image
-                        src="/robot1.webp" 
+                        src="/Rb 3.webp" 
                         alt="Elysial Robot"
                         width={600}
                         height={900}
                         className="object-contain w-[140%] max-w-none drop-shadow-2xl"
                         priority
                     />
-                  </div>
+                  </motion.div>
             </div>
 
             {/* Right Column */}

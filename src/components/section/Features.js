@@ -7,27 +7,28 @@ const features = [
     title: "AI-First Development",
     description:
       "Generate production-ready code with natural language prompts. Our AI understands your intent and builds accordingly.",
-    iconColor: "bg-red-100", // Placeholder hint
+    icon: "/AI.webp",
   },
   {
     title: "Full-Stack Platform",
     description:
       "From frontend to backend, database to deployment—everything you need in one seamless environment.",
-    iconColor: "bg-blue-100", // Placeholder hint
+    icon: "/_Layer_.webp",
   },
   {
     title: "Enterprise Security",
     description:
       "Built-in authentication, authorisation, and data protection. Ship secure applications from day one.",
-    iconColor: "bg-purple-100", // Placeholder hint
+    icon: "/lock.webp",
   },
   {
     title: "Fast Deployment",
     description:
       "One-click deployment to production. Scale automatically with your traffic without any configuration.",
-    iconColor: "bg-indigo-100", // Placeholder hint
+    icon: "/Fast.webp",
   },
 ];
+
 
 export default function Features() {
   return (
@@ -68,11 +69,15 @@ export default function Features() {
                 key={index}
                 className="bg-[#F8FBFF] rounded-[32px] p-8 hover:shadow-md transition-shadow duration-300"
               >
-                {/* Icon Placeholder */}
                 <div className="mb-6">
-                   <div className="w-14 h-14 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center">
-                      <span className="text-[10px] text-gray-400 font-mono">ICON</span>
-                   </div>
+                  <div className="relative w-16 h-16">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
