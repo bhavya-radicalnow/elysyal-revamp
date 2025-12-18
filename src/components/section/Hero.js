@@ -30,7 +30,7 @@ export default function Hero() {
               <span className="font-bold text-bold-600">AI</span>
             </h1>
 
-            <p className="text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg">
+            <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg">
               Transform your ideas into production-ready applications. Future
               Forge combines cutting-edge AI with intuitive tools to accelerate
               your development workflow.
@@ -55,7 +55,7 @@ export default function Hero() {
                 </svg>
               </button>
 
-              <button className="px-8 py-4 bg-white border border-gray-200 rounded-full text-gray-800 text-base font-semibold flex items-center gap-3 hover:bg-gray-50 transition shadow-sm hover:shadow-md">
+              <button className="px-8 py-4 bg-white border border-gray-200 rounded-full text-gray-900 text-base font-semibold flex items-center gap-3 hover:bg-gray-50 transition shadow-sm hover:shadow-md">
                 Book a Demo
                 <span className="w-6 h-6 border-2 border-[#4B95F9] rounded-full flex items-center justify-center">
                   <svg

@@ -48,7 +48,7 @@ const services = [
 ];
 
 const ServiceCard = ({ title, description, icon }) => (
-  <div className="bg-[#F3F6FF] rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-300 flex flex-col h-full">
+  <div className="bg-[#F3F6FF] rounded-3xl p-8 hover:shadow-xl hover:bg-white transition-shadow duration-300 border border-gray-300 flex flex-col h-full">
     <div className="mb-6 relative w-16 h-16">
       <Image 
         src={icon}
@@ -59,7 +59,7 @@ const ServiceCard = ({ title, description, icon }) => (
     </div>
     
     <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-    <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+    <p className="text-gray-900 text-sm leading-relaxed mb-6 flex-grow">
       {description}
     </p>
 
@@ -100,7 +100,7 @@ export default function Services() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Our Technology <br /> Services
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-lg">
+            <p className="text-gray-800 text-lg leading-relaxed max-w-lg">
               From AI and blockchain to custom software development, we deliver cutting-edge solutions that drive innovation and business growth.
             </p>
           </div>

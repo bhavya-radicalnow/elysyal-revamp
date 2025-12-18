@@ -58,11 +58,11 @@ export default function Industries() {
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C084FC] via-[#818CF8] to-[#60A5FA]">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#B9749D] via-[#818CF8] to-[#60A5FA]">
               Industries We Transform
             </span>
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg">
+          <p className="text-gray-900 max-w-3xl mx-auto text-base sm:text-lg">
             We partner with businesses across diverse industries to deliver tailored technology solutions that drive growth and innovation.
           </p>
         </div>

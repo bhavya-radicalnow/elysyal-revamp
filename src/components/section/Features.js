@@ -44,7 +44,7 @@ export default function Features() {
               <span className="text-[#3B82F6]">Fast</span>
             </h2>
             
-            <p className="text-gray-600 text-lg sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+            <p className="text-gray-900 text-lg sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
               Future Forge combines the best of AI generation with developer-friendly tools to help you ship products faster than ever.
             </p>
 
@@ -84,7 +84,7 @@ export default function Features() {
                   {feature.title}
                 </h3>
 
-                <p className="text-gray-600 text-[15px] leading-relaxed">
+                <p className="text-gray-900 text-[15px] leading-relaxed">
                   {feature.description}
                 </p>
               </div>
