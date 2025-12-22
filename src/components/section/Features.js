@@ -29,6 +29,29 @@ const features = [
   },
 ];
 
+const FeatureCard = ({ title, description, icon }) => (
+  <div className="bg-[#F8FBFF] rounded-[32px] p-8 hover:shadow-md transition-shadow duration-300">
+    <div className="mb-6">
+      <div className="relative w-16 h-16">
+        <Image
+          src={icon}
+          alt={title}
+          fill
+          className="object-contain"
+        />
+      </div>
+    </div>
+
+    <h3 className="text-xl font-bold text-gray-900 mb-3">
+      {title}
+    </h3>
+
+    <p className="text-gray-900 text-[15px] leading-relaxed">
+      {description}
+    </p>
+  </div>
+);
+
 
 export default function Features() {
   return (
@@ -65,29 +88,7 @@ export default function Features() {
           {/* Right Content - Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-[#F8FBFF] rounded-[32px] p-8 hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="mb-6">
-                  <div className="relative w-16 h-16">
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-
-                <p className="text-gray-900 text-[15px] leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
+              <FeatureCard key={index} {...feature} />
             ))}
           </div>
 

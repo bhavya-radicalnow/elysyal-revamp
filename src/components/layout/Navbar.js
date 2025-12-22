@@ -1,41 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="w-full bg-white/70 backdrop-blur-md fixed top-0 left-0 z-50 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
 
         {/* Logo */}
-        <Image
-          src="/logo.webp"
-          alt="ELYSYAL Logo"
-          width={140}
-          height={140}
-          priority
-        />
+        <Link href="/">
+            <Image
+            src="/logo.webp"
+            alt="ELYSYAL Logo"
+            width={140}
+            height={140}
+            priority
+            className="w-32 md:w-40 h-auto"
+            />
+        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-bold leading-none tracking-normal text-black">
-          <Link href="#">Services</Link>
-          <Link href="#">Tech-Stack</Link>
-          <Link href="#">Industries</Link>
-          <Link href="#">Solution Hub</Link>
-          <Link href="#">Success Stories</Link>
-          <Link href="#">About Company</Link>
+        <nav className="hidden lg:flex items-center gap-8   text-sm font-bold leading-none tracking-normal text-black">
+          <Link href="#" className="hover:text-blue-600 transition-colors">Services</Link>
+          <Link href="#" className="hover:text-blue-600 transition-colors">Tech-Stack</Link>
+          <Link href="#" className="hover:text-blue-600 transition-colors">Industries</Link>
+          <Link href="#" className="hover:text-blue-600 transition-colors">Solution Hub</Link>
+          <Link href="#" className="hover:text-blue-600 transition-colors">Success Stories</Link>
+          <Link href="#" className="hover:text-blue-600 transition-colors">About Company</Link>
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden lg:block">
           <Link
             href="#"
-            className="text-black px-5 py-2.5 rounded-md text-sm font-bold"
+            className="text-black px-5 py-2 rounded-md text-sm font-bold hover:text-blue-600 transition-colors"
           >
             Get in Touch
           </Link>
@@ -66,10 +83,10 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden bg-white/90 backdrop-blur-md shadow-md overflow-hidden border-t border-gray-100"
+            className="lg:hidden bg-white/90 backdrop-blur-md shadow-md overflow-hidden border-t border-gray-100 absolute w-full left-0 top-full"
           >
-            <nav className="flex flex-col gap-4 px-6 py-6 text-sm font-bold text-black">
-              <Link href="#" onClick={() => setOpen(false)}>Services</Link>
+            <nav className="flex flex-col gap-4 px-6 py-6  text-sm font-bold text-black">
+               <Link href="#" onClick={() => setOpen(false)}>Services</Link>
               <Link href="#" onClick={() => setOpen(false)}>Tech-Stack</Link>
               <Link href="#" onClick={() => setOpen(false)}>Industries</Link>
               <Link href="#" onClick={() => setOpen(false)}>Solution Hub</Link>
@@ -77,7 +94,8 @@ export default function Navbar() {
               <Link href="#" onClick={() => setOpen(false)}>About Company</Link>
               <Link
                 href="#"
-              
+                className="font-bold"
+                onClick={() => setOpen(false)}
               >
                 Get in Touch
               </Link>
