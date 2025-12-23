@@ -2,7 +2,6 @@ import Image from "next/image";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer"
 import Hero from "@/components/section/Hero";
-import Features from "@/components/section/Features";
 import Services from "@/components/section/Services";
 import Industries from "@/components/section/Industries";
 import WhyChoose from "@/components/section/WhyChoose";
@@ -14,7 +13,6 @@ export default function HomePage() {
     <>
       <Navbar />
       <Hero/>
-      <Features/>
       <Services/>
       <Industries/>
       <WhyChoose/>

@@ -8,75 +8,95 @@ const services = [
   {
     title: "AI & Machine Learning",
     description: "Custom AI solutions, neural networks, and intelligent automation to transform your business processes.",
-    icon: "/Icon - 01.webp"
+    icon: "/Icon - 01.webp",
+    link: "/services/ai-development"
   },
   {
     title: "Blockchain Solutions",
     description: "Secure, decentralized applications and smart contracts for next-generation business models.",
-    icon: "/Icon - 02.webp"
+    icon: "/Icon - 02.webp",
+    link: "/services/blockchain"
   },
   {
     title: "Data Science & ML",
     description: "Extract insights from your data with advanced analytics, ML models, and data-driven strategies.",
-    icon: "/Icon - 03.webp"
+    icon: "/Icon - 03.webp",
+    link: "/services/data-science"
   },
   {
     title: "Custom Software",
     description: "Scalable, robust software applications tailored to your unique business requirements.",
-    icon: "/Icon - 04.webp"
+    icon: "/Icon - 04.webp",
+    link: "/services/custom-software"
   },
   {
     title: "Mobile App Development",
     description: "Native and cross-platform mobile applications that deliver exceptional user experiences.",
-    icon: "/Icon - 05.webp"
+    icon: "/Icon - 05.webp",
+    link: "/services/mobile-app-development"
   },
   {
     title: "IoT Solutions",
     description: "Connected devices and smart systems that enable real-time monitoring and automation.",
-    icon: "/Icon - 06.webp"
+    icon: "/Icon - 06.webp",
+    link: "#"
   },
   {
     title: "Legacy Modernization",
     description: "Custom AI solutions, neural networks, and intelligent automation to transform your business processes.",
-    icon: "/Icon - 07.webp"
+    icon: "/Icon - 07.webp",
+    link: "#"
   },
   {
     title: "Staff Augmentation",
     description: "Skilled developers and tech specialists to expand your team and accelerate project delivery.",
-    icon: "/Icon - 08.webp"
+    icon: "/Icon - 08.webp",
+    link: "/services/staff-augmentation"
   },
 ];
 
-const ServiceCard = ({ title, description, icon }) => (
-  <div className="bg-[#F3F6FF] rounded-3xl p-8 hover:shadow-xl hover:bg-white transition-shadow duration-300 border border-gray-300 flex flex-col h-full">
-    <div className="mb-6 relative w-16 h-16">
-      <Image 
-        src={icon}
-        alt={title}
-        fill
-        className="object-contain"
-      />
-    </div>
-    
-    <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-    <p className="text-gray-900 text-sm leading-relaxed mb-6 flex-grow">
-      {description}
-    </p>
+const ServiceCard = ({ title, description, icon, link }) => {
+  const CardContent = (
+    <div className="bg-[#F3F6FF] rounded-3xl p-8 hover:shadow-xl hover:bg-white transition-shadow duration-300 border border-gray-300 flex flex-col h-full cursor-pointer h-full">
+      <div className="mb-6 relative w-16 h-16">
+        <Image 
+          src={icon}
+          alt={title}
+          fill
+          className="object-contain"
+        />
+      </div>
+      
+      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+      <p className="text-gray-900 text-sm leading-relaxed mb-6 flex-grow">
+        {description}
+      </p>
 
-    <div className="mt-auto">
-      <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group cursor-pointer hover:bg-gray-900 hover:border-gray-900 transition-colors">
-        <svg 
-          className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" 
-          fill="none" 
-          viewBox="0 0 24 24" 
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
+      <div className="mt-auto">
+        <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group cursor-pointer hover:bg-gray-900 hover:border-gray-900 transition-colors">
+          <svg 
+            className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+
+  return link && link !== "#" ? (
+    <Link href={link} className="block h-full">
+      {CardContent}
+    </Link>
+  ) : (
+    <div className="h-full">
+      {CardContent}
+    </div>
+  );
+};
 
 export default function Services() {
   const [s1, s2, s3, s4, s5, s6, s7, s8] = services;

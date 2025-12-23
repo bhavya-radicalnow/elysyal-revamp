@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Button from "@/components/ui/Button";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -37,36 +38,16 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#6391F4] to-[#937DC0] text-white rounded-full text-base font-semibold flex items-center gap-2 hover:opacity-90 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                Start Your Project
-                <svg
-                  className="w-8 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 12h14M12 5l7 7-7 7"
-                  ></path>
-                </svg>
-              </button>
-
-              <button className="px-8 py-4 bg-white border border-gray-200 rounded-full text-gray-900 text-base font-semibold flex items-center gap-3 hover:bg-gray-50 transition shadow-sm hover:shadow-md">
-                Book a Demo
-                <span className="w-6 h-6 border-2 border-[#4B95F9] rounded-full flex items-center justify-center">
-                  <svg
-                    className="w-4 h-4 text-[#4B95F9]"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z"></path>
-                  </svg>
-                </span>
-              </button>
+              <Button 
+                text="Start Your Project" 
+                href="#"
+                variant="primary"
+              />
+              <Button 
+                text="Book a Demo" 
+                href="#"
+                variant="secondary"
+              />
             </div>
           </motion.div>
 

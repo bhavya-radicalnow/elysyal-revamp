@@ -8,6 +8,17 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  // Service items with icons and links
+  const serviceItems = [
+    { title: "Artificial Intelligence Development", href: "/services/ai-development", icon: "/Icon - 01.webp" },
+    { title: "Blockchain Development", href: "/services/blockchain", icon: "/Icon - 02.webp" },
+    { title: "Data Science", href: "/services/data-science", icon: "/Icon - 03.webp" },
+    { title: "Custom Software Development", href: "/services/custom-software", icon: "/Icon - 04.webp" },
+    { title: "Mobile App Development", href: "/services/mobile-app-development", icon: "/Icon - 05.webp" },
+    { title: "Staff Augmentation Services", href: "/services/staff-augmentation", icon: "/Icon - 08.webp" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,8 +50,38 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8   text-sm font-bold leading-none tracking-normal text-black">
-          <Link href="#" className="hover:text-blue-600 transition-colors">Services</Link>
+        <nav className="hidden lg:flex items-center gap-8 text-sm font-bold leading-none tracking-normal text-black">
+          
+          {/* Services Dropdown */}
+          <div className="relative group">
+            <button className="flex items-center gap-1 hover:text-blue-600 transition-colors py-2">
+              Services 
+              <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Dropdown Menu */}
+            <div className="absolute left-0 -top-full opacity-0 group-hover:top-full group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 min-w-[320px] bg-white rounded-xl shadow-xl border border-gray-100 p-2 mt-2">
+              <div className="flex flex-col gap-1">
+                {serviceItems.map((item, index) => (
+                  <Link 
+                    key={index} 
+                    href={item.href}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors text-left"
+                  >
+                    <div className="relative w-6 h-6 flex-shrink-0">
+                      <Image src={item.icon} alt={item.title} fill className="object-contain" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 hover:text-blue-600">
+                      {item.title}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <Link href="#" className="hover:text-blue-600 transition-colors">Tech-Stack</Link>
           <Link href="#" className="hover:text-blue-600 transition-colors">Industries</Link>
           <Link href="#" className="hover:text-blue-600 transition-colors">Solution Hub</Link>
@@ -83,10 +124,51 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden bg-white/90 backdrop-blur-md shadow-md overflow-hidden border-t border-gray-100 absolute w-full left-0 top-full"
+            className="lg:hidden bg-white/90 backdrop-blur-md shadow-md overflow-hidden border-t border-gray-100 absolute w-full left-0 top-full max-h-[90vh] overflow-y-auto"
           >
-            <nav className="flex flex-col gap-4 px-6 py-6  text-sm font-bold text-black">
-               <Link href="#" onClick={() => setOpen(false)}>Services</Link>
+            <nav className="flex flex-col gap-4 px-6 py-6 text-sm font-bold text-black">
+              
+              {/* Mobile Services Accordion */}
+              <div>
+                <button 
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="flex items-center justify-between w-full text-left"
+                >
+                  Services
+                  <svg className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden bg-gray-50 rounded-lg mt-2 "
+                    >
+                      <div className="flex flex-col p-2 gap-2">
+                        {serviceItems.map((item, index) => (
+                          <Link 
+                            key={index} 
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className="flex items-center gap-3 p-2 rounded-md hover:bg-white transition-colors"
+                          >
+                             <div className="relative w-5 h-5 flex-shrink-0">
+                                <Image src={item.icon} alt={item.title} fill className="object-contain" />
+                              </div>
+                              <span className="text-xs font-normal text-gray-700">
+                                {item.title}
+                              </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               <Link href="#" onClick={() => setOpen(false)}>Tech-Stack</Link>
               <Link href="#" onClick={() => setOpen(false)}>Industries</Link>
               <Link href="#" onClick={() => setOpen(false)}>Solution Hub</Link>
