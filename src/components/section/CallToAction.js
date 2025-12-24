@@ -5,7 +5,7 @@ function CallToAction({
   title = (
     <>
       Ready to <span className="text-[#6391F4]">Transform Your Business</span> <br className="hidden sm:block" />
-      with <span className="text-[#c084fc]">Next-Gen Technology</span>?
+      with <span className="text-[#B8759E]">Next-Gen Technology</span>?
     </>
   ),
   description = "Join 500+ companies that trust ELYSYAL to deliver innovative AI, blockchain, and custom software solutions. Lets build the future together.",

@@ -44,23 +44,25 @@ export default function ServiceFeatures({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-col group"
+              className="flex gap-4 group items-baseline"
             >
-              {/* Header Row: Number - Line - Title */}
-              <div className="flex items-center gap-3 mb-3">
+              {/* Number & Line */}
+              <div className="flex items-center gap-3 shrink-0">
                 <span className="text-2xl font-bold text-[#c084fc] group-hover:text-[#6391F4] transition-colors">
                   {feature.number}
                 </span>
                 <div className="h-[2px] w-8 bg-[#e9d5ff] group-hover:bg-[#6391F4] transition-colors rounded-full" />
+              </div>
+              
+              {/* Title & Description */}
+              <div className="flex flex-col gap-2">
                 <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#6391F4] transition-colors">
                   {feature.title}
                 </h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  {feature.description}
+                </p>
               </div>
-              
-              {/* Description */}
-              <p className="text-gray-600 leading-relaxed text-sm pl-0">
-                {feature.description}
-              </p>
             </motion.div>
           ))}
         </div>

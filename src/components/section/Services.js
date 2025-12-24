@@ -57,8 +57,9 @@ const services = [
 
 const ServiceCard = ({ title, description, icon, link }) => {
   const CardContent = (
-    <div className="bg-[#F3F6FF] rounded-3xl p-8 hover:shadow-xl hover:bg-white transition-shadow duration-300 border border-gray-300 flex flex-col h-full cursor-pointer h-full">
-      <div className="mb-6 relative w-16 h-16">
+    <div className="bg-[#FFFFFF66]
+ rounded-3xl p-9 hover:shadow-xl hover:bg-white transition-shadow duration-300  flex flex-col h-full cursor-pointer h-full">
+      <div className="mb-6 relative w-19 h-19">
         <Image 
           src={icon}
           alt={title}
@@ -73,7 +74,7 @@ const ServiceCard = ({ title, description, icon, link }) => {
       </p>
 
       <div className="mt-auto">
-        <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group cursor-pointer hover:bg-gray-900 hover:border-gray-900 transition-colors">
+        <div className="w-8 h-8 rounded-full border border-black-300 flex items-center justify-center group cursor-pointer hover:bg-gray-900 hover:border-gray-900 transition-colors">
           <svg 
             className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" 
             fill="none" 
@@ -102,7 +103,7 @@ export default function Services() {
   const [s1, s2, s3, s4, s5, s6, s7, s8] = services;
 
   return (
-    <section className="bg-[#F3F6FF] py-24 overflow-hidden">
+    <section className="bg-[#EFF4FF] py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

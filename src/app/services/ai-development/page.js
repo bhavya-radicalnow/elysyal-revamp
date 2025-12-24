@@ -70,11 +70,33 @@ export default function AIDevelopmentPage() {
           </div>
         </div>
       </section>
-      
+      <section className="py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              <span className="text-[#6391F4]">End-to-End Artificial</span> <br />
+              <span className="text-[#6391F4]">Intelligence</span> <br />
+              <span className="text-[#c084fc]">Development</span> <br />
+              <span className="text-[#c084fc]">Services</span>
+            </h2>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Our AI development services cover everything from intelligent model design to real-world deployment. By combining generative AI, machine learning, conversational interfaces, and computer vision, we deliver solutions that streamline operations, enhance decision-making, and help organizations innovate with confidence.
+            </p>
+          </div>
+          <div className="relative h-[400px] w-full">
+            <Image 
+              src="/As_3.webp" 
+              alt="AI Development Services" 
+              fill 
+              className="object-contain" 
+            />
+          </div>
+        </div>
+      </section>
 
       
       <CallToAction />
 
-    </ServicePageLayout>
+      </ServicePageLayout>
   );
 }

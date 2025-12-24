@@ -34,7 +34,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="w-full bg-white/70 backdrop-blur-md fixed top-0 left-0 z-50 shadow-sm transition-all duration-300">
+    <header className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 backdrop-blur-md shadow-sm" : "bg-transparent shadow-none"}`}>
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
 
         {/* Logo */}
@@ -62,18 +62,27 @@ export default function Navbar() {
             </button>
             
             {/* Dropdown Menu */}
-            <div className="absolute left-0 -top-full opacity-0 group-hover:top-full group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 min-w-[320px] bg-white rounded-xl shadow-xl border border-gray-100 p-2 mt-2">
-              <div className="flex flex-col gap-1">
+            <div className="absolute left-0 -top-full opacity-0 group-hover:top-full group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 w-[800px] bg-white rounded-xl shadow-xl border border-gray-100 p-6 mt-4 z-50">
+              
+              {/* Header */}
+              <div className="flex items-center gap-2 mb-6">
+                <svg className="w-6 h-6 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" />
+                </svg>
+                <h3 className="font-bold text-2xl text-gray-800">Services</h3>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
                 {serviceItems.map((item, index) => (
                   <Link 
                     key={index} 
                     href={item.href}
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 transition-colors text-left"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-slate-100 hover:bg-slate-200 transition-colors text-left group/item"
                   >
-                    <div className="relative w-6 h-6 flex-shrink-0">
+                    <div className="relative w-8 h-8 flex-shrink-0">
                       <Image src={item.icon} alt={item.title} fill className="object-contain" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700 hover:text-blue-600">
+                    <span className="text-base font-normal text-gray-800 group-hover/item:text-blue-600 transition-colors">
                       {item.title}
                     </span>
                   </Link>
@@ -82,11 +91,12 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="#" className="hover:text-blue-600 transition-colors">Tech-Stack</Link>
-          <Link href="#" className="hover:text-blue-600 transition-colors">Industries</Link>
-          <Link href="#" className="hover:text-blue-600 transition-colors">Solution Hub</Link>
-          <Link href="#" className="hover:text-blue-600 transition-colors">Success Stories</Link>
-          <Link href="#" className="hover:text-blue-600 transition-colors">About Company</Link>
+          <Link href="/Tech-stack" className="hover:text-blue-600 transition-colors">Tech-Stack</Link>
+          <Link href="/Industries" className="hover:text-blue-600 transition-colors">Industries</Link>
+          <Link href="/solution-hub
+          " className="hover:text-blue-600 transition-colors">Solution Hub</Link>
+          <Link href="/success-Stories" className="hover:text-blue-600 transition-colors">Success Stories</Link>
+          <Link href="/About" className="hover:text-blue-600 transition-colors">About Company</Link>
         </nav>
 
         {/* Desktop CTA */}

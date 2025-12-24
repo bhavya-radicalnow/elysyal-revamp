@@ -5,6 +5,7 @@ import Hero from "@/components/section/Hero";
 import Services from "@/components/section/Services";
 import Industries from "@/components/section/Industries";
 import WhyChoose from "@/components/section/WhyChoose";
+import Features from "@/components/section/Features"; 
 
 import CallToAction from "@/components/section/CallToAction";
 
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <Navbar />
       <Hero/>
+      <Features/> 
       <Services/>
       <Industries/>
       <WhyChoose/>

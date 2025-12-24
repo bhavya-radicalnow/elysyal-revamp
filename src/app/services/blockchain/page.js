@@ -56,7 +56,7 @@ export default function BlockchainPage() {
               features={features}
             />
 
-            <section className="max-w-7xl pt-16  pb-8 " style={{ background: "linear-gradient(to right, #CCD4F0, #DEDBF0)" }}>
+            <section className="bg-white max-w-7xl pt-16  pb-8 " style={{ background: "linear-gradient(to right, #CCD4F0, #DEDBF0)" }}>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                       <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                         Autonomous AI Agents for <br />
