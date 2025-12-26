@@ -100,7 +100,7 @@ export default function DataSciencePage() {
     <ServicePageLayout
       title="Data Science"
       description="Extract insights from your data with advanced analytics, ML models, and data-driven strategies."
-      heroImage="/As_1.webp"
+      heroImage="/data1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
     

@@ -34,59 +34,61 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 backdrop-blur-md shadow-sm" : "bg-transparent shadow-none"}`}>
+    <header className={`w-full fixed top-0   left-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/70 backdrop-blur-md shadow-sm" : "bg-transparent shadow-none"}`}>
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/">
-            <Image
+          <Image
             src="/logo.webp"
             alt="ELYSYAL Logo"
             width={140}
             height={140}
             priority
             className="w-32 md:w-40 h-auto"
-            />
+          />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-bold leading-none tracking-normal text-black">
-          
+
           {/* Services Dropdown */}
-          <div className="relative group">
-            <button className="flex items-center gap-1 hover:text-blue-600 transition-colors py-2">
-              Services 
+          <div className="group h-full flex items-center">
+            <button className="flex items-center gap-1 hover:text-blue-600 transition-colors py-8">
+              Services
               <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            
-            {/* Dropdown Menu */}
-            <div className="absolute left-0 -top-full opacity-0 group-hover:top-full group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 w-[800px] bg-white rounded-xl shadow-xl border border-gray-100 p-6 mt-4 z-50">
-              
-              {/* Header */}
-              <div className="flex items-center gap-2 mb-6">
-                <svg className="w-6 h-6 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" />
-                </svg>
-                <h3 className="font-bold text-2xl text-gray-800">Services</h3>
-              </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {serviceItems.map((item, index) => (
-                  <Link 
-                    key={index} 
-                    href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-slate-100 hover:bg-slate-200 transition-colors text-left group/item"
-                  >
-                    <div className="relative w-8 h-8 flex-shrink-0">
-                      <Image src={item.icon} alt={item.title} fill className="object-contain" />
-                    </div>
-                    <span className="text-base font-normal text-gray-800 group-hover/item:text-blue-600 transition-colors">
-                      {item.title}
-                    </span>
-                  </Link>
-                ))}
+            {/* Dropdown Menu - Full Width */}
+            <div className="fixed left-0 top-[90px] w-full bg-white shadow-xl border-t border-gray-100 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-[100]">
+              <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-8">
+                  <svg className="w-6 h-6 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" />
+                  </svg>
+                  <h3 className="font-bold text-2xl text-gray-800">Services</h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {serviceItems.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      className="flex items-center gap-6 p-6 rounded-2xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-200 hover:shadow-lg transition-all duration-300 group/item"
+                    >
+                      <div className="relative w-12 h-12 flex-shrink-0">
+                        <Image src={item.icon} alt={item.title} fill className="object-contain" />
+                      </div>
+                      <span className="text-lg font-medium text-gray-700 group-hover/item:text-blue-600 transition-colors">
+                        {item.title}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -137,10 +139,10 @@ export default function Navbar() {
             className="lg:hidden bg-white/90 backdrop-blur-md shadow-md overflow-hidden border-t border-gray-100 absolute w-full left-0 top-full max-h-[90vh] overflow-y-auto"
           >
             <nav className="flex flex-col gap-4 px-6 py-6 text-sm font-bold text-black">
-              
+
               {/* Mobile Services Accordion */}
               <div>
-                <button 
+                <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                   className="flex items-center justify-between w-full text-left"
                 >
@@ -159,18 +161,18 @@ export default function Navbar() {
                     >
                       <div className="flex flex-col p-2 gap-2">
                         {serviceItems.map((item, index) => (
-                          <Link 
-                            key={index} 
+                          <Link
+                            key={index}
                             href={item.href}
                             onClick={() => setOpen(false)}
                             className="flex items-center gap-3 p-2 rounded-md hover:bg-white transition-colors"
                           >
-                             <div className="relative w-5 h-5 flex-shrink-0">
-                                <Image src={item.icon} alt={item.title} fill className="object-contain" />
-                              </div>
-                              <span className="text-xs font-normal text-gray-700">
-                                {item.title}
-                              </span>
+                            <div className="relative w-5 h-5 flex-shrink-0">
+                              <Image src={item.icon} alt={item.title} fill className="object-contain" />
+                            </div>
+                            <span className="text-xs font-normal text-gray-700">
+                              {item.title}
+                            </span>
                           </Link>
                         ))}
                       </div>

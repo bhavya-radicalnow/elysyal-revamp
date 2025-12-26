@@ -40,7 +40,7 @@ export default function CustomSoftwarePage() {
     <ServicePageLayout
       title="Custom Software Development"
       description="Scalable, robust software applications tailored to your unique business requirements."
-       heroImage="/As_1.webp"
+       heroImage="/custom 1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
     
@@ -62,7 +62,7 @@ export default function CustomSoftwarePage() {
                                   </p>
                                   <div className="relative w-full max-w-lg mx-auto h-64 md:h-96">
                                      <Image 
-                                       src="/Sb_2.webp" 
+                                       src="/custom 2.webp" 
                                        alt="Autonomous AI Robot" 
                                        fill 
                                        className="object-contain" 

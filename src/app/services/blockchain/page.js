@@ -37,6 +37,26 @@ export default function BlockchainPage() {
       number: "06",
       title: "Multi-Modal Interaction",
       description: "Engage via text, voice, and visuals for seamless cross-platform user experiences."
+    },
+    {
+      number: "07",
+      title: "Chatbot Development",
+      description: "Advanced AI chatbots that generate natural, context-aware conversations to enhance customer engagement."
+    },
+    {
+      number: "08",
+      title: "Natural Language Development",
+      description: "Advanced text analysis, sentiment detection, and language understanding capabilities."
+    },
+    {
+      number: "09",
+      title: "Multi-Modal Interaction",
+      description: "Engage via text, voice, and visuals for seamless cross-platform user experiences."
+    },
+     {
+      number: "10",
+      title: "Multi-Modal Interaction",
+      description: "Engage via text, voice, and visuals for seamless cross-platform user experiences."
     }
   ];
 
@@ -44,7 +64,7 @@ export default function BlockchainPage() {
     <ServicePageLayout
       title="Blockchain Development"
       description="Secure, decentralized applications and smart contracts for next-generation business models."
-      heroImage="/As_1.webp"
+      heroImage="/Success Stories image 01.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
     

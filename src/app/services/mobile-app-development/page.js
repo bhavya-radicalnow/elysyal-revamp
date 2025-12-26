@@ -41,41 +41,67 @@ export default function MobileAppPage() {
     <ServicePageLayout
       title="Mobile App Development"
       description="Native and cross-platform mobile applications that deliver exceptional user experiences."
-       heroImage="/As_1.webp"
+      heroImage="/As_1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
-    
+
     >
-      <ServiceFeatures 
-              title="Key Features & Services"
-              description="Unlock the potential of artificial intelligence with our comprehensive AI development services. From generative AI and machine learning models to conversational agents and computer vision, we create intelligent solutions that automate processes, enhance decision-making, and drive innovation across your organization."
-              features={features}
-            />
+      <ServiceFeatures
+        title="Key Features & Services"
+        description="Unlock the potential of artificial intelligence with our comprehensive AI development services. From generative AI and machine learning models to conversational agents and computer vision, we create intelligent solutions that automate processes, enhance decision-making, and drive innovation across your organization."
+        features={features}
+      />
+
+      <section className="py-16 lg:py-24" style={{ backgroundColor: "#E2E6F5" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Text Content */}
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Why Choose ELYSYAL for <br />
+                <span className="text-[#6391F4]">Mobile App Development</span>
+              </h2>
+              <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+                We build high-performance mobile applications that are secure,
+                scalable, and designed to deliver real business impact—across
+                platforms and industries.
+              </p>
+
+              <ul className="space-y-6">
+                {[
+                  "End-to-End Mobile Expertise",
+                  "User-Centric & Market-Ready Apps",
+                  "Scalable, Future-Proof Architecture",
+                  "Transparent Process & Reliable Communication"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center text-xl text-gray-900 font-medium">
+                    <span className="w-1.5 h-1.5 bg-black rounded-full mr-4"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Image */}
+            <div className="relative h-[400px] lg:h-[500px] w-full">
+              <Image
+                src="/Rb 1.webp"
+                alt="Mobile App Development Robot"
+                fill
+                className="object-contain transform scale-100 hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
 
 
-             <section className="max-w-7xl pt-16  pb-8 " style={{ background: "linear-gradient(to right, #CCD4F0, #DEDBF0)" }}>
-                                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                                              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                                                Autonomous AI Agents for <br />
-                                                <span className="text-[#6391F4]">Intelligent Automation</span>
-                                              </h2>
-                                              <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto mb-10">
-                                                AI agents are autonomous software systems designed to perform tasks, make decisions, and interact with users with minimal human input. They mimic human problem-solving and adapt dynamically to new information, enabling businesses to automate workflows, provide instant support, and optimize operations. Build intelligent AI agents that think, act, and learn independently.
-                                              </p>
-                                              <div className="relative w-full max-w-lg mx-auto h-64 md:h-96">
-                                                 <Image 
-                                                   src="/Sb_2.webp" 
-                                                   alt="Autonomous AI Robot" 
-                                                   fill 
-                                                   className="object-contain" 
-                                                 />
-                                              </div>
-                                            </div>
-                                          </section>
 
       <CallToAction />
-      
- 
+
+
     </ServicePageLayout>
   );
 }
