@@ -28,26 +28,87 @@ export default function Footer() {
           {/* Links Column 1 */}
           <div className="lg:col-span-2 lg:col-start-6">
             <ul className="space-y-4">
-              {['Home', 'Services', 'Tech-Stack', 'Industries', 'Solution Hub', 'Success Stories', 'About Company'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/Services" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/Tech-stack" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Tech-Stack
+                </Link>
+              </li>
+              <li>
+                <Link href="/Industries" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Industries
+                </Link>
+              </li>
+              <li>
+                <Link href="/solution-hub" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Solution Hub
+                </Link>
+              </li>
+              <li>
+                <Link href="/success-Stories" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Success Stories
+                </Link>
+              </li>
+              <li>
+                <Link href="/About" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                   About Company
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Links Column 2 */}
           <div className="lg:col-span-3">
              <ul className="space-y-4">
-              {['AI & Machine Learning', 'Data Science', 'Blockchain', 'Custom Software', 'Mobile Apps', 'IoT Solutions', 'Legacy Modernization', 'Staff Augmentation'].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/services/ai-development" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  AI & Machine Learning
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/data-science" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Data Science
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/blockchain" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Blockchain
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/custom-software" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Custom Software
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/mobile-app-development" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Mobile Apps
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/iot-solutions" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  IoT Solutions
+                </Link>
+              </li>
+               <li>
+                <Link href="/services/legacy-modernization" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                   Legacy Modernization
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/staff-augmentation" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
+                  Staff Augmentation
+                </Link>
+              </li>
             </ul>
           </div>
 

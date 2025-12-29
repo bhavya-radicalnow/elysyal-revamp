@@ -12,6 +12,7 @@ export default function ServicePageLayout({
   primaryButton,
   secondaryButton,
   children,
+  alignImageBottom = false,
 }) {
   return (
     <>
@@ -20,13 +21,14 @@ export default function ServicePageLayout({
       <main className="min-h-screen bg-[rgb(225,235,247)]">
 
         {/* HERO SECTION */}
-        <section className="pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <section className={`pt-28 lg:pt-40 overflow-hidden ${alignImageBottom ? "pb-0" : "pb-20 lg:pb-16"}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div
               className={`
                 grid grid-cols-1
                 ${heroImage ? "lg:grid-cols-2" : ""}
+
                 gap-14 items-center
               `}
             >
@@ -69,7 +71,7 @@ export default function ServicePageLayout({
 
               {/* RIGHT IMAGE */}
               {heroImage && (
-                <div className="relative flex justify-center lg:justify-end">
+                <div className={`relative flex justify-center lg:justify-end ${alignImageBottom ? "self-end h-full items-end" : ""}`}>
 
                   {/* Soft glow behind robot */}
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -103,7 +105,7 @@ export default function ServicePageLayout({
         </section>
 
         {/* PAGE CONTENT */}
-        <section className="py-14">
+        <section >
           {children}
         </section>
       </main>

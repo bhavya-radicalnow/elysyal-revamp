@@ -65,7 +65,7 @@ const services = [
 
 const ServiceCard = ({ title, description, icon, link }) => {
   const Card = (
-    <div className="bg-white/60 backdrop-blur-md rounded-3xl p-9 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col h-full">
+    <div className="bg-white/60 backdrop-blur-md rounded-3xl p-9 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col h-full min-h-[400px]">
       <div className="mb-6 relative w-20 h-20">
         <Image src={icon} alt={title} fill className="object-contain" />
       </div>
@@ -105,6 +105,15 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
+          {/* ROW 1 CARDS */}
+          <div className="order-2 lg:order-none">
+            <ServiceCard {...services[0]} />
+          </div>
+
+          <div className="order-3 lg:order-none">
+            <ServiceCard {...services[1]} />
+          </div>
+
           {/* TEXT BLOCK — MUST COME FIRST ON MOBILE & iPAD */}
           <div
             className="
@@ -123,15 +132,6 @@ export default function Services() {
               From AI and blockchain to custom software development, we deliver
               cutting-edge solutions that drive innovation and business growth.
             </p>
-          </div>
-
-          {/* ROW 1 CARDS */}
-          <div className="order-2 lg:order-none">
-            <ServiceCard {...services[0]} />
-          </div>
-
-          <div className="order-3 lg:order-none">
-            <ServiceCard {...services[1]} />
           </div>
 
           {/* ROW 2 CARDS */}

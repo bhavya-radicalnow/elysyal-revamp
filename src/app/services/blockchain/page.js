@@ -91,6 +91,7 @@ export default function BlockchainPage() {
                            alt="Autonomous AI Robot" 
                            fill 
                            className="object-contain" 
+                           
                          />
                       </div>
                     </div>

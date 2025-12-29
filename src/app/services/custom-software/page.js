@@ -43,6 +43,8 @@ export default function CustomSoftwarePage() {
        heroImage="/custom 1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
+      alignImageBottom={true}
+      
     
     >
       <ServiceFeatures 

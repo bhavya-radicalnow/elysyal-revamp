@@ -44,6 +44,7 @@ export default function AIDevelopmentPage() {
       heroImage="/As_1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
+      alignImageBottom={true}
     >
       <ServiceFeatures 
         title="Key Features & Services"
@@ -70,30 +71,33 @@ export default function AIDevelopmentPage() {
           </div>
         </div>
       </section>
-      <section className="py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              <span className="text-[#6391F4]">End-to-End Artificial</span> <br />
-              <span className="text-[#6391F4]">Intelligence</span> <br />
-              <span className="text-[#c084fc]">Development</span> <br />
-              <span className="text-[#c084fc]">Services</span>
+
+      <section className="py-16 md:py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24">
+          <div className="w-full md:w-1/2 lg:w-5/12 text-center md:text-left">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+              <span className="text-[#6391F4]">End-to-End Artificial</span><br />
+              <span className="text-[#6391F4]">Intelligence</span><br />
+              <span className="text-[#C86B98]">Development</span><br />
+              <span className="text-[#C86B98]">Services</span>
             </h2>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
               Our AI development services cover everything from intelligent model design to real-world deployment. By combining generative AI, machine learning, conversational interfaces, and computer vision, we deliver solutions that streamline operations, enhance decision-making, and help organizations innovate with confidence.
             </p>
           </div>
-          <div className="relative h-[400px] w-full">
-            <Image 
-              src="/As_3.webp" 
-              alt="AI Development Services" 
-              fill 
-              className="object-contain" 
-            />
+          <div className="w-full md:w-1/2 lg:w-5/12 flex justify-center">
+            <div className="relative w-full max-w-lg aspect-square">
+               <Image 
+                 src="/As_3.webp" 
+                 alt="End-to-End AI Development Robot" 
+                 fill 
+                 className="object-contain" 
+               />
+            </div>
           </div>
         </div>
       </section>
-
+      
       
       <CallToAction />
 

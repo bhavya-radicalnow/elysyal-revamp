@@ -103,6 +103,7 @@ export default function DataSciencePage() {
       heroImage="/data1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
+      alignImageBottom={true}
     
     >
       <ServiceFeatures 
