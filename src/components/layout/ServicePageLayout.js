@@ -1,5 +1,6 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -8,50 +9,44 @@ export default function ServicePageLayout({
   title,
   description,
   heroImage,
-  backgroundImage = "/BG 2.webp",
   primaryButton,
   secondaryButton,
-  children
+  children,
 }) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen ">
-        {/* Hero Section */}
-        <div className="pt-32 pb-16 lg:pt-48 lg:pb-24 overflow-hidden relative">
 
-          {/* Background Image */}
-          <div className="absolute top-0 left-0 w-full h-full -z-10">
-            <Image
-              src={backgroundImage}
-              alt="Background"
-              fill
-              className="object-cover object-center opacity-50 mix-blend-overlay"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-transparent" /> {/* Optional overlay for text contrast */}
-          </div>
+      <main className="min-h-screen bg-[rgb(225,235,247)]">
 
+        {/* HERO SECTION */}
+        <section className="pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className={`grid grid-cols-1 ${heroImage ? 'lg:grid-cols-2' : ''} gap-12 items-center`}>
 
-              {/* Text Content */}
-              <div className="flex flex-col justify-center">
-                <div className="inline-block w-1 h-12 bg-gradient-to-b from-blue-400 to-purple-500 mb-6 rounded-full absolute -left-4 hidden lg:block" /> {/** Decorative line logic if needed, but let's stick to simple first */}
+            <div
+              className={`
+                grid grid-cols-1
+                ${heroImage ? "lg:grid-cols-2" : ""}
+                gap-14 items-center
+              `}
+            >
+              {/* LEFT CONTENT */}
+              <div className="relative">
 
-                {/* Decorative Pill/Line Idea from image (Left border gradient) */}
-                <div className="relative pl-6 border-l-4 border-transparent lg:border-l-0">
-                  <div className="hidden lg:block absolute left-0 top-2 bottom-2 w-1.5 bg-gradient-to-b from-pink-300 to-blue-300 rounded-full"></div>
+                {/* Decorative vertical pill */}
+                <div className="absolute left-0 top-3 bottom-3 w-1.5 rounded-full bg-gradient-to-b from-pink-300 to-blue-400 hidden lg:block" />
 
-                  <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                <div className="pl-0 lg:pl-8">
+                  <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                     {title}
                   </h1>
-                  <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
+
+                  <p className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed mb-10">
                     {description}
                   </p>
 
                   {(primaryButton || secondaryButton) && (
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex flex-wrap gap-4">
                       {primaryButton && (
                         <Button
                           text={primaryButton.text}
@@ -72,31 +67,47 @@ export default function ServicePageLayout({
                 </div>
               </div>
 
-              {/* Hero Image */}
+              {/* RIGHT IMAGE */}
               {heroImage && (
-                <div className="relative h-[400px] lg:h-[600px] w-full flex items-center justify-center">
+                <div className="relative flex justify-center lg:justify-end">
 
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-100/50 blur-3xl rounded-full -z-10" />
+                  {/* Soft glow behind robot */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-[70%] h-[70%] bg-blue-200/40 blur-3xl rounded-full" />
+                  </div>
 
-                  <Image
-                    src={heroImage}
-                    alt={title}
-                    fill
-                    className="object-contain drop-shadow-2xl z-10"
-                    priority
-                  />
+                  <div
+                    className="
+                      relative
+                      w-full
+                      max-w-[280px]
+                      sm:max-w-[360px]
+                      md:max-w-[420px]
+                      lg:max-w-[520px]
+                      xl:max-w-[620px]
+                    "
+                  >
+                    <Image
+                      src={heroImage}
+                      alt={title}
+                      width={700}
+                      height={900}
+                      priority
+                      className="object-contain w-full h-auto drop-shadow-2xl"
+                    />
+                  </div>
                 </div>
               )}
-
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Child Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* PAGE CONTENT */}
+        <section className="py-14">
           {children}
-        </div>
+        </section>
       </main>
+
       <Footer />
     </>
   );

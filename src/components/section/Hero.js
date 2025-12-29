@@ -1,107 +1,78 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
-  const containerRef = useRef(null);
-
   return (
-    <section
-      ref={containerRef}
-      className="relative min-h-[95vh] overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center bg-fixed"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full pt-32 lg:pt-30">
+    <section className="relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 xl:pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
           {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, y: -50 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 z-10 relative"
+            className="space-y-8"
           >
-            <h1 className="font-bold text-gray-900 text-4xl sm:text-5xl md:text-6xl xl:text-7xl pt-28 leading-tight">
+            <h1 className="text-gray-900 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
               <span className="font-normal">Build</span>{" "}
-              <span className="font-bold">Smarter</span> <br />
+              <span className="font-bold">Smarter</span>
+              <br />
               <span className="font-bold">Digital</span>{" "}
-              <span className="font-normal">Experiences</span> <br />
+              <span className="font-normal">Experiences</span>
+              <br />
               <span className="font-normal">with</span>{" "}
-              <span className="font-bold text-bold-600">AI</span>
+              <span className="font-bold">AI</span>
             </h1>
 
-            <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg">
+            <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-xl">
               Transform your ideas into production-ready applications. Future
               Forge combines cutting-edge AI with intuitive tools to accelerate
               your development workflow.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Button 
-                text="Start Your Project" 
-                href="#"
-                variant="primary"
-              />
-              <Button 
-                text="Book a Demo" 
-                href="#"
-                variant="secondary"
-              />
+              <Button text="Start Your Project" href="#" variant="primary" />
+              <Button text="Book a Demo" href="#" variant="secondary" />
             </div>
           </motion.div>
 
-          {/* RIGHT CONTENT (Robot) - Absolute Bottom on Desktop */}
-          <div className="relative mt-12 lg:mt-0 lg:absolute bottom-0 right-0 w-full lg:w-1/2 flex justify-center lg:justify-end items-end h-[400px] sm:h-[500px] lg:h-auto pointer-events-none">
-            {/* Chat Bubbles */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.8 }}
-              className="absolute -top-3  left-4 sm:left-10 lg:-top-20 lg:left-0 z-20 flex flex-col gap-4 pointer-events-auto"
+          {/* RIGHT VISUAL */}
+          <div
+            className="
+              relative
+              h-[420px]
+              sm:h-[480px]
+              md:h-[520px]
+              lg:h-[560px]
+              xl:h-[700px]
+              flex items-end justify-center lg:justify-end
+            "
+          >
+            {/* ROBOT + BUBBLES WRAPPER */}
+            <div
+              className="
+                relative
+                w-full
+                max-w-[360px]
+                sm:max-w-[460px]
+                md:max-w-[540px]
+                lg:max-w-[620px]
+                xl:max-w-[760px]
+              "
             >
-              {/* Bubble 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-                className="flex items-start gap-3 bg-white/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-lg border border-white/50 max-w-[200px] sm:max-w-[250px]"
-              >
-                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-blue-500 rounded-full"></div>
-                </div>
-                <div>
-                  <p className="text-[10px] sm:text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">
-                    Hi
-                  </p>
-                  <p className="text-xs sm:text-sm text-gray-800 font-medium">
-                    How i can help you?
-                  </p>
-                </div>
-              </motion.div>
+              {/* CHAT BUBBLES — ANCHORED TO ROBOT ARM */}
+              {/* TODO:- Add chat bubbles logic */}
 
-              {/* Bubble 2 */}
+              {/* ROBOT */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 48 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.5, duration: 0.6 }}
-                className="flex items-center gap-3 bg-white/80 backdrop-blur-md py-2 px-4 sm:py-3 sm:px-5 rounded-2xl shadow-lg border border-white/50 ml-4 sm:ml-8"
+                transition={{ duration: 0.9, ease: "easeOut" }}
               >
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-500"></div>
-                <p className="text-xs sm:text-sm text-gray-800 font-medium">
-                  I can develop anything
-                </p>
-              </motion.div>
-            </motion.div>
-
-            {/* Robot Image */}
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="relative w-full flex items-end justify-center lg:justify-end"
-            >
-              <div className="relative w-[380px] pt-16 sm:w-[500px] md:w-[500px] lg:w-[600px] xl:w-[800px] xl:-translate-x-70  h-auto">
                 <Image
                   src="/Rb 1.webp"
                   alt="AI Robot"
@@ -110,8 +81,8 @@ export default function Hero() {
                   priority
                   className="object-contain object-bottom drop-shadow-2xl"
                 />
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>

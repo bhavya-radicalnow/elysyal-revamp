@@ -4,38 +4,27 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const stats = [
-  {
-    value: "25+ Countries",
-    label: "Global Reach",
-  },
-  {
-    value: "99.9% Uptime",
-    label: "Enterprise Security",
-  },
-  {
-    value: "10x Growth",
-    label: "Scalable Solutions",
-  },
-  {
-    value: "40% Faster",
-    label: "Global Reach",
-  },
+  { value: "25+ Countries", label: "Global Reach" },
+  { value: "99.9% Uptime", label: "Enterprise Security" },
+  { value: "10x Growth", label: "Scalable Solutions" },
+  { value: "40% Faster", label: "Performance Boost" },
 ];
 
 export default function WhyChoose() {
   return (
-    <section className="relative py-24 bg-gradient-to-br from-[#FEECEF] via-[#E8E8FF] to-[#E5F2FF] z-10">
+    <section className="relative py-24 bg-gradient-to-br from-[#FEECEF] via-[#E8E8FF] to-[#E5F2FF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Left Content */}
-          <div className="space-y-10 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* LEFT CONTENT */}
+          <div className="space-y-10">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-[#1F1F1F] tracking-tight">
+              <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-[#1F1F1F] tracking-tight">
                 Why Choose ELYSYAL
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
-                We combine technical excellence with business acumen to deliver solutions that not only work but drive measurable results.
+                We combine technical excellence with business acumen to deliver
+                solutions that not only work but drive measurable results.
               </p>
             </div>
 
@@ -53,23 +42,31 @@ export default function WhyChoose() {
             </div>
           </div>
 
-          {/* Right Image (Robot) */}
+          {/* RIGHT IMAGE */}
           <div className="relative flex justify-center lg:justify-end">
-           
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9, x: 50 }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, x: 40 }}
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative z-20 w-[350px] h-[450px] sm:w-[600px] sm:h-[750px] lg:w-[900px] lg:h-[1100px]  lg:-mr-38 lg:-mb-52 lg:translate-x-2 lg:translate-y-3"
+              className="
+                relative
+                w-full
+                max-w-[280px]
+                sm:max-w-[360px]
+                md:max-w-[420px]    /* iPads */
+                lg:max-w-[520px]
+                xl:max-w-[620px]    /* Desktop */
+              "
             >
-                <Image
-                  src="/Rb 4.webp" 
-                  alt="Why Choose Robot"
-                  fill
-                  className="object-contain"
-                  priority
-                />
+              <Image
+                src="/Rb 4.webp"
+                alt="Why Choose Robot"
+                width={700}
+                height={900}
+                className="object-contain w-full h-auto"
+                priority
+              />
             </motion.div>
           </div>
 
