@@ -99,7 +99,11 @@ export default function AIDevelopmentPage() {
       </section>
       
       
-      <CallToAction />
+      <CallToAction 
+        title={<>Ready to <span className="text-[#548BF8]">Embrace AI Innovation?</span></>}
+        description="Let's build the future together. Our AI experts are ready to help you unlock the full potential of generative artificial intelligence for your unique business needs."
+        style={{ backgroundColor: "#DEDBF0" }}
+      />
 
       </ServicePageLayout>
   );

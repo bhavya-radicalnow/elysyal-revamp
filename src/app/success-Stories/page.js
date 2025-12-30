@@ -8,7 +8,7 @@ export default function successStoriesPage() {
   return (
     <ServicePageLayout
       title=" Smart, Ready-to-Scale Digital Solutions"
-      description="Transform your ideas into production-ready applications. Elysyal combines cutting-edge AI with intuitive tools to accelerate your development workflow."
+      description="Our Solution Hub brings together proven, ready-to-use digital solutions designed to solve real business challenges. From pre-built products to customizable platforms, we help teams launch faster, reduce development effort, and scale with confidence."
       heroImage="/Success Stories image 02.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
     >
@@ -220,7 +220,12 @@ export default function successStoriesPage() {
       </section>
 
 
-      <CallToAction />
+      <CallToAction 
+      title="Turn Ready Solutions Into Real Results"
+      description="Whether you need a quick launch or a scalable long-term platform, our Solution Hub gives you a strong foundation to build on."
+      primaryButton={{ text: "Start Your Project", href: "#" }}
+      secondaryButton={{ text: "Book a Demo", href: "#" }}
+       />
 
     </ServicePageLayout>
 

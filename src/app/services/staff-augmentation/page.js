@@ -4,50 +4,50 @@ import ServiceFeatures from "@/components/layout/ServiceFeatures";
 import Image from "next/image";
 
 export default function StaffAugmentationPage() {
-  const features = [
+const features = [
     {
       number: "01",
-      title: "Generative AI Solutions",
-      description: "Advanced AI models for content generation, image creation, automated content production at scale."
+      title: "Dedicated Teams",
+      description: "Full development teams dedicated to your projects"
     },
     {
       number: "02",
-      title: "AI Agent Development",
-      description: "Intelligent autonomous agents that handle complex tasks, make decisions, and automate workflows."
+      title: "Remote Specialists",
+      description: "Access global talent pool of experienced developers"
     },
     {
       number: "03",
-      title: "Machine Learning Development",
-      description: "Custom ML solutions for predictive analytics, pattern recognition, and intelligent data processing."
+      title: "Flexible Scaling",
+      description: "Scale your team up or down based on project needs"
     },
     {
       number: "04",
-      title: "Chatbot Development",
-      description: "Advanced AI chatbots that generate natural, context-aware conversations to enhance customer engagement."
+      title: "Expert Consultants",
+      description: "Senior consultants for strategic technology guidance"
     },
     {
       number: "05",
-      title: "Natural Language Development",
-      description: "Advanced text analysis, sentiment detection, and language understanding capabilities."
+      title: "Project Delivery",
+      description: "Accelerated project timelines with quality delivery"
     },
     {
       number: "06",
-      title: "Multi-Modal Interaction",
-      description: "Engage via text, voice, and visuals for seamless cross-platform user experiences."
+      title: "Quality Assurance",
+      description: "Rigorous quality standards and best practices"
     }
   ];
   return (
     <ServicePageLayout
-      title="Staff Augmentation Services"
+      title="Staff Augmentation "
       description="Skilled developers and tech specialists to expand your team and accelerate project delivery."
-      heroImage="/As_1.webp"
+      heroImage="/custom 1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
 
     >
       <ServiceFeatures
         title="Key Features & Services"
-        description="Unlock the potential of artificial intelligence with our comprehensive AI development services. From generative AI and machine learning models to conversational agents and computer vision, we create intelligent solutions that automate processes, enhance decision-making, and drive innovation across your organization."
+        description="We design and build custom software solutions tailored to unique business needs. From enterprise systems and SaaS platforms to scalable microservices and embedded software, our solutions are secure, flexible, and built to grow with your business."
         features={features}
       />
 
@@ -126,7 +126,10 @@ export default function StaffAugmentationPage() {
       </section>
 
 
-      <CallToAction />
+      <CallToAction  
+      title={<>Scale Your  <span className="text-[#548BF8]">Team Today</span></>}
+      description="Get the right talent at the right time to accelerate your development projects."
+      />
 
     </ServicePageLayout>
   );

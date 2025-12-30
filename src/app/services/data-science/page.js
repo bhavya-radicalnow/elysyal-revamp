@@ -10,33 +10,33 @@ export default function DataSciencePage() {
   const features = [
     {
       number: "01",
-      title: "Generative AI Solutions",
-      description: "Advanced AI models for content generation, image creation, automated content production at scale."
+      title: "Big Data Analytics & Processing",
+      description: "Large-scale data processing and insights extraction"
     },
     {
       number: "02",
-      title: "AI Agent Development",
-      description: "Intelligent autonomous agents that handle complex tasks, make decisions, and automate workflows."
+      title: "Data Warehousing & ETL Development",
+      description: "Enterprise data storage and transformation pipelines"
     },
     {
       number: "03",
-      title: "Machine Learning Development",
-      description: "Custom ML solutions for predictive analytics, pattern recognition, and intelligent data processing."
+      title: "Data Visualization",
+      description: "Clear visuals that turn complex data into actionable insights."
     },
     {
       number: "04",
-      title: "Chatbot Development",
-      description: "Advanced AI chatbots that generate natural, context-aware conversations to enhance customer engagement."
+      title: "Dashboard Development",
+      description: "Interactive dashboards for real-time tracking and decisions."
     },
     {
       number: "05",
-      title: "Natural Language Development",
-      description: "Advanced text analysis, sentiment detection, and language understanding capabilities."
+      title: "Machine Learning Models",
+      description: "Custom ML algorithms for predictive analytics."
     },
     {
       number: "06",
-      title: "Multi-Modal Interaction",
-      description: "Engage via text, voice, and visuals for seamless cross-platform user experiences."
+      title: "Business Intelligence",
+      description: "Strategic insights and data-driven decision making."
     }
   ];
 
@@ -98,8 +98,8 @@ export default function DataSciencePage() {
 
   return (
     <ServicePageLayout
-      title="Data Science"
-      description="Extract insights from your data with advanced analytics, ML models, and data-driven strategies."
+      title="Data Science & ML Solutions"
+      description="Extract meaningful insights from your data with advanced analytics and machine learning models."
       heroImage="/data1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
@@ -108,7 +108,7 @@ export default function DataSciencePage() {
     >
       <ServiceFeatures 
               title="Key Features & Services"
-              description="Unlock the potential of artificial intelligence with our comprehensive AI development services. From generative AI and machine learning models to conversational agents and computer vision, we create intelligent solutions that automate processes, enhance decision-making, and drive innovation across your organization."
+              description="Harness the power of big data with our comprehensive analytics and processing solutions. We help organizations process, analyze, and extract valuable insights from massive datasets using cutting-edge technologies and machine learning algorithms."
               features={features}
             />
 {/* 
@@ -159,7 +159,10 @@ export default function DataSciencePage() {
 
 
      
-      <CallToAction />
+      <CallToAction   title={<>Unlock Your  <span className="text-[#548BF8]">Data Potential</span></>}
+        description="Transform raw data into actionable insights that drive business growth and innovation."
+       
+      />
  
     </ServicePageLayout>
   );

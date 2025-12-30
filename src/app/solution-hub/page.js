@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function solutionhubPage() {
   return (
     <ServicePageLayout
-      title=" solutionhub"
-      description="Transform your ideas into production-ready applications. Elysyal combines cutting-edge AI with intuitive tools to accelerate your development workflow."
+      title=" Smart, Ready-to-Scale Digital Solutions"
+      description="Our Solution Hub brings together proven, ready-to-use digital solutions designed to solve real business challenges. From pre-built products to customizable platforms, we help teams launch faster, reduce development effort, and scale with confidence."
       heroImage="/Solution Hub 03.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
@@ -202,7 +202,12 @@ export default function solutionhubPage() {
         </div>
       </section>
 
-      <CallToAction />
+      <CallToAction  
+      title="Turn Ready Solutions Into Real Results"
+      description="Whether you need a quick launch or a scalable long-term platform, our Solution Hub gives you a strong foundation to build on."
+      primaryButton={{ text: "Start Your Project", href: "#" }}
+      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      />
 
     </ServicePageLayout>
 

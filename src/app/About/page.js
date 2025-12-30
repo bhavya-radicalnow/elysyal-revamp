@@ -128,7 +128,7 @@ export default function AboutPage() {
                 Technology serves people first—never the other way around. Speed without strategy becomes wasted
                 effort, while strategy without execution remains mere fantasy. The strongest solutions emerge from
                 cross-functional collaboration between strategy, design, and engineering. Continuous learning
-                ensures we stay relevant, adaptive, and always ahead of tomorrow's challenges.
+                ensures we stay relevant, adaptive, and always ahead of tomorrow challenges.
               </p>
             </div>
 

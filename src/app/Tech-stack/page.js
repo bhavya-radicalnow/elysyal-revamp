@@ -7,8 +7,8 @@ export default function Techstack() {
   return (
 
     <ServicePageLayout
-      title="Built on Proven Technology, Designed for What’s Next "
-      description="Transform your ideas into production-ready applications. Elysyal combines cutting-edge AI with intuitive tools to accelerate your development workflow."
+      title={<>Built  <span className="font-normal"> on Proven  <span className="font-bold">Technology, </span>Designed for What’s Next</span></>}
+      description="We select modern, reliable technologies that deliver strong performance today while providing the flexibility and scalability needed to support tomorrow’s growth and evolving business demands."
       heroImage="/Tech-Stack Image 01 .webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
@@ -138,7 +138,11 @@ export default function Techstack() {
         </div>
       </section>
 
-      <CallToAction />
+      <CallToAction 
+      title="Let's choose the right stack for your product"
+      description="Share your goals and technical needs, and our experts will help define the most suitable technology stack for your project."
+      primaryButton={{ text: "Start Your Project", href: "#" }}
+      />
 
     </ServicePageLayout>
   )

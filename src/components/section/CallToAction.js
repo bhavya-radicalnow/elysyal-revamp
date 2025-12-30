@@ -12,10 +12,11 @@ function CallToAction({
   primaryBtnText = "Start Your Project",
   primaryBtnLink = "#",
   secondaryBtnText = "Book a Demo",
-  secondaryBtnLink = "#"
+  secondaryBtnLink = "#",
+  style = {}
 }) {
   return (
-    <section className="bg-white py-20 lg:py-32 overflow-hidden">
+    <section className="bg-white py-20 lg:py-32 overflow-hidden" style={style}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
         {/* Headline */}

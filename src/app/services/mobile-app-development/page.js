@@ -5,36 +5,31 @@ import Image from "next/image";
 
 
 export default function MobileAppPage() {
-  const features = [
+const features = [
     {
       number: "01",
-      title: "Generative AI Solutions",
-      description: "Advanced AI models for content generation, image creation, automated content production at scale."
+      title: "Android App Development",
+      description: "Native Android applications for Google Play Store"
     },
     {
       number: "02",
-      title: "AI Agent Development",
-      description: "Intelligent autonomous agents that handle complex tasks, make decisions, and automate workflows."
+      title: "iOS App Development",
+      description: "Cloud-Native iOS applications for Apple App Store"
     },
     {
       number: "03",
-      title: "Machine Learning Development",
-      description: "Custom ML solutions for predictive analytics, pattern recognition, and intelligent data processing."
+      title: "React Native App Development",
+      description: "Cross-platform mobile apps with single codebase"
     },
     {
       number: "04",
-      title: "Chatbot Development",
-      description: "Advanced AI chatbots that generate natural, context-aware conversations to enhance customer engagement."
+      title: "Enterprise App Development",
+      description: "Business-focused mobile solutions for productivity"
     },
     {
       number: "05",
-      title: "Natural Language Development",
-      description: "Advanced text analysis, sentiment detection, and language understanding capabilities."
-    },
-    {
-      number: "06",
-      title: "Multi-Modal Interaction",
-      description: "Engage via text, voice, and visuals for seamless cross-platform user experiences."
+      title: "IoT Development",
+      description: "Connected device ecosystems and smart automation"
     }
   ];
   return (
@@ -48,7 +43,7 @@ export default function MobileAppPage() {
     >
       <ServiceFeatures
         title="Key Features & Services"
-        description="Unlock the potential of artificial intelligence with our comprehensive AI development services. From generative AI and machine learning models to conversational agents and computer vision, we create intelligent solutions that automate processes, enhance decision-making, and drive innovation across your organization."
+        description="We design and build custom software solutions tailored to unique business needs. From enterprise systems and SaaS platforms to scalable microservices and embedded software, our solutions are secure, flexible, and built to grow with your business."
         features={features}
       />
 
@@ -86,7 +81,7 @@ export default function MobileAppPage() {
             {/* Image */}
             <div className="relative h-[400px] lg:h-[500px] w-full">
               <Image
-                src="/Rb 1.webp"
+                src="/Success Stories image 02.webp"
                 alt="Mobile App Development Robot"
                 fill
                 className="object-contain transform scale-100 hover:scale-105 transition-transform duration-500"
@@ -99,7 +94,10 @@ export default function MobileAppPage() {
 
 
 
-      <CallToAction />
+      <CallToAction 
+      title={<>Launch Your <span className="text-[#548BF8]">Mobile App</span></>}
+        description="From idea to app store, we'll help you create a mobile app that users love."
+       />
 
 
     </ServicePageLayout>

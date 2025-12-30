@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function IndustriesPage() {
   return (
     <ServicePageLayout
-      title=" Industries"
-      description="Transform your ideas into production-ready applications. Elysyal combines cutting-edge AI with intuitive tools to accelerate your development workflow."
+      title=" Industry-Specific Digital Solutions"
+      description="We design and build scalable, secure technology solutions tailored to the unique challenges and goals of every industry we serve."
       heroImage="/Industries image 01.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
@@ -200,7 +200,12 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <CallToAction />
+      <CallToAction  
+      title="Build Solutions That Fit Your Industry"
+      description="Let's create technology that aligns with your business goals and industry demands."
+      primaryButton={{ text: "Start Your Project", href: "#" }}
+      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      />
 
     </ServicePageLayout>
   )
