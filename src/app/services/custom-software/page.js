@@ -2,6 +2,7 @@ import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import CallToAction from "@/components/section/CallToAction"; 
 import ServiceFeatures from "@/components/layout/ServiceFeatures";
 import Image from "next/image";  
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 export default function CustomSoftwarePage() {
 const features = [
@@ -58,7 +59,7 @@ const features = [
                                     We deliver tailored software solutions that address complex business challenges and evolving technical needs. From enterprise applications and SaaS platforms to scalable microservices, ERP systems, and embedded software, our development approach ensures reliability, performance, and seamless integration across your digital ecosystem.
                                   </p>
                                   <div className="relative w-full max-w-lg mx-auto h-64 md:h-96">
-                                     <Image 
+                                     <ImageWithSkeleton 
                                        src="/custom 2.webp" 
                                        alt="Autonomous AI Robot" 
                                        fill 

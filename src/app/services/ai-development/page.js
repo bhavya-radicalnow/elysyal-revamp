@@ -2,6 +2,7 @@ import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import CallToAction from "@/components/section/CallToAction";
 import ServiceFeatures from "@/components/layout/ServiceFeatures";
 import Image from "next/image";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 export default function AIDevelopmentPage() {
   const features = [
@@ -62,7 +63,7 @@ export default function AIDevelopmentPage() {
             AI agents are autonomous software systems designed to perform tasks, make decisions, and interact with users with minimal human input. They mimic human problem-solving and adapt dynamically to new information, enabling businesses to automate workflows, provide instant support, and optimize operations. Build intelligent AI agents that think, act, and learn independently.
           </p>
           <div className="relative w-full max-w-lg mx-auto h-64 md:h-96">
-             <Image 
+             <ImageWithSkeleton 
                src="/As_2.webp" 
                alt="Autonomous AI Robot" 
                fill 
@@ -87,7 +88,7 @@ export default function AIDevelopmentPage() {
           </div>
           <div className="w-full md:w-1/2 lg:w-5/12 flex justify-center">
             <div className="relative w-full max-w-lg aspect-square">
-               <Image 
+               <ImageWithSkeleton 
                  src="/As_3.webp" 
                  alt="End-to-End AI Development Robot" 
                  fill 

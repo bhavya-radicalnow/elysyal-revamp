@@ -1,6 +1,15 @@
 import Link from "next/link";
+import Skeleton from "@/components/ui/Skeleton";
 
-export default function Button({ href, text, variant = "primary", icon, className = "" }) {
+export default function Button({ href, text, variant = "primary", icon, className = "", isLoading = false }) {
+  if (isLoading) {
+    return (
+      <div className={`rounded-full overflow-hidden ${className}`}>
+        <Skeleton height={48} width={180} />
+      </div>
+    );
+  }
+
   if (variant === "primary") {
     return (
       <Link

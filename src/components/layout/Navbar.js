@@ -4,11 +4,45 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
+import Skeleton from "@/components/ui/Skeleton";
+
+const NavLogo = () => {
+  return (
+    <div className="relative w-32 md:w-40 h-[auto] aspect-[3/1]">
+       <ImageWithSkeleton
+         src="/logo.webp"
+         alt="ELYSYAL Logo"
+         width={140}
+         height={140}
+         priority
+         className="w-full h-auto"
+       />
+    </div>
+  );
+};
+
+const ServiceLink = ({ item, onClick }) => {
+  return (
+    <Link href={item.href} onClick={onClick} className="flex items-center gap-6 p-6 rounded-2xl bg-gray-50 hover:shadow-lg transition">
+      <div className="relative w-12 h-12 shrink-0">
+        <ImageWithSkeleton 
+          src={item.icon} 
+          alt={item.title} 
+          fill 
+          className="object-contain" 
+        />
+      </div>
+      <span className="font-medium text-gray-900">{item.title}</span>
+    </Link>
+  );
+};
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const serviceItems = [
     { title: "Artificial Intelligence Development", href: "/services/ai-development", icon: "/Icon - 01.webp" },
@@ -18,6 +52,12 @@ export default function Navbar() {
     { title: "Mobile App Development", href: "/services/mobile-app-development", icon: "/Icon - 05.webp" },
     { title: "Staff Augmentation Services", href: "/services/staff-augmentation", icon: "/Icon - 08.webp" },
   ];
+
+  /* Simulate loading */
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   /* Scroll background */
   useEffect(() => {
@@ -42,62 +82,70 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href="/">
-          <Image
-            src="/logo.webp"
-            alt="ELYSYAL Logo"
-            width={140}
-            height={140}
-            priority
-            className="w-32 md:w-40 h-auto"
-          />
+        <Link href="/" aria-label="Home">
+           <NavLogo />
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-black">
-          <div className="group flex items-center">
-            <button className="flex items-center gap-1 py-8 hover:text-blue-600">
-              Services
-              <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+          {isLoading ? (
+            <>
+              <Skeleton width={80} height={20} />
+              <Skeleton width={100} height={20} />
+              <Skeleton width={90} height={20} />
+              <Skeleton width={110} height={20} />
+              <Skeleton width={120} height={20} />
+              <Skeleton width={110} height={20} />
+            </>
+          ) : (
+            <>
+              <div className="group flex items-center">
+                <button className="flex items-center gap-1 py-8 hover:text-blue-600">
+                  Services
+                  <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
 
-            <div className="fixed left-0 top-[90px] w-full bg-white shadow-xl border-t border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-[100]">
-              <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {serviceItems.map((item, i) => (
-                  <Link key={i} href={item.href} className="flex items-center gap-6 p-6 rounded-2xl bg-gray-50 hover:shadow-lg transition">
-                    <div className="relative w-12 h-12">
-                      <Image src={item.icon} alt={item.title} fill className="object-contain" />
-                    </div>
-                    <span>{item.title}</span>
-                  </Link>
-                ))}
+                <div className="fixed left-0 top-[90px] w-full bg-white shadow-xl border-t border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-[100]">
+                  <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {serviceItems.map((item, i) => (
+                      <ServiceLink key={i} item={item} />
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <Link href="/Tech-stack">Tech-Stack</Link>
-          <Link href="/Industries">Industries</Link>
-          <Link href="/solution-hub">Solution Hub</Link>
-          <Link href="/success-Stories">Success Stories</Link>
-          <Link href="/About">About Company</Link>
+              <Link href="/Tech-stack">Tech-Stack</Link>
+              <Link href="/Industries">Industries</Link>
+              <Link href="/solution-hub">Solution Hub</Link>
+              <Link href="/success-Stories">Success Stories</Link>
+              <Link href="/About">About Company</Link>
+            </>
+          )}
         </nav>
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center">
-          <Link
-            href="/contact"
-            className="
-      px-5 py-2
-      rounded-lg
-      text-sm
-      font-bold
-      text-black
-    "
-          >
-            Get in Touch
-          </Link>
+          {isLoading ? (
+            <Skeleton width={120} height={40} className="rounded-lg" />
+          ) : (
+            <Link
+              href="/contact"
+              className="
+        px-5 py-2
+        rounded-lg
+        text-sm
+        font-bold
+        border border-black
+        hover:bg-black hover:text-white
+        transition-colors
+        text-black
+      "
+            >
+              Get in Touch
+            </Link>
+          )}
         </div>
 
 
@@ -141,6 +189,7 @@ export default function Navbar() {
               border-t border-white/40
               shadow-[0_8px_30px_rgba(0,0,0,0.12)]
               z-[60]
+              h-[calc(100vh-80px)] overflow-y-auto
             "
           >
             <nav className="flex flex-col items-center gap-5 px-6 py-8 font-bold text-black text-center">
@@ -169,7 +218,7 @@ export default function Navbar() {
                         key={i}
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className="block p-2 text-sm text-center"
+                        className="block p-2 text-sm text-center truncate"
                       >
                         {item.title}
                       </Link>

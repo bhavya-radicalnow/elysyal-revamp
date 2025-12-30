@@ -1,7 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
+import Skeleton from "@/components/ui/Skeleton";
 
 const stats = [
   { value: "25+ Countries", label: "Global Reach" },
@@ -11,6 +14,13 @@ const stats = [
 ];
 
 export default function WhyChoose() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative py-24 bg-gradient-to-br from-[#FEECEF] via-[#E8E8FF] to-[#E5F2FF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,24 +29,47 @@ export default function WhyChoose() {
           {/* LEFT CONTENT */}
           <div className="space-y-10">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-[#1F1F1F] tracking-tight">
-                Why Choose ELYSYAL
-              </h2>
-              <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
-                We combine technical excellence with business acumen to deliver
-                solutions that not only work but drive measurable results.
-              </p>
+              {isLoading ? (
+                <div className="space-y-3">
+                  <Skeleton height={48} width="80%" />
+                  <Skeleton height={48} width="60%" />
+                </div>
+              ) : (
+                <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-[#1F1F1F] tracking-tight">
+                  Why Choose ELYSYAL
+                </h2>
+              )}
+              
+              {isLoading ? (
+                <div className="max-w-lg">
+                  <Skeleton count={2} height={18} />
+                </div>
+              ) : (
+                <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
+                  We combine technical excellence with business acumen to deliver
+                  solutions that not only work but drive measurable results.
+                </p>
+              )}
             </div>
 
             <div className="space-y-8">
               {stats.map((stat, index) => (
                 <div key={index} className="space-y-1">
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-[#1F1F1F]">
-                    {stat.value}
-                  </h3>
-                  <p className="text-[#752e5c] text-lg font-medium">
-                    {stat.label}
-                  </p>
+                  {isLoading ? (
+                    <div className="space-y-2">
+                      <Skeleton height={36} width={150} />
+                      <Skeleton height={20} width={100} />
+                    </div>
+                  ) : (
+                    <>
+                      <h3 className="text-3xl md:text-4xl font-extrabold text-[#1F1F1F]">
+                        {stat.value}
+                      </h3>
+                      <p className="text-[#752e5c] text-lg font-medium">
+                        {stat.label}
+                      </p>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
@@ -59,7 +92,7 @@ export default function WhyChoose() {
                 xl:max-w-[620px]    /* Desktop */
               "
             >
-              <Image
+              <ImageWithSkeleton
                 src="/Rb 4.webp"
                 alt="Why Choose Robot"
                 width={700}

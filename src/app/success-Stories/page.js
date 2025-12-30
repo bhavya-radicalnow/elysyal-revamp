@@ -3,6 +3,7 @@ import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import CallToAction from "@/components/section/CallToAction";
 
 import Image from "next/image";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 export default function successStoriesPage() {
   return (
@@ -119,7 +120,7 @@ export default function successStoriesPage() {
 
             {/* Flying Robot Image */}
             <div className="hidden lg:block absolute right-0 -top-20 w-[500px] h-[500px] pointer-events-none">
-              <Image
+              <ImageWithSkeleton
                 src="/Success Stories image 01.webp"
                 alt="Flying Robot"
                 fill

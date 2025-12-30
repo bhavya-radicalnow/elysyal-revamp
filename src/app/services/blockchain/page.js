@@ -2,6 +2,7 @@ import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import ServiceFeatures from "@/components/layout/ServiceFeatures";
 import CallToAction from "@/components/section/CallToAction"; 
 import Image from "next/image";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 
 
@@ -86,7 +87,7 @@ const features = [
                         We help businesses unlock the full potential of blockchain with secure, scalable, and high-impact solutions. From smart contracts and token development to DeFi platforms, NFT marketplaces, Web3 and DApp development, crypto exchanges, and cross-chain scalability.
                       </p>
                       <div className="relative w-full max-w-lg mx-auto h-64 md:h-96">
-                         <Image 
+                         <ImageWithSkeleton 
                            src="/Sb_2.webp" 
                            alt="Autonomous AI Robot" 
                            fill 

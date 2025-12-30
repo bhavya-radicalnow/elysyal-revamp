@@ -1,8 +1,11 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
+import Skeleton from "@/components/ui/Skeleton";
 
 const services = [
   {
@@ -63,17 +66,32 @@ const services = [
   },
 ];
 
-const ServiceCard = ({ title, description, icon, link }) => {
+const ServiceCard = ({ title, description, icon, link, isLoading }) => {
+
   const Card = (
     <div className="bg-white/60 backdrop-blur-md rounded-3xl p-9 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col h-full min-h-[400px]">
       <div className="mb-6 relative w-20 h-20">
-        <Image src={icon} alt={title} fill className="object-contain" />
+        <ImageWithSkeleton
+          src={icon} 
+          alt={title} 
+          fill 
+          className="object-contain" 
+        />
       </div>
 
-      <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-      <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
-        {description}
-      </p>
+      {isLoading ? (
+        <div className="space-y-3">
+          <Skeleton height={24} width="80%" />
+          <Skeleton count={3} height={14} />
+        </div>
+      ) : (
+        <>
+          <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
+          <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
+            {description}
+          </p>
+        </>
+      )}
 
       <div className="mt-auto">
         <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group hover:bg-gray-900 hover:border-gray-900 transition">
@@ -100,6 +118,13 @@ const ServiceCard = ({ title, description, icon, link }) => {
 };
 
 export default function Services() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1600);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="bg-[#EFF4FF] py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,11 +132,11 @@ export default function Services() {
 
           {/* ROW 1 CARDS */}
           <div className="order-2 lg:order-none">
-            <ServiceCard {...services[0]} />
+            <ServiceCard {...services[0]} isLoading={isLoading} />
           </div>
 
           <div className="order-3 lg:order-none">
-            <ServiceCard {...services[1]} />
+            <ServiceCard {...services[1]} isLoading={isLoading} />
           </div>
 
           {/* TEXT BLOCK — MUST COME FIRST ON MOBILE & iPAD */}
@@ -125,22 +150,36 @@ export default function Services() {
               px-4 lg:pl-12
             "
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Our Technology <br /> Services
-            </h2>
-            <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
-              From AI and blockchain to custom software development, we deliver
-              cutting-edge solutions that drive innovation and business growth.
-            </p>
+            {isLoading ? (
+              <div className="mb-6 space-y-3">
+                <Skeleton height={40} width="70%" />
+                <Skeleton height={40} width="50%" />
+              </div>
+            ) : (
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Our Technology <br /> Services
+              </h2>
+            )}
+            
+            {isLoading ? (
+              <div className="max-w-lg">
+                <Skeleton count={2} height={18} />
+              </div>
+            ) : (
+              <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
+                From AI and blockchain to custom software development, we deliver
+                cutting-edge solutions that drive innovation and business growth.
+              </p>
+            )}
           </div>
 
           {/* ROW 2 CARDS */}
           <div className="order-4 lg:order-none">
-            <ServiceCard {...services[2]} />
+            <ServiceCard {...services[2]} isLoading={isLoading} />
           </div>
 
           <div className="order-5 lg:order-none">
-            <ServiceCard {...services[3]} />
+            <ServiceCard {...services[3]} isLoading={isLoading} />
           </div>
 
           {/* ROBOT */}
@@ -168,7 +207,7 @@ export default function Services() {
                 pointer-events-none
               "
             >
-              <Image
+              <ImageWithSkeleton
                 src="/Rb 2.webp"
                 alt="Future Tech Robot"
                 width={900}
@@ -180,16 +219,16 @@ export default function Services() {
 
           {/* ROW 3 CARDS */}
           <div className="order-7 lg:order-none">
-            <ServiceCard {...services[4]} />
+            <ServiceCard {...services[4]} isLoading={isLoading} />
           </div>
           <div className="order-8 lg:order-none">
-            <ServiceCard {...services[5]} />
+            <ServiceCard {...services[5]} isLoading={isLoading} />
           </div>
           <div className="order-9 lg:order-none">
-            <ServiceCard {...services[6]} />
+            <ServiceCard {...services[6]} isLoading={isLoading} />
           </div>
           <div className="order-10 lg:order-none">
-            <ServiceCard {...services[7]} />
+            <ServiceCard {...services[7]} isLoading={isLoading} />
           </div>
 
         </div>

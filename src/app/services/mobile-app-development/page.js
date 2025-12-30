@@ -2,6 +2,7 @@ import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import CallToAction from "@/components/section/CallToAction";
 import ServiceFeatures from "@/components/layout/ServiceFeatures";
 import Image from "next/image";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 
 export default function MobileAppPage() {
@@ -80,7 +81,7 @@ const features = [
 
             {/* Image */}
             <div className="relative h-[400px] lg:h-[500px] w-full">
-              <Image
+              <ImageWithSkeleton
                 src="/Success Stories image 02.webp"
                 alt="Mobile App Development Robot"
                 fill
