@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import Skeleton from "@/components/ui/Skeleton";
+import { useModal } from "@/context/ModalContext";
 
 const features = [
   {
@@ -69,6 +70,7 @@ function FeatureCard({ feature, isLoading }) {
 
 export default function Features() {
   const [isLoading, setIsLoading] = useState(true);
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1400);
@@ -81,7 +83,7 @@ export default function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Content */}
-          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left pl-4 md:pl-8 xl:pl-16">
             {isLoading ? (
               <div className="mb-6 space-y-4">
                 <Skeleton height={50} width="90%" />
@@ -109,7 +111,10 @@ export default function Features() {
             {isLoading ? (
               <Skeleton height={56} width={200} className="rounded-full" />
             ) : (
-              <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#6391F4] to-[#937DC0] text-white rounded-full text-base font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+              <button 
+                onClick={openContactModal}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#6391F4] to-[#937DC0] text-white rounded-full text-base font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20"
+              >
                 Start Your Project
                 <svg 
                   className="w-5 h-5" 

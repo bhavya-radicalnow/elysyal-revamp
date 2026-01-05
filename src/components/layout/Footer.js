@@ -129,11 +129,7 @@ export default function Footer() {
                       IoT Solutions
                     </Link>
                   </li>
-                   <li>
-                    <Link href="/services/legacy-modernization" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
-                       Legacy Modernization
-                    </Link>
-                  </li>
+
                   <li>
                     <Link href="/services/staff-augmentation" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors block">
                       Staff Augmentation
@@ -176,9 +172,12 @@ export default function Footer() {
             © 2025 ELYSYAL. All rights reserved.
           </p>
           <div className="flex gap-8">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-               <Link key={item} href="#" className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors">
-                 {item}
+            {[
+              { name: 'Privacy Policy', href: '/privacy-policy' },
+              { name: 'Terms of Service', href: '/terms-of-service' }
+            ].map((item) => (
+               <Link key={item.name} href={item.href} className="text-gray-900 hover:text-blue-600 text-sm font-semibold transition-colors">
+                 {item.name}
                </Link>
             ))}
           </div>

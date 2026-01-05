@@ -2,6 +2,7 @@ import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import CallToAction from "@/components/section/CallToAction";
 import ServiceFeatures from "@/components/layout/ServiceFeatures";
 import Image from "next/image";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 export default function StaffAugmentationPage() {
 const features = [
@@ -43,6 +44,7 @@ const features = [
       heroImage="/custom 1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
+      alignImageBottom={true}
 
     >
       <ServiceFeatures
@@ -88,27 +90,36 @@ const features = [
                 {
                   title: "Understand Your Needs",
                   description: "We begin with a quick assessment of your team gaps to match the right talent.",
+                  icon: "/icons/understand-needs.svg"
                 },
                 {
                   title: "Match & Onboard Experts",
                   description: "We select and onboard skilled developers who fit your tech stack and workflow.",
+                  icon: "/icons/match-experts.svg"
                 },
                 {
                   title: "Work in Your Rhythm",
                   description: "Augmented specialists integrate smoothly with your team and tools.",
+                  icon: "/icons/work-rhythm.svg"
                 },
                 {
                   title: "Scale & Adapt",
                   description: "Easily adjust team size and skills as your project evolves.",
+                  icon: "/icons/scale-adapt.svg"
                 }
               ].map((step, index) => (
                 <div
                   key={index}
                   className="bg-white/40 backdrop-blur-md rounded-3xl p-8 hover:bg-white/50 transition-colors duration-300"
                 >
-                  {/* Logo Placeholder */}
-                  <div className="w-16 h-16 bg-white rounded-2xl mb-6 shadow-sm flex items-center justify-center">
-                    <span className="text-gray-300 text-xs">Icon</span>
+                  <div className="w-16 h-16 bg-white rounded-2xl mb-6 shadow-sm flex items-center justify-center p-3">
+                     <ImageWithSkeleton 
+                       src={step.icon} 
+                       alt={step.title} 
+                       width={64} 
+                       height={64} 
+                       className="object-contain" 
+                     />
                   </div>
 
                   <h3 className="text-xl font-bold text-gray-900 mb-3">

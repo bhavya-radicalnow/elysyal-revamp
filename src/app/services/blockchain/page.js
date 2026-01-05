@@ -77,26 +77,34 @@ const features = [
               features={features}
             />
 
-            <section className="bg-white max-w-7xl pt-16  pb-8 " style={{ background: "linear-gradient(to right, #CCD4F0, #DEDBF0)" }}>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                      <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Powering the Future with  <br />
-                        <span className="text-[#6391F4]"> Blockchain Innovation</span>
-                      </h2>
-                      <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto mb-10">
-                        We help businesses unlock the full potential of blockchain with secure, scalable, and high-impact solutions. From smart contracts and token development to DeFi platforms, NFT marketplaces, Web3 and DApp development, crypto exchanges, and cross-chain scalability.
-                      </p>
-                      <div className="relative w-full max-w-lg mx-auto h-64 md:h-96">
-                         <ImageWithSkeleton 
-                           src="/Sb_2.webp" 
-                           alt="Autonomous AI Robot" 
-                           fill 
-                           className="object-contain" 
-                           
-                         />
-                      </div>
-                    </div>
-                  </section>
+
+      <section className="pt-0 pb-0" style={{ background: "linear-gradient(to right, #E2E6FA, #EFEEF9)" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+            
+            {/* Left Content */}
+            <div className="space-y-6 pb-16 md:pb-24">
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+                <span className="text-[#6391F4]">Building Blockchain Solutions</span> That Fits Your Business
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                We deliver tailored blockchain solutions that address complex business challenges and evolving technical needs. From scalable DeFi platforms and secure smart contracts to enterprise-grade DApps and NFT marketplaces, our development approach ensures reliability, transparency, and seamless integration across your decentralized ecosystem.
+              </p>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative h-[500px] lg:h-[650px] w-full flex justify-center lg:justify-end">
+               <ImageWithSkeleton
+                  src="/Sb_2.webp"
+                  alt="Blockchain Development Robot"
+                  fill
+                  className="object-contain object-bottom"
+               />
+            </div>
+            
+          </div>
+        </div>
+      </section>
 
       <CallToAction   title={<>Ready to <span className="text-[#548BF8]">Build on Blockchain?</span></>}
         description="Join the decentralized revolution with custom blockchain solutions that drive innovation and create value."

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@/components/ui/Button';
 import Skeleton from '@/components/ui/Skeleton';
+import { useModal } from "@/context/ModalContext";
 
 function CallToAction({
   title = (
@@ -19,6 +20,7 @@ function CallToAction({
   style = {}
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1200);
@@ -57,6 +59,7 @@ function CallToAction({
           
           <Button 
             text={primaryBtnText} 
+            onClick={primaryBtnText === "Start Your Project" ? openContactModal : undefined}
             href={primaryBtnLink} 
             variant="primary" 
             className="w-full sm:w-auto justify-center"

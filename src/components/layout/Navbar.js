@@ -6,10 +6,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import Skeleton from "@/components/ui/Skeleton";
+import { useModal } from "@/context/ModalContext";
 
 const NavLogo = () => {
   return (
-    <div className="relative w-32 md:w-40 h-[auto] aspect-[3/1]">
+    <div className="relative w-40 md:w-52 h-[auto] aspect-[3/1] pl-4 md:pl-8 xl:pl-16 pt-4">
        <ImageWithSkeleton
          src="/logo.webp"
          alt="ELYSYAL Logo"
@@ -43,6 +44,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { openContactModal } = useModal();
 
   const serviceItems = [
     { title: "Artificial Intelligence Development", href: "/services/ai-development", icon: "/Icon - 01.webp" },
@@ -130,21 +132,20 @@ export default function Navbar() {
           {isLoading ? (
             <Skeleton width={120} height={40} className="rounded-lg" />
           ) : (
-            <Link
-              href="/contact"
+            <button
+              onClick={openContactModal}
               className="
-        px-5 py-2
-        rounded-lg
-        text-sm
-        font-bold
-        border border-black
-        hover:bg-black hover:text-white
-        transition-colors
-        text-black
-      "
+                px-5 py-2
+                rounded-lg
+                text-sm
+                font-bold
+              
+                transition-colors
+                text-black
+              "
             >
               Get in Touch
-            </Link>
+            </button>
           )}
         </div>
 
@@ -232,7 +233,7 @@ export default function Navbar() {
               <Link href="/solution-hub" onClick={() => setOpen(false)} className="text-center">Solution Hub</Link>
               <Link href="/success-Stories" onClick={() => setOpen(false)} className="text-center">Success Stories</Link>
               <Link href="/About" onClick={() => setOpen(false)} className="text-center">About Company</Link>
-              <Link href="/contact" onClick={() => setOpen(false)} className="text-center">Get in Touch</Link>
+              <button onClick={() => { setOpen(false); openContactModal(); }} className="text-center font-bold">Get in Touch</button>
             </nav>
           </motion.div>
         )}

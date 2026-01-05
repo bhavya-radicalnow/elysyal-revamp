@@ -75,7 +75,7 @@ export default function Industries() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-16 space-y-4 pl-4 md:pl-8 xl:pl-16">
           {isLoading ? (
             <div className="flex justify-center mb-4">
               <Skeleton height={48} width={400} />
@@ -121,7 +121,7 @@ export default function Industries() {
                         src="/Rb 3.webp" 
                         alt="Elysial Robot"
                         width={600}
-                        height={900}
+                        height={1200}
                         className="object-contain w-[140%] max-w-none drop-shadow-2xl"
                         priority
                     />

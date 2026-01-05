@@ -1,5 +1,6 @@
 import React from 'react'
 import ServicePageLayout from "@/components/layout/ServicePageLayout";
+import FAQ from "@/components/section/FAQ";
 
 export default function AboutPage() {
   const principles = [
@@ -224,6 +225,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <FAQ />
+
     </ServicePageLayout>
   )
 }

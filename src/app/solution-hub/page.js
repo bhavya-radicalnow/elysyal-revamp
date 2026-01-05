@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react'
+import { useModal } from "@/context/ModalContext";
 import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import CallToAction from "@/components/section/CallToAction";
 import Image from "next/image";
@@ -9,6 +10,7 @@ import Skeleton from "@/components/ui/Skeleton";
 
 export default function solutionhubPage() {
   const [isLoading, setIsLoading] = useState(true);
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1500);
@@ -58,16 +60,16 @@ export default function solutionhubPage() {
               {isLoading ? (
                 <Skeleton height={48} width={180} className="rounded-full" />
               ) : (
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full transition-all duration-200 shadow-md hover:shadow-lg"
+                <button
+                  onClick={openContactModal}
+                  className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:opacity-90"
                   style={{ background: 'linear-gradient(90deg, #7C9EF2 0%, #A49EF0 100%)' }}
                 >
                   Start Your Project
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
-                </a>
+                </button>
               )}
             </div>
 

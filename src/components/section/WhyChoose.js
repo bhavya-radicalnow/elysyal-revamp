@@ -22,12 +22,12 @@ export default function WhyChoose() {
   }, []);
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-[#FEECEF] via-[#E8E8FF] to-[#E5F2FF] overflow-hidden">
+    <section className="relative py-24 bg-gradient-to-br from-[#FEECEF] via-[#E8E8FF] to-[#E5F2FF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="space-y-10">
+          <div className="space-y-10 pl-4 md:pl-8 xl:pl-16">
             <div className="space-y-6">
               {isLoading ? (
                 <div className="space-y-3">
@@ -84,12 +84,15 @@ export default function WhyChoose() {
               viewport={{ once: true }}
               className="
                 relative
-                w-full
+                w-full xl:w-[130%]
                 max-w-[280px]
                 sm:max-w-[360px]
                 md:max-w-[420px]    /* iPads */
                 lg:max-w-[520px]
-                xl:max-w-[620px]    /* Desktop */
+                xl:max-w-[1160px]    /* Desktop */
+                xl:-mr-32
+                xl:-mb-48
+                z-20
               "
             >
               <ImageWithSkeleton

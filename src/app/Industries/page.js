@@ -154,22 +154,22 @@ export default function IndustriesPage() {
 
 
       {/* Challenge to Solution Section */}
-      <section className="py-16 md:py-24 bg-[#F2F6FA]">
+      <section className="pt-16 md:pt-24 pb-0 bg-[#F2F6FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
 
             {/* Left Column: Robot Image */}
-            <div className="relative h-[400px] md:h-[600px] w-full flex justify-center lg:justify-start">
+            <div className="relative h-[400px] md:h-[600px] w-full flex justify-center lg:justify-start items-end">
               <ImageWithSkeleton
                 src="/Industries image 02.webp"
                 alt="Challenge to Solution Robot"
                 fill
-                className="object-contain"
+                className="object-contain object-bottom"
               />
             </div>
 
             {/* Right Column: Content */}
-            <div>
+            <div className="pb-16 md:pb-24">
               {isLoading ? (
                 <div className="mb-6 space-y-3">
                   <Skeleton height={48} width="60%" />

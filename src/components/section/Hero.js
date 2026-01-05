@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import Skeleton from "@/components/ui/Skeleton";
+import { useModal } from "@/context/ModalContext";
 
 export default function Hero() {
   const [isLoading, setIsLoading] = useState(true);
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1200);
@@ -17,7 +19,7 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 xl:pt-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-40 lg:pt-52 xl:pt-64">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
           {/* LEFT CONTENT */}
@@ -25,7 +27,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
+            className="space-y-8 pl-4 md:pl-8 xl:pl-16"
           >
             {isLoading ? (
               <div className="space-y-4">
@@ -33,7 +35,7 @@ export default function Hero() {
                 <Skeleton height={60} width="60%" />
               </div>
             ) : (
-              <h1 className="text-gray-900 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
+              <h1 className="text-gray-900 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-7xl      ">
                 <span className="font-normal">Build</span>{" "}
                 <span className="font-bold">Smarter</span>
                 <br />
@@ -58,7 +60,7 @@ export default function Hero() {
             )}
 
             <div className="flex flex-wrap gap-4">
-              <Button text="Start Your Project" href="#" variant="primary" isLoading={isLoading} />
+              <Button text="Start Your Project" onClick={openContactModal} variant="primary" isLoading={isLoading} />
               <Button text="Book a Demo" href="#" variant="secondary" isLoading={isLoading} />
             </div>
           </motion.div>
@@ -87,9 +89,7 @@ export default function Hero() {
                 xl:max-w-[760px]
               "
             >
-              {/* CHAT BUBBLES — ANCHORED TO ROBOT ARM */}
-              {/* TODO:- Add chat bubbles logic */}
-
+            
               {/* ROBOT */}
               <motion.div
                 initial={{ opacity: 0, y: 48 }}

@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import Skeleton from "@/components/ui/Skeleton";
+import { useModal } from "@/context/ModalContext";
 
 export default function ServicePageLayout({
   title,
@@ -18,6 +19,7 @@ export default function ServicePageLayout({
   alignImageBottom = false,
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const { openContactModal } = useModal();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1500);
@@ -39,16 +41,16 @@ export default function ServicePageLayout({
                 grid grid-cols-1
                 ${heroImage ? "lg:grid-cols-2" : ""}
 
-                gap-14 items-center
+                gap-10 lg:gap-14 items-center
               `}
             >
               {/* LEFT CONTENT */}
               <div className="relative">
 
                 {/* Decorative vertical pill */}
-                <div className="absolute left-0 top-3 bottom-3 w-1.5 rounded-full bg-gradient-to-b from-pink-300 to-blue-400 hidden lg:block" />
+                <div className="absolute left-0 top-3 h-24 w-1.5 rounded-full bg-gradient-to-b from-pink-300 to-blue-400 hidden lg:block" />
 
-                <div className="pl-0 lg:pl-8">
+                <div className="pl-4 md:pl-8 xl:pl-16">
                   {isLoading ? (
                     <div className="mb-6">
                       <Skeleton height={50} width="80%" />
@@ -75,7 +77,9 @@ export default function ServicePageLayout({
                         <Button
                           text={primaryButton.text}
                           href={primaryButton.href}
+                          onClick={primaryButton.text === "Start Your Project" ? openContactModal : undefined}
                           variant="primary"
+                          icon={primaryButton.icon}
                           isLoading={isLoading}
                         />
                       )}
@@ -85,6 +89,7 @@ export default function ServicePageLayout({
                           text={secondaryButton.text}
                           href={secondaryButton.href}
                           variant="secondary"
+                          icon={secondaryButton.icon}
                           isLoading={isLoading}
                         />
                       )}
@@ -107,9 +112,10 @@ export default function ServicePageLayout({
                     className="
                       relative
                       w-full
-                      max-w-[280px]
-                      sm:max-w-[360px]
-                      md:max-w-[420px]
+                      mx-auto lg:mx-0
+                      max-w-[340px]
+                      sm:max-w-[400px]
+                      md:max-w-[460px]
                       lg:max-w-[520px]
                       xl:max-w-[620px]
                     "

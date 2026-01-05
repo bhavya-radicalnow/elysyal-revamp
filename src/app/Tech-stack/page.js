@@ -18,11 +18,21 @@ export default function Techstack() {
   return (
 
     <ServicePageLayout
-      title={<>Built  <span className="font-normal"> on Proven  <span className="font-bold">Technology, </span>Designed for What’s Next</span></>}
+      title={<>Built <span className="font-normal">on Proven</span> Technology, <br /> <span className="font-normal">Designed for</span> What’s Next</>}
       description="We select modern, reliable technologies that deliver strong performance today while providing the flexibility and scalability needed to support tomorrow’s growth and evolving business demands."
       heroImage="/Tech-Stack Image 01 .webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ 
+        text: "Book a Demo", 
+        href: "#",
+        icon: (
+          <div className="w-6 h-6 rounded-full border border-blue-600 flex items-center justify-center bg-white">
+            <svg className="w-2.5 h-2.5 text-blue-600 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        )
+      }}
 
     >
       {/* Tech Stack Section */}
@@ -61,25 +71,29 @@ export default function Techstack() {
                 title: "Frontend Technologies",
                 description: "Modern frontend frameworks used to create fast, responsive, and user-friendly interfaces across web and mobile platforms.",
                 reason: "Delivers smooth user experiences, faster UI development, and consistent design across devices.",
-                iconGradient: "linear-gradient(135deg, #7C9EF2 0%, #3B82F6 100%)"
+                iconGradient: "linear-gradient(135deg, #7C9EF2 0%, #3B82F6 100%)",
+                icon: "/icons/frontend.svg"
               },
               {
                 title: "Backend Technologies",
                 description: "Scalable backend systems that handle business logic, APIs, and data processing efficiently and securely.",
                 reason: "Ensures performance, reliability, and easy integration with third-party services as systems grow.",
-                iconGradient: "linear-gradient(135deg, #A49EF0 0%, #8B5CF6 100%)"
+                iconGradient: "linear-gradient(135deg, #A49EF0 0%, #8B5CF6 100%)",
+                icon: "/icons/backend.svg"
               },
               {
                 title: "DevOps Tools",
                 description: "Automation tools for continuous integration, deployment, testing, and monitoring across environments.",
                 reason: "Reduces deployment risk, speeds up releases, and maintains consistent quality.",
-                iconGradient: "linear-gradient(135deg, #7C9EF2 0%, #10B981 100%)"
+                iconGradient: "linear-gradient(135deg, #7C9EF2 0%, #10B981 100%)",
+                icon: "/icons/devops.svg"
               },
               {
                 title: "Cloud Platforms",
                 description: "Cloud-native platforms used to host, scale, and manage applications globally with high availability.",
                 reason: "Provides flexibility, cost efficiency, and the ability to scale infrastructure on demand.",
-                iconGradient: "linear-gradient(135deg, #A49EF0 0%, #EC4899 100%)"
+                iconGradient: "linear-gradient(135deg, #A49EF0 0%, #EC4899 100%)",
+                icon: "/icons/cloud.svg"
               }
             ].map((item, index) => (
               <div
@@ -88,12 +102,16 @@ export default function Techstack() {
               >
                 {/* Icon Placeholder */}
                 <div
-                  className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center shadow-sm"
+                  className="w-14 h-14 rounded-2xl mb-6 flex items-center justify-center shadow-sm p-3.5"
                   style={{ background: item.iconGradient }}
                 >
-                  <svg className="w-7 h-7 text-white opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
+                  <ImageWithSkeleton
+                    src={item.icon}
+                    alt={item.title}
+                    width={28}
+                    height={28}
+                    className="object-contain"
+                  />
                 </div>
 
                 {isLoading ? (

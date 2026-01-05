@@ -147,7 +147,7 @@ export default function Services() {
               md:col-span-2
               lg:col-span-2
               flex flex-col justify-center
-              px-4 lg:pl-12
+              pl-4 md:pl-8 xl:pl-16
             "
           >
             {isLoading ? (
