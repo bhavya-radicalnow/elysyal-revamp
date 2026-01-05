@@ -19,7 +19,7 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-40 lg:pt-52 xl:pt-64">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-20 lg:pt-24 xl:pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
           {/* LEFT CONTENT */}
