@@ -49,28 +49,28 @@ const features = [
         features={features}
       />
 
-      <section className="pt-16 md:pt-24 pb-0" style={{ background: "linear-gradient(to right, #DCE6F9, #E3E7FA)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+      <section className="pt-8 sm:pt-12 lg:pt-24 pb-0" style={{ background: "linear-gradient(to right, #DCE6F9, #E3E7FA)" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-2 md:gap-12">
           
-          <div className="w-full md:w-1/2 text-left pb-16 md:pb-24">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#6391F4] mb-2 leading-tight">
+          <div className="w-full md:w-1/2 text-left pb-0 md:pb-24">
+            <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-[#6391F4] mb-1 sm:mb-2 leading-tight">
               Building Custom 
             </h2>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               <span className="text-[#6391F4]">Software</span> <span className="text-black">That Fits</span> <br className="hidden lg:block"/>
               <span className="text-black">Your Business</span>
             </h2>
-            <p className="text-black text-lg leading-relaxed mb-6">
+            <p className="text-black text-sm sm:text-base lg:text-lg leading-relaxed mb-4 sm:mb-6">
               We deliver tailored software solutions that address complex business challenges and evolving technical needs. From enterprise applications and SaaS platforms to scalable microservices, ERP systems, and embedded software, our development approach ensures reliability, performance, and seamless integration across your digital ecosystem.
             </p>
           </div>
 
-          <div className="w-full md:w-1/2 flex justify-center md:justify-end relative h-[500px] md:h-[650px] mt-auto">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end relative h-[300px] sm:h-[400px] md:h-[650px] mt-auto">
              <ImageWithSkeleton 
                src="/custom 2.webp" 
                alt="Building Custom Software Robot" 
                fill 
-               className="object-contain object-bottom md:object-right-bottom transform scale-125 origin-bottom drop-shadow-2xl" 
+               className="object-contain object-bottom md:object-right-bottom transform scale-100 md:scale-125 origin-bottom drop-shadow-2xl" 
              />
           </div>
 

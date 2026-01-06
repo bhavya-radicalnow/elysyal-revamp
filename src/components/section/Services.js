@@ -69,8 +69,8 @@ const services = [
 const ServiceCard = ({ title, description, icon, link, isLoading }) => {
 
   const Card = (
-    <div className="bg-white/60 backdrop-blur-md rounded-3xl p-9 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col h-full min-h-[400px]">
-      <div className="mb-6 relative w-20 h-20">
+    <div className="bg-white/60 backdrop-blur-md rounded-3xl p-6 sm:p-9 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col h-full min-h-[280px] sm:min-h-[400px]">
+      <div className="mb-4 sm:mb-6 relative w-16 h-16 sm:w-20 sm:h-20">
         <ImageWithSkeleton
           src={icon} 
           alt={title} 
@@ -86,8 +86,8 @@ const ServiceCard = ({ title, description, icon, link, isLoading }) => {
         </div>
       ) : (
         <>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-          <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{title}</h3>
+          <p className="text-gray-700 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
             {description}
           </p>
         </>
