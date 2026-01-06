@@ -55,11 +55,11 @@ function FeatureCard({ feature, isLoading }) {
         </div>
       ) : (
         <>
-          <h3 className="text-xl font-bold text-black-900 mb-3">
+          <h3 className="text-xl font-bold text-gray-900 mb-3">
             {feature.title}
           </h3>
 
-          <p className="text-black-600 text-[15px] leading-relaxed">
+          <p className="text-gray-600 text-[15px] leading-relaxed">
             {feature.description}
           </p>
         </>

@@ -93,7 +93,7 @@ export default function Industries() {
               <Skeleton count={2} height={18} />
             </div>
           ) : (
-            <p className="text-black-900 max-w-3xl mx-auto text-base sm:text-lg">
+            <p className="text-gray-900 max-w-3xl mx-auto text-base sm:text-lg">
               We partner with businesses across diverse industries to deliver tailored technology solutions that drive growth and innovation.
             </p>
           )}
