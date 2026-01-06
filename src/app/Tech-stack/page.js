@@ -18,12 +18,13 @@ export default function Techstack() {
   return (
 
     <ServicePageLayout
+      heroPadding="pt-44 md:pt-36 lg:pt-40 xl:pt-48 pb-44 md:pb-36 lg:pb-40 xl:pb-48"
       title={<>Built <span className="font-normal">on Proven</span> Technology, <br /> <span className="font-normal">Designed for</span> What’s Next</>}
       description="We select modern, reliable technologies that deliver strong performance today while providing the flexibility and scalability needed to support tomorrow’s growth and evolving business demands."
       heroImage="/Tech-Stack Image 01 .webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ 
-        text: "Book a Demo", 
+      secondaryButton={{
+        text: "Book a Demo",
         href: "#",
         icon: (
           <div className="w-6 h-6 rounded-full border border-blue-600 flex items-center justify-center bg-white">
@@ -36,7 +37,7 @@ export default function Techstack() {
 
     >
       {/* Tech Stack Section */}
-      <section className="py-16 md:py-24 bg-white  dark:bg-white ">
+      <section className="py-28 md:py-36 bg-white  dark:bg-white ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
@@ -58,7 +59,7 @@ export default function Techstack() {
                 <Skeleton count={2} height={18} />
               </div>
             ) : (
-              <p className="text-gray-900 font-medium text-lg leading-relaxed">
+              <p className="text-black font-medium text-lg leading-relaxed">
                 We select technologies that balance speed, reliability, and flexibility. Our stack supports rapid development while ensuring stability, security, and future scalability.
               </p>
             )}
@@ -128,7 +129,7 @@ export default function Techstack() {
                     <h3 className="text-2xl font-bold text-black mb-4">
                       {item.title}
                     </h3>
-                    <p className="text-gray-700 leading-relaxed mb-8 min-h-[48px]">
+                    <p className="text-black leading-relaxed mb-8 min-h-[48px]">
                       {item.description}
                     </p>
 
@@ -136,7 +137,7 @@ export default function Techstack() {
                       <h4 className="font-bold text-black mb-2">
                         Why it matter:
                       </h4>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-black leading-relaxed">
                         {item.reason}
                       </p>
                     </div>
@@ -150,7 +151,7 @@ export default function Techstack() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: '#EBF3FF' }}>
+      <section className="py-28 md:py-36" style={{ backgroundColor: '#EBF3FF' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -189,7 +190,7 @@ export default function Techstack() {
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <span className="text-gray-800 font-semibold text-lg">{benefit}</span>
+                      <span className="text-black font-semibold text-lg">{benefit}</span>
                     </div>
                   ))
                 )}
@@ -210,7 +211,7 @@ export default function Techstack() {
         </div>
       </section>
 
-      <CallToAction 
+      <CallToAction
         title="Let's choose the right stack for your product"
         description="Share your goals and technical needs, and our experts will help define the most suitable technology stack for your project."
         primaryBtnText="Start Your Project"

@@ -5,7 +5,7 @@ import Image from "next/image";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 export default function StaffAugmentationPage() {
-const features = [
+  const features = [
     {
       number: "01",
       title: "Dedicated Teams",
@@ -65,7 +65,7 @@ const features = [
                 Augmentation <br />
                 Works
               </h2>
-              <p className="text-gray-800 text-lg leading-relaxed max-w-lg">
+              <p className="text-black text-lg leading-relaxed max-w-lg">
                 We plug the right expertise into your team with a smooth, transparent process that accelerates delivery, maintains quality, and adapts to your evolving needs.
               </p>
 
@@ -113,19 +113,19 @@ const features = [
                   className="bg-white/40 backdrop-blur-md rounded-3xl p-8 hover:bg-white/50 transition-colors duration-300"
                 >
                   <div className="w-16 h-16 bg-white rounded-2xl mb-6 shadow-sm flex items-center justify-center p-3">
-                     <ImageWithSkeleton 
-                       src={step.icon} 
-                       alt={step.title} 
-                       width={64} 
-                       height={64} 
-                       className="object-contain" 
-                     />
+                    <ImageWithSkeleton
+                      src={step.icon}
+                      alt={step.title}
+                      width={64}
+                      height={64}
+                      className="object-contain"
+                    />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-black mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed text-sm">
+                  <p className="text-black leading-relaxed text-sm">
                     {step.description}
                   </p>
                 </div>
@@ -137,9 +137,9 @@ const features = [
       </section>
 
 
-      <CallToAction  
-      title={<>Scale Your  <span className="text-[#548BF8]">Team Today</span></>}
-      description="Get the right talent at the right time to accelerate your development projects."
+      <CallToAction
+        title={<>Scale Your  <span className="text-[#548BF8]">Team Today</span></>}
+        description="Get the right talent at the right time to accelerate your development projects."
       />
 
     </ServicePageLayout>

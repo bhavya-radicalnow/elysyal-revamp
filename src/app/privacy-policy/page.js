@@ -23,10 +23,10 @@ export default function PrivacyPolicyPage() {
 
       <main className="flex-grow container mx-auto px-8 md:px-12 py-36 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
-          
+
           {/* Main Content Column */}
           <div className="lg:col-span-8 space-y-16">
-            
+
             {/* Page Title */}
             <h1 className="text-5xl md:text-6xl font-bold mb-16">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-500">
@@ -36,13 +36,13 @@ export default function PrivacyPolicyPage() {
 
             {/* Sections */}
             <div className="space-y-12">
-              
+
               <section id="overview" className="scroll-mt-32">
                 <div className="flex gap-4">
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Overview</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       The ELYSYAL website is intended to provide general information about our services,
                       capabilities, and business offerings. Visitors may browse the site without providing
                       personal information.
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Information Handling</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       Any information voluntarily shared with ELYSYAL through direct communication channels
                       (such as email or business inquiries) is used solely for professional correspondence,
                       service discussions, or responding to requests. Such information is not used for unsolicited
@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Use of Website Technologies</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       The website may use basic technical mechanisms necessary for secure and reliable
                       operation. These are used only to ensure proper functionality and performance of the
                       site.
@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Third-Party Links</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       Our website may include links to third-party websites for reference or convenience.
                       ELYSYAL does not control and is not responsible for the content, security, or privacy
                       practices of external sites.
@@ -99,7 +99,7 @@ export default function PrivacyPolicyPage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Information Security</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       We take reasonable measures to ensure that any information shared with us through
                       legitimate business communication is handled responsibly and protected against
                       unauthorized access.
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Policy Updates</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       This Privacy Policy may be updated periodically to reflect changes in legal requirements
                       or business practices. Updates will be reflected on this page with a revised effective date.
                     </p>
@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Contact Information</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-2">
+                    <p className="text-black leading-relaxed text-lg mb-2">
                       For questions or concerns related to privacy, please contact:
                     </p>
                     <a href="mailto:hello@elysyal.com" className="text-lg font-medium hover:text-blue-600 transition-colors">
@@ -148,9 +148,9 @@ export default function PrivacyPolicyPage() {
                   <ul className="space-y-4">
                     {sections.map((section, index) => (
                       <li key={section.id}>
-                        <a 
+                        <a
                           href={`#${section.id}`}
-                          className="text-gray-800 hover:text-blue-600 transition-colors block text-base"
+                          className="text-black hover:text-blue-600 transition-colors block text-base"
                         >
                           {index + 1}. {section.title}
                         </a>
@@ -159,8 +159,8 @@ export default function PrivacyPolicyPage() {
                   </ul>
                 </nav>
               </div>
-  
-              
+
+
 
             </div>
           </div>

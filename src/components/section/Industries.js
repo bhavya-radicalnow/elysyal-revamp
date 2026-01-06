@@ -55,7 +55,7 @@ const CleanCard = ({ title, description, isLoading }) => (
       ) : (
         <>
           <h3 className="text-xl font-bold  text-black mb-3">{title}</h3>
-          <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
+          <p className="text-black text-sm leading-relaxed">{description}</p>
         </>
       )}
     </div>
@@ -73,7 +73,7 @@ export default function Industries() {
   return (
     <section className="bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-16 space-y-4 pl-4 md:pl-8 xl:pl-16">
           {isLoading ? (
@@ -87,53 +87,53 @@ export default function Industries() {
               </span>
             </h2>
           )}
-          
+
           {isLoading ? (
             <div className="max-w-3xl mx-auto">
               <Skeleton count={2} height={18} />
             </div>
           ) : (
-            <p className="text-gray-900 max-w-3xl mx-auto text-base sm:text-lg">
+            <p className="text-black max-w-3xl mx-auto text-base sm:text-lg">
               We partner with businesses across diverse industries to deliver tailored technology solutions that drive growth and innovation.
             </p>
           )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center relative">
-            
-            {/* Left Column */}
-            <div className="space-y-6 z-10">
-                {industriesLeft.map((industry) => (
-                    <CleanCard key={industry.title} {...industry} isLoading={isLoading} />
-                ))}
-            </div>
 
-            {/* Center Humanoid Robot */}
-            <div className="hidden lg:flex justify-center items-center relative h-full min-h-[700px]">
-                  <motion.div 
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    <ImageWithSkeleton
-                        src="/Rb 3.webp" 
-                        alt="Elysial Robot"
-                        width={600}
-                        height={1200}
-                        className="object-contain w-[140%] max-w-none drop-shadow-2xl"
-                        priority
-                    />
-                  </motion.div>
-            </div>
+          {/* Left Column */}
+          <div className="space-y-6 z-10">
+            {industriesLeft.map((industry) => (
+              <CleanCard key={industry.title} {...industry} isLoading={isLoading} />
+            ))}
+          </div>
 
-            {/* Right Column */}
-             <div className="space-y-6 z-10">
-                {industriesRight.map((industry) => (
-                    <CleanCard key={industry.title} {...industry} isLoading={isLoading} />
-                ))}
-            </div>
+          {/* Center Humanoid Robot */}
+          <div className="hidden lg:flex justify-center items-center relative h-full min-h-[700px]">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <ImageWithSkeleton
+                src="/Rb 3.webp"
+                alt="Elysial Robot"
+                width={600}
+                height={1200}
+                className="object-contain w-[140%] max-w-none drop-shadow-2xl"
+                priority
+              />
+            </motion.div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-6 z-10">
+            {industriesRight.map((industry) => (
+              <CleanCard key={industry.title} {...industry} isLoading={isLoading} />
+            ))}
+          </div>
 
         </div>
       </div>

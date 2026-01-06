@@ -41,13 +41,13 @@ export default function WhyChoose() {
                   Why Choose ELYSYAL
                 </h2>
               )}
-              
+
               {isLoading ? (
                 <div className="max-w-lg">
                   <Skeleton count={2} height={18} />
                 </div>
               ) : (
-                <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
+                <p className="text-black text-lg leading-relaxed max-w-lg">
                   We combine technical excellence with business acumen to deliver
                   solutions that not only work but drive measurable results.
                 </p>

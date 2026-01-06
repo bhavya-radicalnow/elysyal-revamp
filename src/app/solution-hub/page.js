@@ -52,7 +52,7 @@ export default function solutionhubPage() {
                   <Skeleton count={3} height={18} />
                 </div>
               ) : (
-                <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+                <p className="text-black text-lg mb-8 leading-relaxed">
                   Pre-built and customizable solutions designed to address common business needs across industries, helping you go live faster with lower risk.
                 </p>
               )}
@@ -99,10 +99,10 @@ export default function solutionhubPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  <h3 className="text-lg font-bold text-black mb-3">
                     Pre-Built Software Products
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     Reusable, production-ready software products that can be quickly customized to your business needs.
                   </p>
                 </>
@@ -130,10 +130,10 @@ export default function solutionhubPage() {
                       <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  <h3 className="text-lg font-bold text-black mb-3">
                     Business-Critical Systems
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     Solutions designed for enterprises that require high performance, security, and reliability.
                   </p>
                 </div>
@@ -145,10 +145,10 @@ export default function solutionhubPage() {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  <h3 className="text-lg font-bold text-black mb-3">
                     Development Accelerators & Frameworks
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     Reusable components, templates, and frameworks that speed up development and ensure consistency.
                   </p>
                 </div>
@@ -160,10 +160,10 @@ export default function solutionhubPage() {
                       <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  <h3 className="text-lg font-bold text-black mb-3">
                     End-to-End Digital Platforms
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     Comprehensive platforms designed to support complex business operations and user ecosystems.
                   </p>
                 </div>
@@ -198,7 +198,7 @@ export default function solutionhubPage() {
                   <Skeleton count={2} height={18} />
                 </div>
               ) : (
-                <p className="text-gray-700 text-lg mb-10 leading-relaxed">
+                <p className="text-black text-lg mb-10 leading-relaxed">
                   Our Solution Hub brings together proven architectures, ready-to-scale frameworks, and real-world expertise to help businesses move from idea to impact—faster, safer, and smarter.
                 </p>
               )}
@@ -254,7 +254,7 @@ export default function solutionhubPage() {
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${item.iconColor}`}>
                         {item.icon}
                       </div>
-                      <span className="text-gray-900 font-bold text-base leading-snug">
+                      <span className="text-black font-bold text-base leading-snug">
                         {item.title}
                       </span>
                     </div>
@@ -277,7 +277,7 @@ export default function solutionhubPage() {
         </div>
       </section>
 
-      <CallToAction  
+      <CallToAction
         title="Turn Ready Solutions Into Real Results"
         description="Whether you need a quick launch or a scalable long-term platform, our Solution Hub gives you a strong foundation to build on."
         primaryBtnText="Start Your Project"

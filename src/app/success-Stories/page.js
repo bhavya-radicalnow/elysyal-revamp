@@ -25,7 +25,7 @@ export default function successStoriesPage() {
               More Wins Across <br />
               Industries
             </h2>
-            <p className="text-gray-700 font-medium text-lg leading-relaxed">
+            <p className="text-black font-medium text-lg leading-relaxed">
               From startups to enterprises, teams trust ELYSYAL to deliver measurable results across diverse business domains.
             </p>
           </div>
@@ -89,10 +89,10 @@ export default function successStoriesPage() {
                 <div className={`w-16 h-16 rounded-2xl ${item.iconColor} mb-6 flex items-center justify-center shadow-sm`}>
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl font-bold text-black mb-4">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-black leading-relaxed text-sm">
                   {item.description}
                 </p>
               </div>
@@ -113,7 +113,7 @@ export default function successStoriesPage() {
                 Featured Client <br />
                 Success Stories
               </h2>
-              <p className="text-gray-700 text-lg md:text-xl leading-relaxed max-w-lg">
+              <p className="text-black text-lg md:text-xl leading-relaxed max-w-lg">
                 A closer look at how our technology solutions solve real-world challenges and deliver measurable business impact.
               </p>
             </div>
@@ -156,14 +156,14 @@ export default function successStoriesPage() {
                     <span className={`w-2 h-2 rounded-full ${item.dotColor}`}></span>
                     {item.badge}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
+                  <p className="text-black text-base md:text-lg leading-relaxed mb-8">
                     {item.description}
                   </p>
                   <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                   </button>
@@ -201,14 +201,14 @@ export default function successStoriesPage() {
                     <span className={`w-2 h-2 rounded-full ${item.dotColor}`}></span>
                     {item.badge}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                  <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-base leading-relaxed mb-8">
+                  <p className="text-black text-base leading-relaxed mb-8">
                     {item.description}
                   </p>
                   <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
                   </button>
@@ -221,12 +221,12 @@ export default function successStoriesPage() {
       </section>
 
 
-      <CallToAction 
-      title="Turn Ready Solutions Into Real Results"
-      description="Whether you need a quick launch or a scalable long-term platform, our Solution Hub gives you a strong foundation to build on."
-      primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
-       />
+      <CallToAction
+        title="Turn Ready Solutions Into Real Results"
+        description="Whether you need a quick launch or a scalable long-term platform, our Solution Hub gives you a strong foundation to build on."
+        primaryButton={{ text: "Start Your Project", href: "#" }}
+        secondaryButton={{ text: "Book a Demo", href: "#" }}
+      />
 
     </ServicePageLayout>
 

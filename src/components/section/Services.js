@@ -72,10 +72,10 @@ const ServiceCard = ({ title, description, icon, link, isLoading }) => {
     <div className="bg-white/60 backdrop-blur-md rounded-3xl p-6 sm:p-9 hover:shadow-xl hover:bg-white transition-all duration-300 flex flex-col h-full min-h-[280px] sm:min-h-[400px]">
       <div className="mb-4 sm:mb-6 relative w-16 h-16 sm:w-20 sm:h-20">
         <ImageWithSkeleton
-          src={icon} 
-          alt={title} 
-          fill 
-          className="object-contain" 
+          src={icon}
+          alt={title}
+          fill
+          className="object-contain"
         />
       </div>
 
@@ -94,9 +94,9 @@ const ServiceCard = ({ title, description, icon, link, isLoading }) => {
       )}
 
       <div className="mt-auto">
-        <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center group hover:bg-gray-900 hover:border-gray-900 transition">
+        <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center group hover:bg-black hover:border-black transition">
           <svg
-            className="w-4 h-4 text-gray-500 group-hover:text-white transition"
+            className="w-4 h-4 text-black group-hover:text-white transition"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -156,17 +156,17 @@ export default function Services() {
                 <Skeleton height={40} width="50%" />
               </div>
             ) : (
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
                 Our Technology <br /> Services
               </h2>
             )}
-            
+
             {isLoading ? (
               <div className="max-w-lg">
                 <Skeleton count={2} height={18} />
               </div>
             ) : (
-              <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
+              <p className="text-black text-lg leading-relaxed max-w-lg">
                 From AI and blockchain to custom software development, we deliver
                 cutting-edge solutions that drive innovation and business growth.
               </p>

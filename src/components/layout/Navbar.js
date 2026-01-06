@@ -11,14 +11,14 @@ import { useModal } from "@/context/ModalContext";
 const NavLogo = () => {
   return (
     <div className="relative w-40 md:w-52 h-[auto] aspect-[3/1] pl-4 md:pl-8 xl:pl-16 pt-4">
-       <ImageWithSkeleton
-         src="/logo.webp"
-         alt="ELYSYAL Logo"
-         width={140}
-         height={140}
-         priority
-         className="w-full h-auto"
-       />
+      <ImageWithSkeleton
+        src="/logo.webp"
+        alt="ELYSYAL Logo"
+        width={140}
+        height={140}
+        priority
+        className="w-full h-auto"
+      />
     </div>
   );
 };
@@ -27,14 +27,14 @@ const ServiceLink = ({ item, onClick }) => {
   return (
     <Link href={item.href} onClick={onClick} className="flex items-center gap-6 p-6 rounded-2xl bg-gray-50 hover:shadow-lg transition">
       <div className="relative w-12 h-12 shrink-0">
-        <ImageWithSkeleton 
-          src={item.icon} 
-          alt={item.title} 
-          fill 
-          className="object-contain" 
+        <ImageWithSkeleton
+          src={item.icon}
+          alt={item.title}
+          fill
+          className="object-contain"
         />
       </div>
-      <span className="font-medium text-gray-900">{item.title}</span>
+      <span className="font-medium text-black">{item.title}</span>
     </Link>
   );
 };
@@ -85,7 +85,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" aria-label="Home">
-           <NavLogo />
+          <NavLogo />
         </Link>
 
         {/* Desktop Nav */}

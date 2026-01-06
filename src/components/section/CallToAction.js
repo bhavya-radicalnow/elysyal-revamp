@@ -30,7 +30,7 @@ function CallToAction({
   return (
     <section className="bg-white py-20 lg:py-32 overflow-hidden" style={style}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        
+
         {/* Headline */}
         {isLoading ? (
           <div className="mb-6 space-y-3 flex flex-col items-center">
@@ -38,7 +38,7 @@ function CallToAction({
             <Skeleton height={40} width="40%" />
           </div>
         ) : (
-          <h2 className="font-bold text-gray-900 text-4xl sm:text-5xl lg:text-5xl leading-tight mb-6 tracking-tight">
+          <h2 className="font-bold text-black text-4xl sm:text-5xl lg:text-5xl leading-tight mb-6 tracking-tight">
             {title}
           </h2>
         )}
@@ -49,27 +49,27 @@ function CallToAction({
             <Skeleton count={2} height={18} />
           </div>
         ) : (
-          <p className="text-gray-600 text-lg sm:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-black text-lg sm:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
         )}
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-          
-          <Button 
-            text={primaryBtnText} 
+
+          <Button
+            text={primaryBtnText}
             onClick={primaryBtnText === "Start Your Project" ? openContactModal : undefined}
-            href={primaryBtnLink} 
-            variant="primary" 
+            href={primaryBtnLink}
+            variant="primary"
             className="w-full sm:w-auto justify-center"
             isLoading={isLoading}
           />
 
-          <Button 
-            text={secondaryBtnText} 
-            href={secondaryBtnLink} 
-            variant="secondary" 
+          <Button
+            text={secondaryBtnText}
+            href={secondaryBtnLink}
+            variant="secondary"
             className="w-full sm:w-auto justify-center"
             isLoading={isLoading}
           />
@@ -82,7 +82,7 @@ function CallToAction({
             <Skeleton width={200} height={16} />
           </div>
         ) : (
-          <p className="text-gray-900 font-bold text-sm">
+          <p className="text-black font-bold text-sm">
             Quick response within 24 hours
           </p>
         )}

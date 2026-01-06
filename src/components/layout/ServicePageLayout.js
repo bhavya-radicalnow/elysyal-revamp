@@ -17,6 +17,8 @@ export default function ServicePageLayout({
   secondaryButton,
   children,
   alignImageBottom = false,
+  heroPadding = "pt-33 md:pt-20 lg:pt-24 xl:pt-35 pb-20 lg:pb-16",
+  backgroundImage
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const { openContactModal } = useModal();
@@ -33,7 +35,18 @@ export default function ServicePageLayout({
       <main className="min-h-screen bg-[rgb(225,235,247)]">
 
         {/* HERO SECTION */}
-        <section className={`pt-33 md:pt-20 lg:pt-24 xl:pt-35 overflow-hidden ${alignImageBottom ? "pb-0" : "pb-20 lg:pb-16"}`}>
+        <section
+          className={`${alignImageBottom ? "pt-33 md:pt-20 lg:pt-24 xl:pt-35 pb-0" : heroPadding} overflow-hidden relative`}
+          style={backgroundImage ? {
+            backgroundImage: `url('${backgroundImage}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          } : {}}
+        >
+          {backgroundImage && (
+            <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
+          )}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div
@@ -47,26 +60,28 @@ export default function ServicePageLayout({
               {/* LEFT CONTENT */}
               <div className="relative">
 
-                {/* Decorative vertical pill */}
-                <div className="absolute left-0 top-3 h-24 w-1.5 rounded-full bg-gradient-to-b from-pink-300 to-blue-400 hidden lg:block" />
+                <div className="flex items-stretch gap-4 md:gap-6 mb-6">
+                  {/* Decorative Vertical Pill */}
+                  <div className="w-1.5 md:w-2 rounded-full bg-gradient-to-b from-[#F7ABB3] to-[#CFEAFB] shadow-[0_0_15px_rgba(247,171,179,0.3)]" />
 
-                <div className="pl-4 md:pl-8 xl:pl-16">
-                  {isLoading ? (
-                    <div className="mb-6">
+                  <div className="flex-1">
+                    {isLoading ? (
                       <Skeleton height={50} width="80%" />
-                    </div>
-                  ) : (
-                    <h1 className="text-gray-900 font-bold leading-tight text-3xl sm:text-3xl md:text-3xl xl:text-3xl mb-6">
-                      {title}
-                    </h1>
-                  )}
+                    ) : (
+                      <h1 className="text-black font-bold leading-tight text-3xl sm:text-3xl md:text-3xl xl:text-3xl">
+                        {title}
+                      </h1>
+                    )}
+                  </div>
+                </div>
 
+                <div className="ml-5.5 md:ml-8">
                   {isLoading ? (
                     <div className="mb-10 max-w-xl">
                       <Skeleton count={2} height={20} />
                     </div>
                   ) : (
-                    <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-xl mb-10">
+                    <p className="text-black text-base sm:text-lg md:text-xl max-w-xl mb-10">
                       {description}
                     </p>
                   )}
@@ -104,11 +119,10 @@ export default function ServicePageLayout({
 
                   {/* Soft glow behind robot */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                     <div className="w-[70%] h-[70%] bg-blue-200/40 blur-3xl rounded-full" />
+                    <div className="w-[70%] h-[70%] bg-blue-200/40 blur-3xl rounded-full" />
                   </div>
 
                   <div
-
                     className="
                       relative
                       w-full
@@ -122,7 +136,7 @@ export default function ServicePageLayout({
                   >
                     <ImageWithSkeleton
                       src={heroImage}
-                      alt={title}
+                      alt={typeof title === "string" ? title : "Hero Image"}
                       width={700}
                       height={900}
                       priority

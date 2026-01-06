@@ -6,7 +6,7 @@ import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 
 export default function MobileAppPage() {
-const features = [
+  const features = [
     {
       number: "01",
       title: "Android App Development",
@@ -55,11 +55,11 @@ const features = [
 
             {/* Text Content */}
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight">
                 Why Choose ELYSYAL for <br />
                 <span className="text-[#6391F4]">Mobile App Development</span>
               </h2>
-              <p className="text-gray-700 text-lg mb-8 leading-relaxed">
+              <p className="text-black text-lg mb-8 leading-relaxed">
                 We build high-performance mobile applications that are secure,
                 scalable, and designed to deliver real business impact—across
                 platforms and industries.
@@ -72,7 +72,7 @@ const features = [
                   "Scalable, Future-Proof Architecture",
                   "Transparent Process & Reliable Communication"
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center text-xl text-gray-900 font-medium">
+                  <li key={index} className="flex items-center text-xl text-black font-medium">
                     <span className="w-1.5 h-1.5 bg-black rounded-full mr-4"></span>
                     {item}
                   </li>
@@ -96,10 +96,10 @@ const features = [
 
 
 
-      <CallToAction 
-      title={<>Launch Your <span className="text-[#548BF8]">Mobile App</span></>}
+      <CallToAction
+        title={<>Launch Your <span className="text-[#548BF8]">Mobile App</span></>}
         description="From idea to app store, we'll help you create a mobile app that users love."
-       />
+      />
 
 
     </ServicePageLayout>

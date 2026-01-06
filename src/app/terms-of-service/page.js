@@ -24,10 +24,10 @@ export default function TermsOfServicePage() {
 
       <main className="flex-grow container mx-auto px-8 md:px-12 py-48 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
-          
+
           {/* Main Content Column */}
           <div className="lg:col-span-8 space-y-16">
-            
+
             {/* Page Title */}
             <h1 className="text-5xl md:text-6xl font-bold mb-16">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-500">
@@ -37,13 +37,13 @@ export default function TermsOfServicePage() {
 
             {/* Sections */}
             <div className="space-y-12">
-              
+
               <section id="acceptance-of-terms" className="scroll-mt-32">
                 <div className="flex gap-4">
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Acceptance of Terms</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       By accessing or using this website, you agree to comply with these Terms. If you do not
                       agree, please discontinue use of the site.
                     </p>
@@ -56,7 +56,7 @@ export default function TermsOfServicePage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Website Use</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       The website is provided for informational purposes only. Content on this site does not
                       constitute professional, technical, or legal advice, nor does it represent a binding offer of
                       services.
@@ -70,7 +70,7 @@ export default function TermsOfServicePage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Services & Engagement</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       All services offered by ELYSYAL—including AI, blockchain, and custom software
                       development—are delivered only under a separate written agreement. Website content is
                       illustrative and subject to change.
@@ -84,7 +84,7 @@ export default function TermsOfServicePage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Intellectual Property</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       All materials displayed on this website, including text, graphics, logos, and design
                       elements, are the intellectual property of ELYSYAL unless otherwise stated. Unauthorized
                       use, reproduction, or distribution is prohibited.
@@ -98,7 +98,7 @@ export default function TermsOfServicePage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Limitation of Liability</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       ELYSYAL shall not be liable for any loss or damage arising from reliance on information
                       presented on this website or from its use. The website is provided "as is" without
                       warranties of any kind.
@@ -112,7 +112,7 @@ export default function TermsOfServicePage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Modifications</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       We reserve the right to modify or discontinue any part of the website or these Terms at
                       any time without prior notice. Continued use constitutes acceptance of updated terms.
                     </p>
@@ -125,7 +125,7 @@ export default function TermsOfServicePage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Governing Law</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-black leading-relaxed text-lg">
                       These Terms are governed by applicable local laws. Any disputes arising from use of the
                       website shall be subject to the jurisdiction of the appropriate courts.
                     </p>
@@ -138,8 +138,8 @@ export default function TermsOfServicePage() {
                   <div className="w-1.5 bg-pink-200 h-8 rounded-full flex-shrink-0 mt-1"></div>
                   <div>
                     <h2 className="text-2xl md:text-3xl font-medium mb-4">Contact Us</h2>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-2">
-                       For questions regarding these Terms, contact:
+                    <p className="text-black leading-relaxed text-lg mb-2">
+                      For questions regarding these Terms, contact:
                     </p>
                     <a href="mailto:hello@elysyal.com" className="text-lg font-medium hover:text-blue-600 transition-colors">
                       hello@elysyal.com
@@ -160,9 +160,9 @@ export default function TermsOfServicePage() {
                   <ul className="space-y-4">
                     {sections.map((section, index) => (
                       <li key={section.id}>
-                        <a 
+                        <a
                           href={`#${section.id}`}
-                          className="text-gray-800 hover:text-blue-600 transition-colors block text-base"
+                          className="text-black hover:text-blue-600 transition-colors block text-base"
                         >
                           {index + 1}. {section.title}
                         </a>

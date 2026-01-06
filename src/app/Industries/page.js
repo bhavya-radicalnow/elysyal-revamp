@@ -44,7 +44,7 @@ export default function IndustriesPage() {
                 <Skeleton count={1} height={20} width="60%" />
               </div>
             ) : (
-              <p className="text-gray-700 font-medium text-lg">
+              <p className="text-black font-medium text-lg">
                 Click on any industry to learn about the specific challenges we solve and how ELYSYAL helps.
               </p>
             )}
@@ -137,10 +137,10 @@ export default function IndustriesPage() {
                     {industry.icon}
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-black mb-3">
                     {industry.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <p className="text-black leading-relaxed text-sm">
                     {industry.description}
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export default function IndustriesPage() {
                   <Skeleton height={48} width="40%" />
                 </div>
               ) : (
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black leading-tight">
                   From Challenge to <br />
                   Solution
                 </h2>
@@ -187,7 +187,7 @@ export default function IndustriesPage() {
                   <Skeleton count={2} height={18} />
                 </div>
               ) : (
-                <p className="text-gray-600 text-lg mb-10 max-w-lg">
+                <p className="text-black text-lg mb-10 max-lg">
                   We transform industry challenges into opportunities through tailored technology solutions.
                 </p>
               )}
@@ -211,7 +211,7 @@ export default function IndustriesPage() {
                       <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-semibold mb-4">
                         Industry Challenges
                       </span>
-                      <h3 className="text-lg font-bold text-gray-900 mb-4">
+                      <h3 className="text-lg font-bold text-black mb-4">
                         Common Pain Points
                       </h3>
                       <ul className="space-y-3">
@@ -220,7 +220,7 @@ export default function IndustriesPage() {
                           "Operational inefficiencies",
                           "Scalability and compliance"
                         ].map((item, i) => (
-                          <li key={i} className="flex items-center gap-2 text-gray-600 text-sm">
+                          <li key={i} className="flex items-center gap-2 text-black text-sm">
                             <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
                             {item}
                           </li>
@@ -248,7 +248,7 @@ export default function IndustriesPage() {
                       <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-semibold mb-4">
                         ELYSYAL Solutions
                       </span>
-                      <h3 className="text-lg font-bold text-gray-900 mb-4">
+                      <h3 className="text-lg font-bold text-black mb-4">
                         Our Approach
                       </h3>
                       <ul className="space-y-3">
@@ -257,7 +257,7 @@ export default function IndustriesPage() {
                           "Secure and scalable architectures",
                           "Automation and analytics-driven insights"
                         ].map((item, i) => (
-                          <li key={i} className="flex items-center gap-2 text-gray-600 text-sm">
+                          <li key={i} className="flex items-center gap-2 text-black text-sm">
                             <div className="w-4 h-4 rounded-full bg-blue-500 text-white flex items-center justify-center flex-shrink-0 text-[10px]">
                               ✓
                             </div>
@@ -276,7 +276,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <CallToAction  
+      <CallToAction
         title="Build Solutions That Fit Your Industry"
         description="Let's create technology that aligns with your business goals and industry demands."
         primaryBtnText="Start Your Project"

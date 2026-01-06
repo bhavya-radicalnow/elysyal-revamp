@@ -37,13 +37,13 @@ export default function ContactModal() {
             transition={{ duration: 0.2 }}
             className="relative bg-white w-full max-w-md rounded-[2rem] p-8 shadow-2xl overflow-hidden"
           >
-           
+
             <button
               onClick={closeContactModal}
               className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
               aria-label="Close modal"
             >
-              <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -55,15 +55,15 @@ export default function ContactModal() {
                 <input
                   type="text"
                   placeholder="Name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                 />
               </div>
-              
+
               <div>
                 <input
                   type="email"
                   placeholder="Email"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                 />
               </div>
 
@@ -71,7 +71,7 @@ export default function ContactModal() {
                 <input
                   type="tel"
                   placeholder="Phone"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
                 />
               </div>
 

@@ -47,7 +47,7 @@ export default function AIDevelopmentPage() {
       secondaryButton={{ text: "Book a Demo", href: "#" }}
       alignImageBottom={true}
     >
-      <ServiceFeatures 
+      <ServiceFeatures
         title="Key Features & Services"
         description="Unlock the potential of artificial intelligence with our comprehensive AI development services. From generative AI and machine learning models to conversational agents and computer vision, we create intelligent solutions that automate processes, enhance decision-making, and drive innovation across your organization."
         features={features}
@@ -55,20 +55,20 @@ export default function AIDevelopmentPage() {
 
       <section className="pt-16  pb-8 " style={{ background: "linear-gradient(to right, #CCD4F0, #DEDBF0)" }}>
         <div className="mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">
             Autonomous AI Agents for <br />
             <span className="text-[#6391F4]">Intelligent Automation</span>
           </h2>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto mb-10">
+          <p className="text-black text-lg leading-relaxed max-w-4xl mx-auto mb-10">
             AI agents are autonomous software systems designed to perform tasks, make decisions, and interact with users with minimal human input. They mimic human problem-solving and adapt dynamically to new information, enabling businesses to automate workflows, provide instant support, and optimize operations. Build intelligent AI agents that think, act, and learn independently.
           </p>
           <div className="relative w-full max-w-lg mx-auto h-64 md:h-96">
-             <ImageWithSkeleton 
-               src="/As_2.webp" 
-               alt="Autonomous AI Robot" 
-               fill 
-               className="object-contain" 
-             />
+            <ImageWithSkeleton
+              src="/As_2.webp"
+              alt="Autonomous AI Robot"
+              fill
+              className="object-contain"
+            />
           </div>
         </div>
       </section>
@@ -82,30 +82,30 @@ export default function AIDevelopmentPage() {
               <span className="text-[#C86B98]">Development</span><br />
               <span className="text-[#C86B98]">Services</span>
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+            <p className="text-black text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
               Our AI development services cover everything from intelligent model design to real-world deployment. By combining generative AI, machine learning, conversational interfaces, and computer vision, we deliver solutions that streamline operations, enhance decision-making, and help organizations innovate with confidence.
             </p>
           </div>
           <div className="w-full md:w-1/2 lg:w-5/12 flex justify-center">
             <div className="relative w-full max-w-lg aspect-square">
-               <ImageWithSkeleton 
-                 src="/As_3.webp" 
-                 alt="End-to-End AI Development Robot" 
-                 fill 
-                 className="object-contain" 
-               />
+              <ImageWithSkeleton
+                src="/As_3.webp"
+                alt="End-to-End AI Development Robot"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </div>
       </section>
-      
-      
-      <CallToAction 
+
+
+      <CallToAction
         title={<>Ready to <span className="text-[#548BF8]">Embrace AI Innovation?</span></>}
         description="Let's build the future together. Our AI experts are ready to help you unlock the full potential of generative artificial intelligence for your unique business needs."
         style={{ backgroundColor: "#DEDBF0" }}
       />
 
-      </ServicePageLayout>
+    </ServicePageLayout>
   );
 }

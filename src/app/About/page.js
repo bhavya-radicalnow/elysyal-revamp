@@ -33,6 +33,7 @@ export default function AboutPage() {
       backgroundImage="/About Company bg.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
+      heroPadding="pt-48 md:pt-56 lg:pt-64 pb-32 md:pb-40"
     >
 
 
@@ -45,7 +46,7 @@ export default function AboutPage() {
               How It Started
             </h2>
 
-            <div className="prose prose-lg text-gray-600 mb-16 space-y-6">
+            <div className="prose prose-lg text-black mb-16 space-y-6">
               <p>
                 Elysial was founded on a simple observation: most digital transformation projects fail not
                 because of technology, but because strategy, design, and execution are disconnected.
@@ -62,8 +63,8 @@ export default function AboutPage() {
             <div className="space-y-12 mb-20">
               {/* 2015-2016 */}
               <div className="relative pl-8 border-l-4 border-blue-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2015–2016 | Foundation</h3>
-                <ul className="space-y-3 text-gray-600">
+                <h3 className="text-2xl font-bold text-black mb-4">2015–2016 | Foundation</h3>
+                <ul className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
                     Small team of 5, focused on solving real problems
@@ -81,8 +82,8 @@ export default function AboutPage() {
 
               {/* 2017-2019 */}
               <div className="relative pl-8 border-l-4 border-blue-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2017–2019 | Growth & Depth</h3>
-                <ul className="space-y-3 text-gray-600">
+                <h3 className="text-2xl font-bold text-black mb-4">2017–2019 | Growth & Depth</h3>
+                <ul className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
                     Scaled to 25+ specialists across disciplines
@@ -100,8 +101,8 @@ export default function AboutPage() {
 
               {/* 2020-2025 */}
               <div className="relative pl-8 border-l-4 border-blue-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">2020–2025 | Leadership & Innovation</h3>
-                <ul className="space-y-3 text-gray-600">
+                <h3 className="text-2xl font-bold text-black mb-4">2020–2025 | Leadership & Innovation</h3>
+                <ul className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
                     Technology serves people, not the other way around
@@ -124,8 +125,8 @@ export default function AboutPage() {
 
             {/* Foundation Card */}
             <div className="bg-blue-50/50 rounded-[2rem] p-8 md:p-10">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">Our Foundation</h3>
-              <p className="text-gray-700 leading-relaxed text-lg">
+              <h3 className="text-xl md:text-2xl font-bold text-black mb-4">Our Foundation</h3>
+              <p className="text-black leading-relaxed text-lg">
                 Technology serves people first—never the other way around. Speed without strategy becomes wasted
                 effort, while strategy without execution remains mere fantasy. The strongest solutions emerge from
                 cross-functional collaboration between strategy, design, and engineering. Continuous learning
@@ -145,7 +146,7 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#8B5CF6]">
               Our Core Principles
             </h2>
-            <p className="text-gray-900 font-medium text-lg md:text-xl leading-relaxed">
+            <p className="text-black font-medium text-lg md:text-xl leading-relaxed">
               We partner with businesses across diverse industries to deliver
               tailored technology solutions that drive growth and innovation.
             </p>
@@ -158,10 +159,10 @@ export default function AboutPage() {
                 key={index}
                 className="bg-white rounded-[2rem] p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-lg transition-shadow duration-300 flex flex-col items-start"
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-black leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -176,7 +177,7 @@ export default function AboutPage() {
       {/* Leadership & Expertise Section */}
       <section className="py-16 md:py-24 bg-[#EAF5FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-black">
             Leadership & Expertise
           </h2>
 
@@ -184,13 +185,13 @@ export default function AboutPage() {
             {/* CEO Card */}
             <div className="bg-white rounded-[2rem] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="w-48 h-48 rounded-full border-8 border-teal-600 mb-6 overflow-hidden bg-gray-200 relative">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium">
+                <div className="absolute inset-0 flex items-center justify-center text-black font-medium">
                   IMAGE
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">[CEO Name]</h3>
-              <p className="text-gray-900 font-medium mb-4">Co-Founder & CEO</p>
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <h3 className="text-2xl font-bold text-black mb-1">[CEO Name]</h3>
+              <p className="text-black font-medium mb-4">Co-Founder & CEO</p>
+              <p className="text-black leading-relaxed text-sm">
                 20+ years building tech. Strategy, product, teams.
               </p>
             </div>
@@ -198,13 +199,13 @@ export default function AboutPage() {
             {/* CTO Card */}
             <div className="bg-white rounded-[2rem] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="w-48 h-48 rounded-full border-8 border-cyan-500 mb-6 overflow-hidden bg-gray-200 relative">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium">
+                <div className="absolute inset-0 flex items-center justify-center text-black font-medium">
                   IMAGE
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">[CTO Name]</h3>
-              <p className="text-gray-900 font-medium mb-4">Chief Technology Officer</p>
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <h3 className="text-2xl font-bold text-black mb-1">[CTO Name]</h3>
+              <p className="text-black font-medium mb-4">Chief Technology Officer</p>
+              <p className="text-black leading-relaxed text-sm">
                 15+ years full-stack. 50M+ users. AWS certified.
               </p>
             </div>
@@ -212,13 +213,13 @@ export default function AboutPage() {
             {/* CDO Card */}
             <div className="bg-white rounded-[2rem] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="w-48 h-48 rounded-full border-8 border-orange-300 mb-6 overflow-hidden bg-gray-200 relative">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-medium">
+                <div className="absolute inset-0 flex items-center justify-center text-black font-medium">
                   IMAGE
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">[CDO Name]</h3>
-              <p className="text-gray-900 font-medium mb-4">Chief Design Officer</p>
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <h3 className="text-2xl font-bold text-black mb-1">[CDO Name]</h3>
+              <p className="text-black font-medium mb-4">Chief Design Officer</p>
+              <p className="text-black leading-relaxed text-sm">
                 12+ years product design & design systems.
               </p>
             </div>

@@ -55,11 +55,11 @@ function FeatureCard({ feature, isLoading }) {
         </div>
       ) : (
         <>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">
+          <h3 className="text-xl font-bold text-black mb-3">
             {feature.title}
           </h3>
 
-          <p className="text-gray-600 text-[15px] leading-relaxed">
+          <p className="text-black text-[15px] leading-relaxed">
             {feature.description}
           </p>
         </>
@@ -81,7 +81,7 @@ export default function Features() {
     <section className="bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left Content */}
           <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left pl-4 md:pl-8 xl:pl-16">
             {isLoading ? (
@@ -91,13 +91,13 @@ export default function Features() {
                 <Skeleton height={50} width="50%" />
               </div>
             ) : (
-              <h2 className="font-bold text-gray-900 text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6">
+              <h2 className="font-bold text-black text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6">
                 Everything You <br />
                 Need to <span className="text-[#3B82F6]">Build</span> <br />
                 <span className="text-[#3B82F6]">Fast</span>
               </h2>
             )}
-            
+
             {isLoading ? (
               <div className="mb-8 max-w-lg">
                 <Skeleton count={2} height={18} />
@@ -111,16 +111,16 @@ export default function Features() {
             {isLoading ? (
               <Skeleton height={56} width={200} className="rounded-full" />
             ) : (
-              <button 
+              <button
                 onClick={openContactModal}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#6391F4] to-[#937DC0] text-white rounded-full text-base font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20"
               >
                 Start Your Project
-                <svg 
-                  className="w-5 h-5" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>

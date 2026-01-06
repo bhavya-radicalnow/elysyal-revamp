@@ -35,16 +35,21 @@ export default function Hero() {
                 <Skeleton height={60} width="60%" />
               </div>
             ) : (
-              <h1 className="text-gray-900 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-3xl    ">
-                <span className="font-normal">Build</span>{" "}
-                <span className="font-bold">Smarter</span>
-                <br />
-                <span className="font-bold">Digital</span>{" "}
-                <span className="font-normal">Experiences</span>
-                <br />
-                <span className="font-normal">with</span>{" "}
-                <span className="font-bold">AI</span>
-              </h1>
+              <div className="flex items-stretch gap-4 md:gap-6">
+                {/* Decorative Vertical Pill */}
+                <div className="w-1.5 md:w-2 rounded-full bg-gradient-to-b from-[#F7ABB3] to-[#CFEAFB] shadow-[0_0_15px_rgba(247,171,179,0.3)]" />
+
+                <h1 className="text-black font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-3xl">
+                  <span className="font-normal">Build</span>{" "}
+                  <span className="font-bold">Smarter</span>
+                  <br />
+                  <span className="font-bold">Digital</span>{" "}
+                  <span className="font-normal">Experiences</span>
+                  <br />
+                  <span className="font-normal">with</span>{" "}
+                  <span className="font-bold">AI</span>
+                </h1>
+              </div>
             )}
 
             {isLoading ? (
@@ -89,7 +94,7 @@ export default function Hero() {
                 xl:max-w-[760px]
               "
             >
-            
+
               {/* ROBOT */}
               <motion.div
                 initial={{ opacity: 0, y: 48 }}
