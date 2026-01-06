@@ -55,11 +55,11 @@ function FeatureCard({ feature, isLoading }) {
         </div>
       ) : (
         <>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">
+          <h3 className="text-xl font-bold text-black-900 mb-3">
             {feature.title}
           </h3>
 
-          <p className="text-gray-600 text-[15px] leading-relaxed">
+          <p className="text-black-600 text-[15px] leading-relaxed">
             {feature.description}
           </p>
         </>
@@ -103,7 +103,7 @@ export default function Features() {
                 <Skeleton count={2} height={18} />
               </div>
             ) : (
-              <p className="text-gray-600 text-lg sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+              <p className="text-black text-lg sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0 ">
                 Future Forge combines the best of AI generation with developer-friendly tools to help you ship products faster than ever.
               </p>
             )}

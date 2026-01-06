@@ -86,8 +86,8 @@ const ServiceCard = ({ title, description, icon, link, isLoading }) => {
         </div>
       ) : (
         <>
-          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{title}</h3>
-          <p className="text-gray-700 text-sm leading-relaxed mb-4 sm:mb-6 flex-grow">
+          <h3 className="text-lg sm:text-xl font-bold text-black mb-2 sm:mb-3">{title}</h3>
+          <p className="text-black  text-sm xl:text-base leading-relaxed mb-4 sm:mb-6 flex-grow">
             {description}
           </p>
         </>

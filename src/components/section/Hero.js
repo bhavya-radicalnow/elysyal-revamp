@@ -19,15 +19,15 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-33 md:pt-20 lg:pt-24 xl:pt-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-33 md:pt-20 lg:pt-24 xl:pt-35 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 pl-4 md:pl-8 xl:pl-16"
+            className="space-y-8 pl-4 md:pl-8 xl:pl-16 xl:-mt-60"
           >
             {isLoading ? (
               <div className="space-y-4">
@@ -35,7 +35,7 @@ export default function Hero() {
                 <Skeleton height={60} width="60%" />
               </div>
             ) : (
-              <h1 className="text-gray-900 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-7xl      ">
+              <h1 className="text-gray-900 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-3xl    ">
                 <span className="font-normal">Build</span>{" "}
                 <span className="font-bold">Smarter</span>
                 <br />
@@ -52,7 +52,7 @@ export default function Hero() {
                 <Skeleton count={3} />
               </div>
             ) : (
-              <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-xl">
+              <p className="text-black text-base sm:text-lg md:text-xl max-w-xl">
                 Transform your ideas into production-ready applications. Future
                 Forge combines cutting-edge AI with intuitive tools to accelerate
                 your development workflow.

@@ -33,7 +33,7 @@ export default function ServicePageLayout({
       <main className="min-h-screen bg-[rgb(225,235,247)]">
 
         {/* HERO SECTION */}
-        <section className={`pt-28 lg:pt-40 overflow-hidden ${alignImageBottom ? "pb-0" : "pb-20 lg:pb-16"}`}>
+        <section className={`pt-33 md:pt-20 lg:pt-24 xl:pt-35 overflow-hidden ${alignImageBottom ? "pb-0" : "pb-20 lg:pb-16"}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div
@@ -56,7 +56,7 @@ export default function ServicePageLayout({
                       <Skeleton height={50} width="80%" />
                     </div>
                   ) : (
-                    <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                    <h1 className="text-gray-900 font-bold leading-tight text-3xl sm:text-3xl md:text-3xl xl:text-3xl mb-6">
                       {title}
                     </h1>
                   )}
@@ -66,7 +66,7 @@ export default function ServicePageLayout({
                       <Skeleton count={2} height={20} />
                     </div>
                   ) : (
-                    <p className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed mb-10">
+                    <p className="text-gray-800 text-base sm:text-lg md:text-xl max-w-xl mb-10">
                       {description}
                     </p>
                   )}

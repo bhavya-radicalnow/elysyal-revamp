@@ -54,8 +54,8 @@ const CleanCard = ({ title, description, isLoading }) => (
         </div>
       ) : (
         <>
-          <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-          <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+          <h3 className="text-xl font-bold  text-black mb-3">{title}</h3>
+          <p className="text-gray-700 text-sm leading-relaxed">{description}</p>
         </>
       )}
     </div>
@@ -93,7 +93,7 @@ export default function Industries() {
               <Skeleton count={2} height={18} />
             </div>
           ) : (
-            <p className="text-gray-900 max-w-3xl mx-auto text-base sm:text-lg">
+            <p className="text-black-900 max-w-3xl mx-auto text-base sm:text-lg">
               We partner with businesses across diverse industries to deliver tailored technology solutions that drive growth and innovation.
             </p>
           )}

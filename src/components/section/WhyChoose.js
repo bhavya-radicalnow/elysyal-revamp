@@ -30,12 +30,14 @@ export default function WhyChoose() {
           <div className="space-y-10 pl-4 md:pl-8 xl:pl-16">
             <div className="space-y-6">
               {isLoading ? (
-                <div className="space-y-3">
-                  <Skeleton height={48} width="80%" />
-                  <Skeleton height={48} width="60%" />
+                <div className="space-y-3 xl:space-y-0">
+                  <Skeleton height={48} width="80%" className="xl:w-[70%]" />
+                  <div className="xl:hidden">
+                    <Skeleton height={48} width="60%" />
+                  </div>
                 </div>
               ) : (
-                <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-[#1F1F1F] tracking-tight">
+                <h2 className="text-4xl md:text-5xl xl:text-5xl font-extrabold text-[#1F1F1F] tracking-tight flex items-center xl:whitespace-nowrap">
                   Why Choose ELYSYAL
                 </h2>
               )}
