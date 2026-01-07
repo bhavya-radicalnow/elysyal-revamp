@@ -8,8 +8,8 @@ import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 export default function successStoriesPage() {
   return (
     <ServicePageLayout
-      title=" Smart, Ready-to-Scale Digital Solutions"
-      description="Our Solution Hub brings together proven, ready-to-use digital solutions designed to solve real business challenges. From pre-built products to customizable platforms, we help teams launch faster, reduce development effort, and scale with confidence."
+      title=" Results That Speak Louder Than Features"
+      description="Real projects. Real timelines. Real impact. See how healthcare platforms reduced deployment time by 60%, fintech apps accelerated user adoption, and enterprises achieved seamless cloud migration."
       heroImage="/Success Stories image 02.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
     >

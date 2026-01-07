@@ -52,7 +52,7 @@ export default function ServicePageLayout({
             <div
               className={`
                 grid grid-cols-1
-                ${heroImage ? "lg:grid-cols-2" : ""}
+                ${heroImage ? "lg:grid-cols-2" : "xl:grid-cols-2"}
 
                 gap-10 lg:gap-14 items-center
               `}

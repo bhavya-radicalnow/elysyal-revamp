@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import Skeleton from "@/components/ui/Skeleton";
 import { useModal } from "@/context/ModalContext";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 const NavLogo = () => {
   return (
@@ -23,9 +25,13 @@ const NavLogo = () => {
   );
 };
 
-const ServiceLink = ({ item, onClick }) => {
+const ServiceLink = ({ item, onClick, isActive }) => {
   return (
-    <Link href={item.href} onClick={onClick} className="flex items-center gap-6 p-6 rounded-2xl bg-gray-50 hover:shadow-lg transition">
+    <Link 
+      href={item.href} 
+      onClick={onClick} 
+      className={`flex items-center gap-6 p-6 rounded-2xl transition-all duration-300 ${isActive ? 'bg-blue-50/80 shadow-sm border border-blue-100' : 'bg-gray-50 hover:shadow-lg'}`}
+    >
       <div className="relative w-12 h-12 shrink-0">
         <ImageWithSkeleton
           src={item.icon}
@@ -34,7 +40,7 @@ const ServiceLink = ({ item, onClick }) => {
           className="object-contain"
         />
       </div>
-      <span className="font-medium text-black">{item.title}</span>
+      <span className={`font-medium ${isActive ? 'text-blue-600' : 'text-black hover:text-blue-600'}`}>{item.title}</span>
     </Link>
   );
 };
@@ -44,6 +50,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
   const { openContactModal } = useModal();
 
   const serviceItems = [
@@ -102,7 +109,7 @@ export default function Navbar() {
           ) : (
             <>
               <div className="group flex items-center">
-                <button className="flex items-center gap-1 py-8 hover:text-blue-600">
+                <button className={`flex items-center gap-1 py-8 hover:text-blue-600 transition-colors ${pathname.startsWith('/services') ? 'text-blue-600' : ''}`}>
                   Services
                   <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -112,17 +119,17 @@ export default function Navbar() {
                 <div className="fixed left-0 top-[90px] w-full bg-white shadow-xl border-t border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-[100]">
                   <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {serviceItems.map((item, i) => (
-                      <ServiceLink key={i} item={item} />
+                      <ServiceLink key={i} item={item} isActive={pathname === item.href} />
                     ))}
                   </div>
                 </div>
               </div>
 
-              <Link href="/Tech-stack">Tech-Stack</Link>
-              <Link href="/Industries">Industries</Link>
-              <Link href="/solution-hub">Solution Hub</Link>
-              <Link href="/success-Stories">Success Stories</Link>
-              <Link href="/About">About Company</Link>
+              <Link href="/Tech-stack" className={`hover:text-blue-600 transition-colors ${pathname === '/Tech-stack' ? 'text-blue-600' : ''}`}>Tech-Stack</Link>
+              <Link href="/Industries" className={`hover:text-blue-600 transition-colors ${pathname === '/Industries' ? 'text-blue-600' : ''}`}>Industries</Link>
+              <Link href="/solution-hub" className={`hover:text-blue-600 transition-colors ${pathname === '/solution-hub' ? 'text-blue-600' : ''}`}>Solution Hub</Link>
+              <Link href="/success-Stories" className={`hover:text-blue-600 transition-colors ${pathname === '/success-Stories' ? 'text-blue-600' : ''}`}>Success Stories</Link>
+              <Link href="/About" className={`hover:text-blue-600 transition-colors ${pathname === '/About' ? 'text-blue-600' : ''}`}>About Company</Link>
             </>
           )}
         </nav>
@@ -142,9 +149,11 @@ export default function Navbar() {
               
                 transition-colors
                 text-black
+                hover:text-blue-600
+                
               "
             >
-              Get in Touch
+              Get in Touch 
             </button>
           )}
         </div>
@@ -174,6 +183,11 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Breadcrumbs for phone view */}
+      <div className="bg-transparent lg:hidden">
+        <Breadcrumbs />
+      </div>
+
       {/* Glass Mobile Menu */}
       <AnimatePresence>
         {open && (
@@ -198,7 +212,7 @@ export default function Navbar() {
               {/* Mobile Services */}
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className="flex items-center gap-2"
+                className={`flex items-center gap-2 transition-colors ${pathname.startsWith('/services') ? 'text-blue-600' : ''}`}
               >
                 Services
                 <svg className={`w-4 h-4 transition ${mobileServicesOpen && "rotate-180"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -219,7 +233,7 @@ export default function Navbar() {
                         key={i}
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className="block p-2 text-sm text-center truncate"
+                        className={`block p-2 text-sm text-center truncate transition-colors ${pathname === item.href ? 'text-blue-600' : ''}`}
                       >
                         {item.title}
                       </Link>
@@ -228,12 +242,12 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
 
-              <Link href="/Tech-stack" onClick={() => setOpen(false)} className="text-center">Tech-Stack</Link>
-              <Link href="/Industries" onClick={() => setOpen(false)} className="text-center">Industries</Link>
-              <Link href="/solution-hub" onClick={() => setOpen(false)} className="text-center">Solution Hub</Link>
-              <Link href="/success-Stories" onClick={() => setOpen(false)} className="text-center">Success Stories</Link>
-              <Link href="/About" onClick={() => setOpen(false)} className="text-center">About Company</Link>
-              <button onClick={() => { setOpen(false); openContactModal(); }} className="text-center font-bold">Get in Touch</button>
+              <Link href="/Tech-stack" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/Tech-stack' ? 'text-blue-600' : ''}`}>Tech-Stack</Link>
+              <Link href="/Industries" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/Industries' ? 'text-blue-600' : ''}`}>Industries</Link>
+              <Link href="/solution-hub" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/solution-hub' ? 'text-blue-600' : ''}`}>Solution Hub</Link>
+              <Link href="/success-Stories" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/success-Stories' ? 'text-blue-600' : ''}`}>Success Stories</Link>
+              <Link href="/About" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/About' ? 'text-blue-600' : ''}`}>About Company</Link>
+              <button onClick={() => { setOpen(false); openContactModal(); }} className="text-center font-bold hover:text-blue-600 transition-colors">Get in Touch</button>
             </nav>
           </motion.div>
         )}

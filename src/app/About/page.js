@@ -28,8 +28,8 @@ export default function AboutPage() {
 
   return (
     <ServicePageLayout
-      title="About Company"
-      description="Transform your ideas into production-ready applications. Elysyal combines cutting-edge AI with intuitive tools to accelerate your development workflow."
+      title={<>Building Intelligent Digital Solutions <br /> That Create Real Business Impact</>}
+      description="Elysial helps businesses evolve and scale at the intersection of strategy, design, and engineering. We deliver solutions that work today and adapt to tomorrow's challenges—always with measurable impact."
       backgroundImage="/About Company bg.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
