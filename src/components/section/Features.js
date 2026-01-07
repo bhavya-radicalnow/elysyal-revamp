@@ -83,7 +83,7 @@ export default function Features() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Content */}
-          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left pl-4 md:pl-8 xl:pl-16">
+          <div className="max-w-xl mx-auto lg:mx-0  sm:text-left lg:text-left pl-4 md:pl-8 xl:pl-16">
             {isLoading ? (
               <div className="mb-6 space-y-4">
                 <Skeleton height={50} width="90%" />
@@ -91,7 +91,7 @@ export default function Features() {
                 <Skeleton height={50} width="50%" />
               </div>
             ) : (
-              <h2 className="font-bold text-black text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6">
+              <h2 className="font-bold text-black text-3xl sm:text-3xl     lg:text-6xl leading-[1.1] tracking-tight mb-6">
                 Everything You <br />
                 Need to <span className="text-[#3B82F6]">Build</span> <br />
                 <span className="text-[#3B82F6]">Fast</span>

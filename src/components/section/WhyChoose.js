@@ -37,7 +37,7 @@ export default function WhyChoose() {
                   </div>
                 </div>
               ) : (
-                <h2 className="text-4xl md:text-5xl xl:text-5xl font-extrabold text-[#1F1F1F] tracking-tight flex items-center xl:whitespace-nowrap">
+                <h2 className="text-3xl md:text-5xl xl:text-5xl font-extrabold text-[#1F1F1F] tracking-tight flex items-center xl:whitespace-nowrap">
                   Why Choose ELYSYAL
                 </h2>
               )}

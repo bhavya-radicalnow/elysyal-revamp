@@ -164,7 +164,7 @@ export default function Techstack() {
                 </div>
               ) : (
                 <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight text-[#111827]">
-                  Why our <span className="text-[#6391F4]">technology choices</span> <br />
+                  Why our <span className="text-[#6391F4]">technology choices</span>  {" "}
                   <span className="text-[#B58FD8]">help your business</span>
                 </h2>
               )}

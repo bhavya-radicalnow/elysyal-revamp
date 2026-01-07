@@ -39,7 +39,7 @@ export default function Hero() {
                 {/* Decorative Vertical Pill */}
                 <div className="w-1.5 md:w-2 rounded-full bg-gradient-to-b from-[#F7ABB3] to-[#CFEAFB] shadow-[0_0_15px_rgba(247,171,179,0.3)]" />
 
-                <h1 className="text-black font-bold leading-tight text-4xl sm:text-5xl md:text-6xl xl:text-3xl">
+                <h1 className="text-black font-bold leading-tight text-3xl sm:text-4xl md:text-6xl xl:text-3xl">
                   <span className="font-normal">Build</span>{" "}
                   <span className="font-bold">Smarter</span>
                   <br />
