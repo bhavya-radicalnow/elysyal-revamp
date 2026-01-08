@@ -193,18 +193,11 @@ export default function Services() {
               flex items-center justify-center
             "
           >
-            <motion.div
-              animate={{ y: [0, -16, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            <div
               className="
                 relative
                 w-full h-full
-                md:w-[90%] md:h-[90%]
-                lg:absolute lg:-right-16 lg:top-1/2
-                lg:-translate-y-1/2
-                lg:w-[115%] lg:h-[115%]
-                xl:w-[135%] xl:h-[135%]
-                pointer-events-none
+                flex items-center justify-center
               "
             >
               <ImageWithSkeleton
@@ -212,9 +205,9 @@ export default function Services() {
                 alt="Future Tech Robot"
                 width={900}
                 height={900}
-                className="object-contain w-full h-full max-w-[900px] drop-shadow-2xl"
+                className="object-contain w-full h-auto max-h-[400px] drop-shadow-2xl"
               />
-            </motion.div>
+            </div>
           </div>
 
           {/* ROW 3 CARDS */}

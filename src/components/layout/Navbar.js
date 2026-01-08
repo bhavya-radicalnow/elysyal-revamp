@@ -85,7 +85,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/60 backdrop-blur-md shadow-sm" : "bg-transparent"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 lg:bg-white/60 backdrop-blur-md shadow-sm" : "bg-transparent"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
@@ -168,7 +168,7 @@ export default function Navbar() {
             relative
             p-3
             rounded-xl
-            bg-white/30
+            bg-white/90
             backdrop-blur-xl
             border border-white/40
             shadow-md
@@ -199,7 +199,7 @@ export default function Navbar() {
             className="
               lg:hidden
               absolute top-full left-0 w-full
-              bg-white/30
+              bg-white/95
               backdrop-blur-xl
               border-t border-white/40
               shadow-[0_8px_30px_rgba(0,0,0,0.12)]

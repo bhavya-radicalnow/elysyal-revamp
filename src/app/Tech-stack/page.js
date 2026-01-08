@@ -18,7 +18,7 @@ export default function Techstack() {
   return (
 
     <ServicePageLayout
-      heroPadding="pt-44 md:pt-36 lg:pt-40 xl:pt-48 pb-44 md:pb-36 lg:pb-40 xl:pb-48"
+      heroPadding="pt-48 md:pt-36 lg:pt-40 xl:pt-48 pb-44 md:pb-36 lg:pb-40 xl:pb-48"
       title={<>Built <span className="font-normal">on Proven</span> Technology, <br /> <span className="font-normal   ">Designed for</span> What’s Next</>}
       description="We select modern, reliable technologies that deliver strong performance today while providing the flexibility and scalability needed to support tomorrow’s growth and evolving business demands."
       heroImage="/Tech-Stack Image 01 .webp"

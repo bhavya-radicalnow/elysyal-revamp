@@ -17,7 +17,7 @@ export default function ServicePageLayout({
   secondaryButton,
   children,
   alignImageBottom = false,
-  heroPadding = "pt-33 md:pt-20 lg:pt-24 xl:pt-35 pb-20 lg:pb-16",
+  heroPadding = "pt-48 md:pt-20 lg:pt-24 xl:pt-35 pb-20 lg:pb-16",
   backgroundImage
 }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +36,7 @@ export default function ServicePageLayout({
 
         {/* HERO SECTION */}
         <section
-          className={`${alignImageBottom ? "pt-33 md:pt-20 lg:pt-24 xl:pt-35 pb-0" : heroPadding} overflow-hidden relative`}
+          className={`${alignImageBottom ? "pt-48 md:pt-20 lg:pt-24 xl:pt-35 pb-0" : heroPadding} overflow-hidden relative`}
           style={backgroundImage ? {
             backgroundImage: `url('${backgroundImage}')`,
             backgroundSize: 'cover',
