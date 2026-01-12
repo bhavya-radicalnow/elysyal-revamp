@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useModal } from '@/context/ModalContext';
-import { useEffect } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useModal } from "@/context/ModalContext";
+import { useEffect } from "react";
 
 export default function ContactModal() {
   const { isContactModalOpen, closeContactModal } = useModal();
@@ -10,10 +10,10 @@ export default function ContactModal() {
   // Close on escape key
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === 'Escape') closeContactModal();
+      if (e.key === "Escape") closeContactModal();
     };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
   }, [closeContactModal]);
 
   return (
@@ -37,14 +37,23 @@ export default function ContactModal() {
             transition={{ duration: 0.2 }}
             className="relative bg-white w-full max-w-md rounded-[2rem] p-8 shadow-2xl overflow-hidden"
           >
-
             <button
               onClick={closeContactModal}
               className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
               aria-label="Close modal"
             >
-              <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-5 h-5 text-black"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 

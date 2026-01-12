@@ -18,7 +18,11 @@ const ImageWithSkeleton = ({
     <>
       {!loaded && (
         <div className={`absolute inset-0 z-10 ${skeletonClassName || ""}`}>
-           <Skeleton height="100%" width="100%" className="h-full w-full rounded-2xl" />
+          <Skeleton
+            height="100%"
+            width="100%"
+            className="h-full w-full rounded-2xl"
+          />
         </div>
       )}
       <Image

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 const ModalContext = createContext();
 
@@ -11,7 +11,9 @@ export function ModalProvider({ children }) {
   const closeContactModal = () => setIsContactModalOpen(false);
 
   return (
-    <ModalContext.Provider value={{ isContactModalOpen, openContactModal, closeContactModal }}>
+    <ModalContext.Provider
+      value={{ isContactModalOpen, openContactModal, closeContactModal }}
+    >
       {children}
     </ModalContext.Provider>
   );
