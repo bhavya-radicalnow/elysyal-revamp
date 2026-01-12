@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Button from '@/components/ui/Button';
-import Skeleton from '@/components/ui/Skeleton';
+import React, { useState, useEffect } from "react";
+import Button from "@/components/ui/Button";
+import Skeleton from "@/components/ui/Skeleton";
 import { useModal } from "@/context/ModalContext";
 
 function CallToAction({
   title = (
     <>
-      Ready to <span className="text-[#6391F4]">Transform Your Business</span> <br className="hidden sm:block" />
+      Ready to <span className="text-[#6391F4]">Transform Your Business</span>{" "}
+      <br className="hidden sm:block" />
       with <span className="text-[#B8759E]">Next-Gen Technology</span>?
     </>
   ),
@@ -17,7 +18,7 @@ function CallToAction({
   primaryBtnLink = "#",
   secondaryBtnText = "Book a Demo",
   secondaryBtnLink = "#",
-  style = {}
+  style = {},
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const { openContactModal } = useModal();
@@ -30,7 +31,6 @@ function CallToAction({
   return (
     <section className="bg-white py-20 lg:py-32 overflow-hidden" style={style}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
         {/* Headline */}
         {isLoading ? (
           <div className="mb-6 space-y-3 flex flex-col items-center">
@@ -56,10 +56,13 @@ function CallToAction({
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-
           <Button
             text={primaryBtnText}
-            onClick={primaryBtnText === "Start Your Project" ? openContactModal : undefined}
+            onClick={
+              primaryBtnText === "Start Your Project"
+                ? openContactModal
+                : undefined
+            }
             href={primaryBtnLink}
             variant="primary"
             className="w-full sm:w-auto justify-center"
@@ -73,7 +76,6 @@ function CallToAction({
             className="w-full sm:w-auto justify-center"
             isLoading={isLoading}
           />
-
         </div>
 
         {/* Trust/Response Text */}
@@ -86,10 +88,9 @@ function CallToAction({
             Quick response within 24 hours
           </p>
         )}
-
       </div>
     </section>
-  )
+  );
 }
 
 export default CallToAction;

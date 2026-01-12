@@ -18,7 +18,7 @@ export default function ServicePageLayout({
   children,
   alignImageBottom = false,
   heroPadding = "pt-48 md:pt-20 lg:pt-24 xl:pt-35 pb-20 lg:pb-16",
-  backgroundImage
+  backgroundImage,
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const { openContactModal } = useModal();
@@ -33,22 +33,28 @@ export default function ServicePageLayout({
       <Navbar />
 
       <main className="min-h-screen bg-[rgb(225,235,247)]">
-
         {/* HERO SECTION */}
         <section
-          className={`${alignImageBottom ? "pt-48 md:pt-20 lg:pt-24 xl:pt-35 pb-0" : heroPadding} overflow-hidden relative`}
-          style={backgroundImage ? {
-            backgroundImage: `url('${backgroundImage}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          } : {}}
+          className={`${
+            alignImageBottom
+              ? "pt-48 md:pt-20 lg:pt-24 xl:pt-35 pb-0"
+              : heroPadding
+          } overflow-hidden relative`}
+          style={
+            backgroundImage
+              ? {
+                  backgroundImage: `url('${backgroundImage}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }
+              : {}
+          }
         >
           {backgroundImage && (
             <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
           )}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
             <div
               className={`
                 grid grid-cols-1
@@ -59,7 +65,6 @@ export default function ServicePageLayout({
             >
               {/* LEFT CONTENT */}
               <div className="relative">
-
                 <div className="flex items-stretch gap-4 md:gap-6 mb-6">
                   {/* Decorative Vertical Pill */}
                   <div className="w-1.5 md:w-2 rounded-full bg-gradient-to-b from-[#F7ABB3] to-[#CFEAFB] shadow-[0_0_15px_rgba(247,171,179,0.3)]" />
@@ -92,7 +97,11 @@ export default function ServicePageLayout({
                         <Button
                           text={primaryButton.text}
                           href={primaryButton.href}
-                          onClick={primaryButton.text === "Start Your Project" ? openContactModal : undefined}
+                          onClick={
+                            primaryButton.text === "Start Your Project"
+                              ? openContactModal
+                              : undefined
+                          }
                           variant="primary"
                           icon={primaryButton.icon}
                           isLoading={isLoading}
@@ -115,8 +124,11 @@ export default function ServicePageLayout({
 
               {/* RIGHT IMAGE */}
               {heroImage && (
-                <div className={`relative flex justify-center lg:justify-end ${alignImageBottom ? "self-end h-full items-end" : ""}`}>
-
+                <div
+                  className={`relative flex justify-center lg:justify-end ${
+                    alignImageBottom ? "self-end h-full items-end" : ""
+                  }`}
+                >
                   {/* Soft glow behind robot */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-[70%] h-[70%] bg-blue-200/40 blur-3xl rounded-full" />
@@ -150,9 +162,7 @@ export default function ServicePageLayout({
         </section>
 
         {/* PAGE CONTENT */}
-        <section >
-          {children}
-        </section>
+        <section>{children}</section>
       </main>
 
       <Footer />

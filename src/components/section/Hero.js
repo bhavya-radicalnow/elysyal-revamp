@@ -21,7 +21,6 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 md:pt-20 lg:pt-24 xl:pt-35 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
           {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -59,14 +58,24 @@ export default function Hero() {
             ) : (
               <p className="text-black text-base sm:text-lg md:text-xl max-w-xl">
                 Transform your ideas into production-ready applications. Future
-                Forge combines cutting-edge AI with intuitive tools to accelerate
-                your development workflow.
+                Forge combines cutting-edge AI with intuitive tools to
+                accelerate your development workflow.
               </p>
             )}
 
             <div className="flex flex-wrap gap-4">
-              <Button text="Start Your Project" onClick={openContactModal} variant="primary" isLoading={isLoading} />
-              <Button text="Book a Demo" href="#" variant="secondary" isLoading={isLoading} />
+              <Button
+                text="Start Your Project"
+                onClick={openContactModal}
+                variant="primary"
+                isLoading={isLoading}
+              />
+              <Button
+                text="Book a Demo"
+                href="#"
+                variant="secondary"
+                isLoading={isLoading}
+              />
             </div>
           </motion.div>
 
@@ -94,7 +103,6 @@ export default function Hero() {
                 xl:max-w-[760px]
               "
             >
-
               {/* ROBOT */}
               <motion.div
                 initial={{ opacity: 0, y: 48 }}

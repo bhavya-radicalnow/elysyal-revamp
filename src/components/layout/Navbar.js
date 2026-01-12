@@ -27,10 +27,14 @@ const NavLogo = () => {
 
 const ServiceLink = ({ item, onClick, isActive }) => {
   return (
-    <Link 
-      href={item.href} 
-      onClick={onClick} 
-      className={`flex items-center gap-6 p-6 rounded-2xl transition-all duration-300 ${isActive ? 'bg-blue-50/80 shadow-sm border border-blue-100' : 'bg-gray-50 hover:shadow-lg'}`}
+    <Link
+      href={item.href}
+      onClick={onClick}
+      className={`flex items-center gap-6 p-6 rounded-2xl transition-all duration-300 ${
+        isActive
+          ? "bg-blue-50/80 shadow-sm border border-blue-100"
+          : "bg-gray-50 hover:shadow-lg"
+      }`}
     >
       <div className="relative w-12 h-12 shrink-0">
         <ImageWithSkeleton
@@ -40,7 +44,13 @@ const ServiceLink = ({ item, onClick, isActive }) => {
           className="object-contain"
         />
       </div>
-      <span className={`font-medium ${isActive ? 'text-blue-600' : 'text-black hover:text-blue-600'}`}>{item.title}</span>
+      <span
+        className={`font-medium ${
+          isActive ? "text-blue-600" : "text-black hover:text-blue-600"
+        }`}
+      >
+        {item.title}
+      </span>
     </Link>
   );
 };
@@ -54,12 +64,36 @@ export default function Navbar() {
   const { openContactModal } = useModal();
 
   const serviceItems = [
-    { title: "Artificial Intelligence Development", href: "/services/ai-development", icon: "/Icon - 01.webp" },
-    { title: "Blockchain Development", href: "/services/blockchain", icon: "/Icon - 02.webp" },
-    { title: "Data Science", href: "/services/data-science", icon: "/Icon - 03.webp" },
-    { title: "Custom Software Development", href: "/services/custom-software", icon: "/Icon - 04.webp" },
-    { title: "Mobile App Development", href: "/services/mobile-app-development", icon: "/Icon - 05.webp" },
-    { title: "Staff Augmentation Services", href: "/services/staff-augmentation", icon: "/Icon - 08.webp" },
+    {
+      title: "Artificial Intelligence Development",
+      href: "/services/ai-development",
+      icon: "/Icon - 01.webp",
+    },
+    {
+      title: "Blockchain Development",
+      href: "/services/blockchain",
+      icon: "/Icon - 02.webp",
+    },
+    {
+      title: "Data Science",
+      href: "/services/data-science",
+      icon: "/Icon - 03.webp",
+    },
+    {
+      title: "Custom Software Development",
+      href: "/services/custom-software",
+      icon: "/Icon - 04.webp",
+    },
+    {
+      title: "Mobile App Development",
+      href: "/services/mobile-app-development",
+      icon: "/Icon - 05.webp",
+    },
+    {
+      title: "Staff Augmentation Services",
+      href: "/services/staff-augmentation",
+      icon: "/Icon - 08.webp",
+    },
   ];
 
   /* Simulate loading */
@@ -85,11 +119,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 lg:bg-white/60 backdrop-blur-md shadow-sm" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 lg:bg-white/60 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-5 flex items-center justify-between">
-
         {/* Logo */}
         <Link href="/" aria-label="Home">
           <NavLogo />
@@ -109,27 +145,81 @@ export default function Navbar() {
           ) : (
             <>
               <div className="group flex items-center">
-                <button className={`flex items-center gap-1 py-8 hover:text-blue-600 transition-colors ${pathname.startsWith('/services') ? 'text-blue-600' : ''}`}>
+                <Link
+                  href="/services"
+                  className={`flex items-center gap-1 py-8 hover:text-blue-600 transition-colors ${
+                    pathname.startsWith("/services") ? "text-blue-600" : ""
+                  }`}
+                >
                   Services
-                  <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <svg
+                    className="w-4 h-4 transition-transform group-hover:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
-                </button>
+                </Link>
 
                 <div className="fixed left-0 top-[90px] w-full bg-white shadow-xl border-t border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-[100]">
                   <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-6">
                     {serviceItems.map((item, i) => (
-                      <ServiceLink key={i} item={item} isActive={pathname === item.href} />
+                      <ServiceLink
+                        key={i}
+                        item={item}
+                        isActive={pathname === item.href}
+                      />
                     ))}
                   </div>
                 </div>
               </div>
 
-              <Link href="/Tech-stack" className={`hover:text-blue-600 transition-colors ${pathname === '/Tech-stack' ? 'text-blue-600' : ''}`}>Tech-Stack</Link>
-              <Link href="/Industries" className={`hover:text-blue-600 transition-colors ${pathname === '/Industries' ? 'text-blue-600' : ''}`}>Industries</Link>
-              <Link href="/solution-hub" className={`hover:text-blue-600 transition-colors ${pathname === '/solution-hub' ? 'text-blue-600' : ''}`}>Solution Hub</Link>
-              <Link href="/success-Stories" className={`hover:text-blue-600 transition-colors ${pathname === '/success-Stories' ? 'text-blue-600' : ''}`}>Success Stories</Link>
-              <Link href="/About" className={`hover:text-blue-600 transition-colors ${pathname === '/About' ? 'text-blue-600' : ''}`}>About Company</Link>
+              <Link
+                href="/Tech-stack"
+                className={`hover:text-blue-600 transition-colors ${
+                  pathname === "/Tech-stack" ? "text-blue-600" : ""
+                }`}
+              >
+                Tech-Stack
+              </Link>
+              <Link
+                href="/Industries"
+                className={`hover:text-blue-600 transition-colors ${
+                  pathname === "/Industries" ? "text-blue-600" : ""
+                }`}
+              >
+                Industries
+              </Link>
+              <Link
+                href="/solution-hub"
+                className={`hover:text-blue-600 transition-colors ${
+                  pathname === "/solution-hub" ? "text-blue-600" : ""
+                }`}
+              >
+                Solution Hub
+              </Link>
+              <Link
+                href="/success-Stories"
+                className={`hover:text-blue-600 transition-colors ${
+                  pathname === "/success-Stories" ? "text-blue-600" : ""
+                }`}
+              >
+                Success Stories
+              </Link>
+              <Link
+                href="/About"
+                className={`hover:text-blue-600 transition-colors ${
+                  pathname === "/About" ? "text-blue-600" : ""
+                }`}
+              >
+                About Company
+              </Link>
             </>
           )}
         </nav>
@@ -153,11 +243,10 @@ export default function Navbar() {
                 
               "
             >
-              Get in Touch 
+              Get in Touch
             </button>
           )}
         </div>
-
 
         {/* Glass Hamburger */}
         <button
@@ -177,9 +266,21 @@ export default function Navbar() {
             active:scale-95
           "
         >
-          <span className={`block w-6 h-[2px] bg-black transition ${open && "rotate-45 translate-y-2"}`} />
-          <span className={`block w-6 h-[2px] bg-black my-1 transition ${open && "opacity-0"}`} />
-          <span className={`block w-6 h-[2px] bg-black transition ${open && "-rotate-45 -translate-y-2"}`} />
+          <span
+            className={`block w-6 h-[2px] bg-black transition ${
+              open && "rotate-45 translate-y-2"
+            }`}
+          />
+          <span
+            className={`block w-6 h-[2px] bg-black my-1 transition ${
+              open && "opacity-0"
+            }`}
+          />
+          <span
+            className={`block w-6 h-[2px] bg-black transition ${
+              open && "-rotate-45 -translate-y-2"
+            }`}
+          />
         </button>
       </div>
 
@@ -208,17 +309,41 @@ export default function Navbar() {
             "
           >
             <nav className="flex flex-col items-center gap-5 px-6 py-8 font-bold text-black text-center">
-
               {/* Mobile Services */}
-              <button
-                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className={`flex items-center gap-2 transition-colors ${pathname.startsWith('/services') ? 'text-blue-600' : ''}`}
-              >
-                Services
-                <svg className={`w-4 h-4 transition ${mobileServicesOpen && "rotate-180"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+              <div className="flex items-center gap-2">
+                <Link
+                  href="/services"
+                  onClick={() => setOpen(false)}
+                  className={`py-2 transition-colors ${
+                    pathname === "/services" ? "text-blue-600" : ""
+                  }`}
+                >
+                  Services
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setMobileServicesOpen(!mobileServicesOpen);
+                  }}
+                  className="p-1"
+                >
+                  <svg
+                    className={`w-4 h-4 transition ${
+                      mobileServicesOpen && "rotate-180"
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
 
               <AnimatePresence>
                 {mobileServicesOpen && (
@@ -233,7 +358,9 @@ export default function Navbar() {
                         key={i}
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className={`block p-2 text-sm text-center truncate transition-colors ${pathname === item.href ? 'text-blue-600' : ''}`}
+                        className={`block p-2 text-sm text-center truncate transition-colors ${
+                          pathname === item.href ? "text-blue-600" : ""
+                        }`}
                       >
                         {item.title}
                       </Link>
@@ -242,12 +369,60 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
 
-              <Link href="/Tech-stack" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/Tech-stack' ? 'text-blue-600' : ''}`}>Tech-Stack</Link>
-              <Link href="/Industries" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/Industries' ? 'text-blue-600' : ''}`}>Industries</Link>
-              <Link href="/solution-hub" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/solution-hub' ? 'text-blue-600' : ''}`}>Solution Hub</Link>
-              <Link href="/success-Stories" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/success-Stories' ? 'text-blue-600' : ''}`}>Success Stories</Link>
-              <Link href="/About" onClick={() => setOpen(false)} className={`text-center hover:text-blue-600 transition-colors ${pathname === '/About' ? 'text-blue-600' : ''}`}>About Company</Link>
-              <button onClick={() => { setOpen(false); openContactModal(); }} className="text-center font-bold hover:text-blue-600 transition-colors">Get in Touch</button>
+              <Link
+                href="/Tech-stack"
+                onClick={() => setOpen(false)}
+                className={`text-center hover:text-blue-600 transition-colors ${
+                  pathname === "/Tech-stack" ? "text-blue-600" : ""
+                }`}
+              >
+                Tech-Stack
+              </Link>
+              <Link
+                href="/Industries"
+                onClick={() => setOpen(false)}
+                className={`text-center hover:text-blue-600 transition-colors ${
+                  pathname === "/Industries" ? "text-blue-600" : ""
+                }`}
+              >
+                Industries
+              </Link>
+              <Link
+                href="/solution-hub"
+                onClick={() => setOpen(false)}
+                className={`text-center hover:text-blue-600 transition-colors ${
+                  pathname === "/solution-hub" ? "text-blue-600" : ""
+                }`}
+              >
+                Solution Hub
+              </Link>
+              <Link
+                href="/success-Stories"
+                onClick={() => setOpen(false)}
+                className={`text-center hover:text-blue-600 transition-colors ${
+                  pathname === "/success-Stories" ? "text-blue-600" : ""
+                }`}
+              >
+                Success Stories
+              </Link>
+              <Link
+                href="/About"
+                onClick={() => setOpen(false)}
+                className={`text-center hover:text-blue-600 transition-colors ${
+                  pathname === "/About" ? "text-blue-600" : ""
+                }`}
+              >
+                About Company
+              </Link>
+              <button
+                onClick={() => {
+                  setOpen(false);
+                  openContactModal();
+                }}
+                className="text-center font-bold hover:text-blue-600 transition-colors"
+              >
+                Get in Touch
+              </button>
             </nav>
           </motion.div>
         )}

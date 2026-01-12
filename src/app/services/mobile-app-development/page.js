@@ -4,34 +4,33 @@ import ServiceFeatures from "@/components/layout/ServiceFeatures";
 import Image from "next/image";
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
-
 export default function MobileAppPage() {
   const features = [
     {
       number: "01",
       title: "Android App Development",
-      description: "Native Android applications for Google Play Store"
+      description: "Native Android applications for Google Play Store",
     },
     {
       number: "02",
       title: "iOS App Development",
-      description: "Cloud-Native iOS applications for Apple App Store"
+      description: "Cloud-Native iOS applications for Apple App Store",
     },
     {
       number: "03",
       title: "React Native App Development",
-      description: "Cross-platform mobile apps with single codebase"
+      description: "Cross-platform mobile apps with single codebase",
     },
     {
       number: "04",
       title: "Enterprise App Development",
-      description: "Business-focused mobile solutions for productivity"
+      description: "Business-focused mobile solutions for productivity",
     },
     {
       number: "05",
       title: "IoT Development",
-      description: "Connected device ecosystems and smart automation"
-    }
+      description: "Connected device ecosystems and smart automation",
+    },
   ];
   return (
     <ServicePageLayout
@@ -41,7 +40,6 @@ export default function MobileAppPage() {
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
       alignImageBottom={true}
-
     >
       <ServiceFeatures
         title="Key Features & Services"
@@ -49,10 +47,12 @@ export default function MobileAppPage() {
         features={features}
       />
 
-      <section className="py-16 lg:py-24" style={{ backgroundColor: "#E2E6F5" }}>
+      <section
+        className="py-16 lg:py-24"
+        style={{ backgroundColor: "#E2E6F5" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
             {/* Text Content */}
             <div>
               <h2 className="text-3xl md:text-5xl font-bold text-black mb-6 leading-tight">
@@ -70,9 +70,12 @@ export default function MobileAppPage() {
                   "End-to-End Mobile Expertise",
                   "User-Centric & Market-Ready Apps",
                   "Scalable, Future-Proof Architecture",
-                  "Transparent Process & Reliable Communication"
+                  "Transparent Process & Reliable Communication",
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center text-xl text-black font-medium">
+                  <li
+                    key={index}
+                    className="flex items-center text-xl text-black font-medium"
+                  >
                     <span className="w-1.5 h-1.5 bg-black rounded-full mr-4"></span>
                     {item}
                   </li>
@@ -89,19 +92,18 @@ export default function MobileAppPage() {
                 className="object-contain transform scale-100 hover:scale-105 transition-transform duration-500"
               />
             </div>
-
           </div>
         </div>
       </section>
 
-
-
       <CallToAction
-        title={<>Launch Your <span className="text-[#548BF8]">Mobile App</span></>}
+        title={
+          <>
+            Launch Your <span className="text-[#548BF8]">Mobile App</span>
+          </>
+        }
         description="From idea to app store, we'll help you create a mobile app that users love."
       />
-
-
     </ServicePageLayout>
   );
 }

@@ -18,13 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        // 2. Add the variable to the className
-        // Note: We normally add 'font-sans' here if we set up Tailwind correctly
+        
         className={`${outfit.variable} font-sans antialiased`}
       >
-        <ClientProviders>
-          {children}
-        </ClientProviders>
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );

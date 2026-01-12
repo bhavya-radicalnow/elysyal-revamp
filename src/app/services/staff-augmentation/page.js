@@ -9,33 +9,33 @@ export default function StaffAugmentationPage() {
     {
       number: "01",
       title: "Dedicated Teams",
-      description: "Full development teams dedicated to your projects"
+      description: "Full development teams dedicated to your projects",
     },
     {
       number: "02",
       title: "Remote Specialists",
-      description: "Access global talent pool of experienced developers"
+      description: "Access global talent pool of experienced developers",
     },
     {
       number: "03",
       title: "Flexible Scaling",
-      description: "Scale your team up or down based on project needs"
+      description: "Scale your team up or down based on project needs",
     },
     {
       number: "04",
       title: "Expert Consultants",
-      description: "Senior consultants for strategic technology guidance"
+      description: "Senior consultants for strategic technology guidance",
     },
     {
       number: "05",
       title: "Project Delivery",
-      description: "Accelerated project timelines with quality delivery"
+      description: "Accelerated project timelines with quality delivery",
     },
     {
       number: "06",
       title: "Quality Assurance",
-      description: "Rigorous quality standards and best practices"
-    }
+      description: "Rigorous quality standards and best practices",
+    },
   ];
   return (
     <ServicePageLayout
@@ -45,7 +45,6 @@ export default function StaffAugmentationPage() {
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
       alignImageBottom={true}
-
     >
       <ServiceFeatures
         title="Key Features & Services"
@@ -54,10 +53,12 @@ export default function StaffAugmentationPage() {
       />
 
       {/* How Our Staff Augmentation Works Section */}
-      <section className="bg-white  py-16 md:py-24" style={{ backgroundColor: '#D5D9F2' }}>
+      <section
+        className="bg-white  py-16 md:py-24"
+        style={{ backgroundColor: "#D5D9F2" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
             {/* Left Column: Text Content */}
             <div className="space-y-8">
               <h2 className="text-4xl md:text-5xl font-bold leading-tight text-[#5B8bf3]">
@@ -66,17 +67,32 @@ export default function StaffAugmentationPage() {
                 Works
               </h2>
               <p className="text-black text-lg leading-relaxed max-w-lg">
-                We plug the right expertise into your team with a smooth, transparent process that accelerates delivery, maintains quality, and adapts to your evolving needs.
+                We plug the right expertise into your team with a smooth,
+                transparent process that accelerates delivery, maintains
+                quality, and adapts to your evolving needs.
               </p>
 
               <div className="pt-4">
                 <a
                   href="#"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-medium text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
-                  style={{ background: 'linear-gradient(90deg, #7C9EF2 0%, #A49EF0 100%)' }}
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #7C9EF2 0%, #A49EF0 100%)",
+                  }}
                 >
                   Start Your Project
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
                   </svg>
@@ -89,24 +105,28 @@ export default function StaffAugmentationPage() {
               {[
                 {
                   title: "Understand Your Needs",
-                  description: "We begin with a quick assessment of your team gaps to match the right talent.",
-                  icon: "/icons/understand-needs.svg"
+                  description:
+                    "We begin with a quick assessment of your team gaps to match the right talent.",
+                  icon: "/icons/understand-needs.svg",
                 },
                 {
                   title: "Match & Onboard Experts",
-                  description: "We select and onboard skilled developers who fit your tech stack and workflow.",
-                  icon: "/icons/match-experts.svg"
+                  description:
+                    "We select and onboard skilled developers who fit your tech stack and workflow.",
+                  icon: "/icons/match-experts.svg",
                 },
                 {
                   title: "Work in Your Rhythm",
-                  description: "Augmented specialists integrate smoothly with your team and tools.",
-                  icon: "/icons/work-rhythm.svg"
+                  description:
+                    "Augmented specialists integrate smoothly with your team and tools.",
+                  icon: "/icons/work-rhythm.svg",
                 },
                 {
                   title: "Scale & Adapt",
-                  description: "Easily adjust team size and skills as your project evolves.",
-                  icon: "/icons/scale-adapt.svg"
-                }
+                  description:
+                    "Easily adjust team size and skills as your project evolves.",
+                  icon: "/icons/scale-adapt.svg",
+                },
               ].map((step, index) => (
                 <div
                   key={index}
@@ -131,17 +151,18 @@ export default function StaffAugmentationPage() {
                 </div>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
-
       <CallToAction
-        title={<>Scale Your  <span className="text-[#548BF8]">Team Today</span></>}
+        title={
+          <>
+            Scale Your <span className="text-[#548BF8]">Team Today</span>
+          </>
+        }
         description="Get the right talent at the right time to accelerate your development projects."
       />
-
     </ServicePageLayout>
   );
 }

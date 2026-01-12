@@ -34,7 +34,6 @@ const features = [
 ];
 
 function FeatureCard({ feature, isLoading }) {
-
   return (
     <div className="bg-[#F8FBFF] rounded-[32px] p-8 hover:shadow-md transition-shadow duration-300">
       <div className="mb-6">
@@ -55,9 +54,7 @@ function FeatureCard({ feature, isLoading }) {
         </div>
       ) : (
         <>
-          <h3 className="text-xl font-bold text-black mb-3">
-            {feature.title}
-          </h3>
+          <h3 className="text-xl font-bold text-black mb-3">{feature.title}</h3>
 
           <p className="text-black text-[15px] leading-relaxed">
             {feature.description}
@@ -81,7 +78,6 @@ export default function Features() {
     <section className="bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
           {/* Left Content */}
           <div className="max-w-xl mx-auto lg:mx-0  sm:text-left lg:text-left pl-4 md:pl-8 xl:pl-16">
             {isLoading ? (
@@ -104,7 +100,9 @@ export default function Features() {
               </div>
             ) : (
               <p className="text-black text-lg sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0 ">
-                Future Forge combines the best of AI generation with developer-friendly tools to help you ship products faster than ever.
+                Future Forge combines the best of AI generation with
+                developer-friendly tools to help you ship products faster than
+                ever.
               </p>
             )}
 
@@ -123,7 +121,11 @@ export default function Features() {
                   strokeWidth="2"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  ></path>
                 </svg>
               </button>
             )}
@@ -132,10 +134,13 @@ export default function Features() {
           {/* Right Content - Features Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <FeatureCard key={index} feature={feature} isLoading={isLoading} />
+              <FeatureCard
+                key={index}
+                feature={feature}
+                isLoading={isLoading}
+              />
             ))}
           </div>
-
         </div>
       </div>
     </section>
