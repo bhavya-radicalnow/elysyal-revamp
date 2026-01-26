@@ -10,8 +10,14 @@ const outfit = Outfit({
 });
 
 export const metadata = {
-  title: "Elysyal",
-  description: "Elysyal",
+  title: "ELYSYAL | Engineering the Future with AI, Blockchain & Vision",
+  description: "Transform your business with cutting-edge AI, blockchain, and custom software solutions. Global technology partner for tomorrow's innovations.",
+  // The comma below is required before adding openGraph!
+  openGraph: {
+    title: "ELYSYAL | Engineering the Future with AI, Blockchain & Vision",
+    description: "Transform your business with cutting-edge AI, blockchain, and custom software solutions. Global technology partner for tomorrow's innovations.",
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }) {

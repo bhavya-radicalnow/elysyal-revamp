@@ -39,7 +39,7 @@ export default function AboutPage() {
           Business Impact
         </>
       }
-      description="Elysial helps businesses evolve and scale at the intersection of strategy, design, and engineering. We deliver solutions that work today and adapt to tomorrow's challenges—always with measurable impact."
+      description="Elysyal helps businesses evolve and scale at the intersection of strategy, design, and engineering. We deliver solutions that work today and adapt to tomorrow's challenges—always with measurable impact."
       backgroundImage="/About Company bg.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{ text: "Book a Demo", href: "#" }}
@@ -55,16 +55,10 @@ export default function AboutPage() {
 
             <div className="prose prose-lg text-black mb-16 space-y-6">
               <p>
-                Elysial was founded on a simple observation: most digital
-                transformation projects fail not because of technology, but
-                because strategy, design, and execution are disconnected.
+                Elysyal was founded on a simple observation: most digital transformation projects fail not because of technology, but because strategy, design, and execution are disconnected.
               </p>
               <p>
-                Our founders—veterans from leading tech companies—realized the
-                market was fragmented. Strategy consultants couldn't build.
-                Agencies couldn't think strategically. Engineers worked without
-                business context. So we created something different: a company
-                where strategy, design, and engineering speak the same language.
+                Our founders—veterans from leading tech companies—realized the market was fragmented. Strategy consultants couldn't build. Agencies couldn't think strategically. Engineers worked without business context. So we created something different: a company where strategy, design, and engineering speak the same language.
               </p>
             </div>
 
@@ -73,21 +67,20 @@ export default function AboutPage() {
               {/* 2015-2016 */}
               <div className="relative pl-8 border-l-4 border-blue-200">
                 <h3 className="text-2xl font-bold text-black mb-4">
-                  2015–2016 | Foundation
+                  2024 | Foundation
                 </h3>
                 <ul className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    Small team of 5, focused on solving real problems
+                    The Beginning: Started with a core team of 5, laser-focused on solving real-world friction points.
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    First success: AI-powered healthcare platform
+                    First Major Win: Launched our flagship AI-powered healthcare platform.
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    Core learning: Understanding the problem matters more than
-                    flashy tech
+                    Core Learning: Established our belief that understanding the problem matters more than flashy tech.
                   </li>
                 </ul>
               </div>
@@ -95,20 +88,20 @@ export default function AboutPage() {
               {/* 2017-2019 */}
               <div className="relative pl-8 border-l-4 border-blue-200">
                 <h3 className="text-2xl font-bold text-black mb-4">
-                  2017–2019 | Growth & Depth
+                  2025 | Growth & Acceleration
                 </h3>
                 <ul className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    Scaled to 25+ specialists across disciplines
+                    Rapid Expansion: Scaled to 25+ specialists across strategy, design, and engineering disciplines.
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    Expanded from startups to enterprise work
+                    Market Shift: Successfully expanded from serving early-stage startups to complex enterprise partnerships.
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    Built proprietary Digital Discovery framework
+                    Methodology: Codified our approach into the proprietary Digital Discovery Framework.
                   </li>
                 </ul>
               </div>
@@ -116,25 +109,20 @@ export default function AboutPage() {
               {/* 2020-2025 */}
               <div className="relative pl-8 border-l-4 border-blue-200">
                 <h3 className="text-2xl font-bold text-black mb-4">
-                  2020–2025 | Leadership & Innovation
+                  2026 | Leadership & Vision
                 </h3>
                 <ul className="space-y-3 text-black">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    Technology serves people, not the other way around
+                    Human-Centric Tech: Doubling down on the philosophy that technology serves people, not the other way around.
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    Speed without strategy is waste; strategy without execution
-                    is fantasy
+                    Execution Focus: Proving that speed without strategy is waste, and strategy without execution is fantasy.
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    The best solutions come from cross-functional collaboration
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    Continuous learning keeps us relevant and ahead
+                    The Future: Driving innovation through cross-functional collaboration and continuous learning to stay ahead of the curve.
                   </li>
                 </ul>
               </div>
@@ -189,14 +177,13 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership & Expertise Section */}
-      <section className="py-16 md:py-24 bg-[#EAF5FF]">
+      {/* <section className="py-16 md:py-24 bg-[#EAF5FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-black">
             Leadership & Expertise
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* CEO Card */}
             <div className="bg-white rounded-[2rem] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="w-48 h-48 rounded-full border-8 border-teal-600 mb-6 overflow-hidden bg-gray-200 relative">
                 <div className="absolute inset-0 flex items-center justify-center text-black font-medium">
@@ -210,7 +197,6 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* CTO Card */}
             <div className="bg-white rounded-[2rem] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="w-48 h-48 rounded-full border-8 border-cyan-500 mb-6 overflow-hidden bg-gray-200 relative">
                 <div className="absolute inset-0 flex items-center justify-center text-black font-medium">
@@ -226,7 +212,6 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* CDO Card */}
             <div className="bg-white rounded-[2rem] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="w-48 h-48 rounded-full border-8 border-orange-300 mb-6 overflow-hidden bg-gray-200 relative">
                 <div className="absolute inset-0 flex items-center justify-center text-black font-medium">
@@ -243,7 +228,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <FAQ />
     </ServicePageLayout>
