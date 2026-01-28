@@ -48,7 +48,7 @@ const services = [
     description:
       "Connected devices and smart systems that enable real-time monitoring and automation.",
     icon: "/Icon - 06.webp",
-    link: "#",
+    link: "/services/iot-solutions",
   },
   {
     title: "Legacy Modernization",
