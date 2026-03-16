@@ -1,8 +1,7 @@
 import React from "react";
 import ServicePageLayout from "@/components/layout/ServicePageLayout";
 import CallToAction from "@/components/section/CallToAction";
-
-import Image from "next/image";
+import Link from "next/link"; // Import Link
 import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 
 export default function successStoriesPage() {
@@ -13,7 +12,7 @@ export default function successStoriesPage() {
       heroImage="/Success Stories image 02.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
     >
-      {/* Success Stories Section */}
+      {/* ... (Previous Section remains the same) ... */}
       <section className="py-16 md:py-24 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -153,7 +152,6 @@ export default function successStoriesPage() {
       {/* Featured Client Success Stories */}
       <section className="py-16 md:py-24 bg-[#EBF3FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Header & Robot */}
           <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between mb-16 relative">
             <div className="lg:w-1/2 z-10">
               <h2 className="text-4xl md:text-6xl font-extrabold text-[#111827] mb-6 leading-tight">
@@ -166,7 +164,6 @@ export default function successStoriesPage() {
               </p>
             </div>
 
-            {/* Flying Robot Image */}
             <div className="hidden lg:block absolute right-0 -top-20 w-[500px] h-[500px] pointer-events-none">
               <ImageWithSkeleton
                 src="/Success Stories image 01.webp"
@@ -178,12 +175,12 @@ export default function successStoriesPage() {
             </div>
           </div>
 
-          {/* Cards Container */}
           <div className="space-y-8 relative z-10">
             {/* Row 1: 2 Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
+                  slug: "healthcare-modernization", // ADDED SLUG
                   badge: "Platform Modernization",
                   badgeColor: "bg-blue-100 text-blue-700",
                   dotColor: "bg-blue-600",
@@ -192,6 +189,7 @@ export default function successStoriesPage() {
                     "Modernized legacy healthcare systems to streamline patient workflows, enhance data security, and support scalable cloud-based operations.",
                 },
                 {
+                  slug: "fintech-app", // ADDED SLUG
                   badge: "Product Engineering",
                   badgeColor: "bg-purple-100 text-purple-700",
                   dotColor: "bg-purple-600",
@@ -204,12 +202,8 @@ export default function successStoriesPage() {
                   key={index}
                   className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div
-                    className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 ${item.badgeColor}`}
-                  >
-                    <span
-                      className={`w-2 h-2 rounded-full ${item.dotColor}`}
-                    ></span>
+                  <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 ${item.badgeColor}`}>
+                    <span className={`w-2 h-2 rounded-full ${item.dotColor}`}></span>
                     {item.badge}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 leading-tight">
@@ -218,20 +212,15 @@ export default function successStoriesPage() {
                   <p className="text-black text-base md:text-lg leading-relaxed mb-8">
                     {item.description}
                   </p>
-                  <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-colors">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-black group-hover:text-white"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
+                  {/* Changed button to Link */}
+                  <Link
+                    href={`/success-stories/${item.slug}`}
+                    className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -240,6 +229,7 @@ export default function successStoriesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
+                  slug: "ecommerce-transformation", // ADDED SLUG
                   badge: "Digital Transformation",
                   badgeColor: "bg-green-100 text-green-700",
                   dotColor: "bg-green-600",
@@ -248,6 +238,7 @@ export default function successStoriesPage() {
                     "Reimagined a retail e-commerce platform to improve performance, simplify user journeys, and support multi-channel growth.",
                 },
                 {
+                  slug: "logistics-platform", // ADDED SLUG
                   badge: "System Optimization",
                   badgeColor: "bg-yellow-100 text-yellow-700",
                   dotColor: "bg-yellow-600",
@@ -256,6 +247,7 @@ export default function successStoriesPage() {
                     "Built a centralized logistics system to improve shipment visibility, optimize workflows, and support growing operational demands.",
                 },
                 {
+                  slug: "enterprise-automation", // ADDED SLUG
                   badge: "Process Automation",
                   badgeColor: "bg-red-100 text-red-700",
                   dotColor: "bg-red-600",
@@ -268,12 +260,8 @@ export default function successStoriesPage() {
                   key={index}
                   className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group"
                 >
-                  <div
-                    className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 ${item.badgeColor}`}
-                  >
-                    <span
-                      className={`w-2 h-2 rounded-full ${item.dotColor}`}
-                    ></span>
+                  <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 ${item.badgeColor}`}>
+                    <span className={`w-2 h-2 rounded-full ${item.dotColor}`}></span>
                     {item.badge}
                   </div>
                   <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
@@ -282,20 +270,15 @@ export default function successStoriesPage() {
                   <p className="text-black text-base leading-relaxed mb-8">
                     {item.description}
                   </p>
-                  <button className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-colors">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-black group-hover:text-white"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
+                  {/* Changed button to Link */}
+                  <Link
+                    href={`/success-stories/${item.slug}`}
+                    className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-black group-hover:border-black transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-black group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -307,7 +290,7 @@ export default function successStoriesPage() {
         title="Turn Ready Solutions Into Real Results"
         description="Whether you need a quick launch or a scalable long-term platform, our Solution Hub gives you a strong foundation to build on."
         primaryButton={{ text: "Start Your Project", href: "#" }}
-        secondaryButton={{ text: "Book a Demo", href: "#" }}
+        secondaryButton={{ text: "Book Demo", href: "#" }}
       />
     </ServicePageLayout>
   );

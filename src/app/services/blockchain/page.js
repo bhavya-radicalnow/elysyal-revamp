@@ -65,7 +65,7 @@ export default function BlockchainPage() {
       description="Build secure, scalable, and innovative blockchain solutions for the decentralized future."
       heroImage="/Success Stories image 01.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ text: "Book Demo", href: "#" }}
     >
       <ServiceFeatures
         title="Key Features & Services"

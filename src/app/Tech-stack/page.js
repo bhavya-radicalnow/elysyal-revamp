@@ -29,8 +29,8 @@ export default function Techstack() {
       heroImage="/Tech-Stack Image 01 .webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
       secondaryButton={{
-        text: "Book a Demo",
-        href: "#",
+        text: "Book Demo",
+        href: "https://calendly.com/bhavya-elysyal/30min",
         icon: (
           <div className="w-6 h-6 rounded-full border border-blue-600 flex items-center justify-center bg-white">
             <svg

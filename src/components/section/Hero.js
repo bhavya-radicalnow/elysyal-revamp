@@ -71,8 +71,8 @@ export default function Hero() {
                 isLoading={isLoading}
               />
               <Button
-                text="Book a Demo"
-                href="#"
+                text="Book Demo"
+                href="https://calendly.com/bhavya-elysyal/30min"
                 variant="secondary"
                 isLoading={isLoading}
               />

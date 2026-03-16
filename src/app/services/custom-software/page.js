@@ -38,7 +38,7 @@ export default function CustomSoftwarePage() {
       description="Scalable, robust software applications tailored to your unique business requirements."
       heroImage="/custom 1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ text: "Book Demo", href: "#" }}
       alignImageBottom={true}
     >
       <ServiceFeatures

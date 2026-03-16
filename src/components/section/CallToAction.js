@@ -16,7 +16,7 @@ function CallToAction({
   description = "Join 500+ companies that trust ELYSYAL to deliver innovative AI, blockchain, and custom software solutions. Lets build the future together.",
   primaryBtnText = "Start Your Project",
   primaryBtnLink = "#",
-  secondaryBtnText = "Book a Demo",
+  secondaryBtnText = "Book Demo",
   secondaryBtnLink = "#",
   style = {},
 }) {

@@ -84,7 +84,7 @@ export default function DataSciencePage() {
       description="Extract meaningful insights from your data with advanced analytics and machine learning models."
       heroImage="/data1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ text: "Book Demo", href: "#" }}
       alignImageBottom={true}
     >
       <ServiceFeatures

@@ -42,7 +42,7 @@ export default function AboutPage() {
       description="Elysyal helps businesses evolve and scale at the intersection of strategy, design, and engineering. We deliver solutions that work today and adapt to tomorrow's challenges—always with measurable impact."
       backgroundImage="/About Company bg.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ text: "Book Demo", href: "#" }}
       heroPadding="pt-48 md:pt-56 lg:pt-64 pb-32 md:pb-40"
     >
       {/* How It Started Section */}

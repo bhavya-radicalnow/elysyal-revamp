@@ -21,7 +21,7 @@ export default function IndustriesPage() {
       description="We design and build scalable, secure technology solutions tailored to the unique challenges and goals of every industry we serve."
       heroImage="/Industries image 01.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ text: "Book Demo", href: "#" }}
     >
       {/* Industry Solutions Section */}
       <section className="py-16 md:py-24 bg-[#FAFAFA]">

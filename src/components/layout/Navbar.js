@@ -181,17 +181,17 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="/Tech-stack"
+                href="/tech-stack"
                 className={`hover:text-blue-600 transition-colors ${
-                  pathname === "/Tech-stack" ? "text-blue-600" : ""
+                  pathname === "/tech-stack" ? "text-blue-600" : ""
                 }`}
               >
                 Tech-Stack
               </Link>
               <Link
-                href="/Industries"
+                href="/industries"
                 className={`hover:text-blue-600 transition-colors ${
-                  pathname === "/Industries" ? "text-blue-600" : ""
+                  pathname === "/industries" ? "text-blue-600" : ""
                 }`}
               >
                 Industries
@@ -205,17 +205,17 @@ export default function Navbar() {
                 Solution Hub
               </Link>
               <Link
-                href="/success-Stories"
+                href="/success-stories"
                 className={`hover:text-blue-600 transition-colors ${
-                  pathname === "/success-Stories" ? "text-blue-600" : ""
+                  pathname === "/success-stories" ? "text-blue-600" : ""
                 }`}
               >
                 Success Stories
               </Link>
               <Link
-                href="/About"
+                href="/about"
                 className={`hover:text-blue-600 transition-colors ${
-                  pathname === "/About" ? "text-blue-600" : ""
+                  pathname === "/about" ? "text-blue-600" : ""
                 }`}
               >
                 About Company
@@ -370,19 +370,19 @@ export default function Navbar() {
               </AnimatePresence>
 
               <Link
-                href="/Tech-stack"
+                href="/tech-stack"
                 onClick={() => setOpen(false)}
                 className={`text-center hover:text-blue-600 transition-colors ${
-                  pathname === "/Tech-stack" ? "text-blue-600" : ""
+                  pathname === "/tech-stack" ? "text-blue-600" : ""
                 }`}
               >
                 Tech-Stack
               </Link>
               <Link
-                href="/Industries"
+                href="/industries"
                 onClick={() => setOpen(false)}
                 className={`text-center hover:text-blue-600 transition-colors ${
-                  pathname === "/Industries" ? "text-blue-600" : ""
+                  pathname === "/industries" ? "text-blue-600" : ""
                 }`}
               >
                 Industries
@@ -397,19 +397,19 @@ export default function Navbar() {
                 Solution Hub
               </Link>
               <Link
-                href="/success-Stories"
+                href="/success-stories"
                 onClick={() => setOpen(false)}
                 className={`text-center hover:text-blue-600 transition-colors ${
-                  pathname === "/success-Stories" ? "text-blue-600" : ""
+                  pathname === "/success-stories" ? "text-blue-600" : ""
                 }`}
               >
                 Success Stories
               </Link>
               <Link
-                href="/About"
+                href="/about"
                 onClick={() => setOpen(false)}
                 className={`text-center hover:text-blue-600 transition-colors ${
-                  pathname === "/About" ? "text-blue-600" : ""
+                  pathname === "/about" ? "text-blue-600" : ""
                 }`}
               >
                 About Company

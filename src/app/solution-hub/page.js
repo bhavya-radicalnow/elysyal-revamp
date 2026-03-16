@@ -23,7 +23,7 @@ export default function solutionhubPage() {
       description="Our Solution Hub brings together proven, ready-to-use digital solutions designed to solve real business challenges. From pre-built products to customizable platforms, we help teams launch faster, reduce development effort, and scale with confidence."
       heroImage="/Solution Hub 03.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ text: "Book Demo", href: "#" }}
     >
       {/* Ready Solutions Section */}
       <section className="py-16 md:py-24 bg-white">

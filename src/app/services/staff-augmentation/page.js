@@ -43,7 +43,7 @@ export default function StaffAugmentationPage() {
       description="Skilled developers and tech specialists to expand your team and accelerate project delivery."
       heroImage="/custom 1.webp"
       primaryButton={{ text: "Start Your Project", href: "#" }}
-      secondaryButton={{ text: "Book a Demo", href: "#" }}
+      secondaryButton={{ text: "Book Demo", href: "#" }}
       alignImageBottom={true}
     >
       <ServiceFeatures

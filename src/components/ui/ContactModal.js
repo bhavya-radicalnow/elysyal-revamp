@@ -2,25 +2,44 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useModal } from "@/context/ModalContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function ContactModal() {
   const { isContactModalOpen, closeContactModal } = useModal();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
 
-  // Close on escape key
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === "Escape") closeContactModal();
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [closeContactModal]);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhaaiadZI5y5CcrGZXEWz3cLotXul1i3_UpuVrdDHs6GFB9NfAAI-0Fngv27zyPfU7/exec";
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Required for Google Apps Script
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      setFormData({ name: "", email: "", phone: "" });
+      closeContactModal();
+    } catch (error) {
+      setIsSubmitting(false)
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <AnimatePresence>
       {isContactModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -29,66 +48,49 @@ export default function ContactModal() {
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
 
-          {/* Modal Content */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ duration: 0.2 }}
-            className="relative bg-white w-full max-w-md rounded-[2rem] p-8 shadow-2xl overflow-hidden"
+            className="relative bg-white w-full max-w-md rounded-[2rem] p-8 shadow-2xl"
           >
-            <button
-              onClick={closeContactModal}
-              className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors z-10"
-              aria-label="Close modal"
-            >
-              <svg
-                className="w-5 h-5 text-black"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
             <h2 className="text-3xl font-bold text-black mb-8">Get in Touch</h2>
 
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                />
-              </div>
-
-              <div>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                />
-              </div>
-
-              <div>
-                <input
-                  type="tel"
-                  placeholder="Phone"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black placeholder:text-black/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all"
-                />
-              </div>
+            <form className="space-y-5" onSubmit={handleSubmit}>
+              <input
+                required
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                type="text"
+                placeholder="Name"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black outline-none focus:border-blue-500 transition-all"
+              />
+              <input
+                required
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                type="email"
+                placeholder="Email"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black outline-none focus:border-blue-500 transition-all"
+              />
+              <input
+                required
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                type="tel"
+                placeholder="Phone"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 text-black outline-none focus:border-blue-500 transition-all"
+              />
 
               <button
                 type="submit"
-                className="w-full mt-4 bg-gradient-to-r from-[#6391F4] to-[#9F7AEA] text-white font-semibold py-4 rounded-full shadow-lg hover:shadow-xl hover:opacity-95 transition-all active:scale-[0.98]"
+                disabled={isSubmitting}
+                className="w-full mt-4 bg-gradient-to-r from-[#6391F4] to-[#9F7AEA] text-white font-semibold py-4 rounded-full shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
               >
-                Submit
+                {isSubmitting ? "Sending..." : "Submit"}
               </button>
             </form>
           </motion.div>
